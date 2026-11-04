@@ -1,0 +1,895 @@
+<style>
+  /* Base Layout & Typography */
+  .dc-campus-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 36px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .hero-card .subtitle {
+    font-size: max(12pt, 1.1em);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-card .address-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: max(12pt, 0.95em);
+    color: #f7f7f7;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Image Banner Styling */
+  .campus-image-container {
+    box-sizing: border-box;
+    height: 650px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e6e6e6;
+  }
+
+  .campus-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.4em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Grid Layouts */
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  /* Visitor & Parking Links */
+  .info-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-box p {
+    margin: 0 0 16px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  /* Parking Stickers List */
+  .parking-section {
+    margin-top: 20px;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 22px;
+  }
+
+  .parking-section h3 {
+    margin: 0 0 12px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .parking-stickers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .sticker-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+
+  .sticker-card.green  { border-left-color: #38a169; }
+  .sticker-card.pink   { border-left-color: #ed64a6; }
+  .sticker-card.grey   { border-left-color: #7f7f7f; }
+  .sticker-card.red    { border-left-color: #8d1324; }
+  .sticker-card.yellow { border-left-color: #ecc94b; }
+
+  .sticker-card .sticker-title {
+    font-weight: 700;
+    font-size: max(12pt, 0.9em);
+    color: #111111;
+  }
+
+  .sticker-card .sticker-desc {
+    font-size: max(12pt, 0.85em);
+    color: #7f7f7f;
+    margin-top: 2px;
+  }
+
+  .parking-steps {
+    margin: 16px 0 0 0;
+    padding-left: 20px;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  .parking-steps li {
+    margin-bottom: 6px;
+  }
+
+  /* Tech Equipment List */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .tech-item {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tech-item .icon {
+    font-size: max(12pt, 1.1em);
+    flex-shrink: 0;
+  }
+
+  /* Software Request Alert */
+  .alert-banner {
+    background-color: #f7f7f7;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .alert-banner p {
+    margin: 0;
+    font-size: max(12pt, 0.92em);
+    color: #8d1324;
+  }
+
+  /* Notice Box */
+  .notice-box {
+    background-color: #fff7df;
+    border: 1px solid #f0d27a;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .notice-box h4 {
+    margin: 0 0 6px 0;
+    color: #8d1324;
+    font-size: max(12pt, 0.98em);
+  }
+
+  .notice-box p {
+    margin: 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+  }
+
+  /* Support Hours Cards */
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .support-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .support-card h3 {
+    margin: 0 0 6px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .support-card .badge {
+    display: inline-block;
+    background: #e6e6e6;
+    color: #454545;
+    font-size: max(12pt, 0.75em);
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .support-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+  }
+
+  .support-details li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Buttons & Action Links */
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="dc-campus-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">Labs &amp; Classrooms</p>
+<h1>Robert H. Smith School of Business</h1>
+<div class="subtitle">Ronald Reagan Building &amp; International Trade Center</div>
+<div class="address-badge">📍︎ Concourse Level &bull; 1300 Pennsylvania Avenue NW, Washington, DC 20004</div>
+</div>
+</div>
+<!-- CAMPUS IMAGE -->
+<div class="campus-image-container"><img src="rrb_itc.jpg" alt="Ronald Reagan Building and International Trade Center" width="805" height="503"></div>
+<!-- LOCATION & PARKING -->
+<div class="section-card">
+<h2>🚗︎ Directions &amp; Parking</h2>
+<div class="grid-2col">
+<div class="info-box">
+<div>
+<h3>Building Visitor Information</h3>
+<p>Access maps, building FAQs, and general visitor guidance for the Ronald Reagan Building.</p>
+</div>
+<div><a class="btn-outline" href="https://rrbitc.com/visit/" target="_blank" rel="noopener">Explore Visitor Info ↗</a></div>
+</div>
+<div class="info-box">
+<div>
+<h3>Garage &amp; Parking Rates</h3>
+<p>View current parking rates, operating hours, and garage entry details for RRB.</p>
+</div>
+<div><a class="btn-outline" href="https://rrbitc.com/parking/" target="_blank" rel="noopener">View Parking Info ↗</a></div>
+</div>
+</div>
+<!-- FACULTY PARKING STICKERS -->
+<div class="parking-section">
+<h3>Faculty Parking Sticker Requests</h3>
+<p style="font-size: max(12pt, 0.92em); color: #454545; margin-bottom: 12px;">Faculty teaching at the DC campus can request parking validation stickers by following these steps:</p>
+<div class="parking-stickers-grid">
+<div class="sticker-card green">
+<div class="sticker-title">Green Sticker ($14.00)</div>
+<div class="sticker-desc">After 5:00 PM / Weekends / Holidays</div>
+</div>
+<div class="sticker-card pink">
+<div class="sticker-title">Pink Sticker ($22.00)</div>
+<div class="sticker-desc">All Day Access</div>
+</div>
+<div class="sticker-card grey">
+<div class="sticker-title">Grey Sticker ($19.00)</div>
+<div class="sticker-desc">4 Hours or Less</div>
+</div>
+<div class="sticker-card red">
+<div class="sticker-title">Red Sticker ($17.00)</div>
+<div class="sticker-desc">2 Hours or Less</div>
+</div>
+<div class="sticker-card yellow">
+<div class="sticker-title">Yellow Sticker ($10.00)</div>
+<div class="sticker-desc">1 Hour or Less</div>
+</div>
+</div>
+<ol class="parking-steps">
+<li>Submit request via email to <a href="mailto:smith_operations@rhsmith.umd.edu">smith_operations@rhsmith.umd.edu</a>.</li>
+<li>Specify the sticker type(s) and quantity needed.</li>
+<li>Provide your department spending account number for reimbursement.</li>
+<li>Notify your department accountant regarding the chargeback.</li>
+</ol>
+</div>
+</div>
+<!-- CLASSROOMS & TECH -->
+<div class="section-card">
+<h2>🏫︎ Classrooms &amp; Audio/Visual Technology</h2>
+<p>The DC Campus features <strong>4 fully equipped classrooms</strong> outfitted with standard instruction technology:</p>
+<div class="tech-grid">
+<div class="tech-item"><span class="icon">🖥︎</span> Windows 11 Instructor PC</div>
+<div class="tech-item"><span class="icon">👆︎</span> Touch Screen Display</div>
+<div class="tech-item"><span class="icon">🔊︎</span> Ceiling Speakers &amp; Sound System</div>
+<div class="tech-item"><span class="icon">🎙︎</span> Wireless Lapel Microphone</div>
+<div class="tech-item"><span class="icon">📹︎</span> HD Capture Pro System</div>
+<div class="tech-item"><span class="icon">🎥︎</span> 2 HD Tilt &amp; Zoom Cameras</div>
+<div class="tech-item"><span class="icon">📽︎</span> Center-Mounted Sony Projector</div>
+<div class="tech-item"><span class="icon">✏︎</span> Epson BrightLink Wall Projector</div>
+<div class="tech-item"><span class="icon">📄︎</span> Document Camera</div>
+<div class="tech-item"><span class="icon">📡︎</span> AirMedia Wireless Presentation</div>
+<div class="tech-item"><span class="icon">📶︎</span> EDUROAM Wireless Internet</div>
+<div class="tech-item"><span class="icon">💻︎</span> HDMI Laptop Connectivity</div>
+</div>
+<div class="alert-banner">
+<p><strong>Need specialized software?</strong> Request additions for classroom/lab PCs using our standard form.</p>
+<a class="btn-action" href="https://go.umd.edu/swrequest" target="_blank" rel="noopener">Request Software ↗</a></div>
+</div>
+<!-- COMPUTER LABS -->
+<div class="section-card">
+<h2>💻︎ Computer Labs &amp; Workstations</h2>
+<p>The DC Suite contains <strong>6 BYOD (Bring Your Own Device) workstations</strong> and <strong>2 high-capacity printers</strong>.</p>
+<p style="font-size: max(12pt, 0.92em); color: #454545;">Each workstation provides a high-definition monitor and an HDMI cable connection. Users with devices lacking native HDMI ports should bring an appropriate adapter. Contact Smith IT or consult your device specs for compatibility advice.</p>
+</div>
+<!-- TECHNICAL SUPPORT -->
+<div class="section-card">
+<h2>🛠︎ Technical Support Services</h2>
+<div class="notice-box">
+<h4>⚠︎ Remote Support Operational Notice (2026&ndash;2027 Academic Year)</h4>
+<p>Smith IT provides <strong>Remote Support</strong> for the DC Suite. In-person technical support is available strictly by approved scheduling or for critical system repairs.</p>
+</div>
+<div class="support-grid"><!-- Standard Support -->
+<div class="support-card">
+<h3>Standard Help Desk</h3>
+<span class="badge">8:00 AM &ndash; 5:00 PM</span>
+<ul class="support-details">
+<li>📞︎ <strong>Helpline:</strong> (301) 405-2269</li>
+<li>✉︎ <strong>Email:</strong> <a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a></li>
+<li>🌐︎ <strong>Portal:</strong> <a href="https://it.rhsmith.umd.edu" target="_blank" rel="noopener">it.rhsmith.umd.edu</a></li>
+</ul>
+</div>
+<!-- Extended Support -->
+<div class="support-card">
+<h3>Extended Evening Support</h3>
+<span class="badge">5:00 PM &ndash; 10:00 PM</span>
+<p style="font-size: max(12pt, 0.85em); color: #7f7f7f; margin-top: -6px; margin-bottom: 10px;">Staffed by 1 Service Desk &amp; 1 AV representative.</p>
+<ul class="support-details">
+<li>🎙︎ <strong>Voicemail:</strong> (301) 405-2269</li>
+<li>✉︎ <strong>Email:</strong> <a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a></li>
+<li>🌐︎ <strong>Portal:</strong> <a href="https://it.rhsmith.umd.edu" target="_blank" rel="noopener">it.rhsmith.umd.edu</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- SMITH SHARED PAGE OVERRIDES -->
+<style>
+  :root {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+  }
+
+  [class*="-container"],
+  .hero-card,
+  .section-card,
+  .announcement-banner,
+  .emergency-alert-banner,
+  .emergency-contact-card,
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-box,
+  .action-box,
+  .instruction-box,
+  .contact-card,
+  .network-card,
+  .program-card,
+  .course-card,
+  .support-card,
+  .action-banner,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .portal-notice-box,
+  .feature-box,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .location-card,
+  .lab-card,
+  .sticker-card,
+  .parking-section,
+  .guide-card,
+  .cloud-tag,
+  .rebrand-box,
+  .config-block,
+  .server-code {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 0;
+    border-bottom: 4px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .parking-stickers-grid .sticker-card.green {
+    border-left-color: #38a169;
+  }
+
+  .parking-stickers-grid .sticker-card.pink {
+    border-left-color: #ed64a6;
+  }
+
+  .parking-stickers-grid .sticker-card.grey {
+    border-left-color: #7f7f7f;
+  }
+
+  .parking-stickers-grid .sticker-card.red {
+    border-left-color: #8d1324;
+  }
+
+  .parking-stickers-grid .sticker-card.yellow {
+    border-left-color: #ecc94b;
+  }
+
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0 0 0.7rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    border-bottom-color: var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    font-weight: 800;
+  }
+
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-card,
+  .network-card,
+  .contact-card,
+  .program-card,
+  .course-card,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .step-card,
+  .location-card,
+  .lab-card,
+  .parking-section,
+  .parking-stickers-grid .sticker-card {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .info-card h3,
+  .info-box h3,
+  .feature-card h3,
+  .feature-item h3,
+  .overview-item h3,
+  .support-card h3,
+  .network-card h3,
+  .contact-card h3,
+  .program-card h3,
+  .course-card h3,
+  .practice-card h3,
+  .benefit-card h3,
+  .location-card h3,
+  .lab-card h3,
+  .parking-section h3,
+  .action-box h3,
+  .support-box h3 {
+    color: var(--smith-black);
+  }
+
+  .info-card p,
+  .info-box p,
+  .feature-card p,
+  .feature-item p,
+  .overview-item p,
+  .tech-item,
+  .support-card p,
+  .network-card p,
+  .contact-card p,
+  .program-card p,
+  .course-card p,
+  .practice-card p,
+  .benefit-card p,
+  .location-card p,
+  .lab-card p,
+  .parking-steps,
+  .action-box p,
+  .support-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .announcement-banner,
+  .support-box,
+  .action-box,
+  .rebrand-box,
+  .portal-notice-box,
+  .alert-banner {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .announcement-banner p,
+  .alert-banner p,
+  .portal-notice-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .emergency-alert-banner,
+  .warning-box,
+  .alert-box {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 5px solid var(--smith-red-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .emergency-alert-banner h2,
+  .emergency-alert-banner p,
+  .emergency-contact-card strong,
+  .emergency-contact-card .phone-num,
+  .warning-box h3,
+  .warning-box p,
+  .alert-box {
+    color: var(--smith-red-dark);
+  }
+
+  .emergency-contact-card {
+    background: var(--smith-white);
+    border-color: rgba(186, 24, 46, 0.24);
+    border-radius: 0;
+  }
+
+  .notice-box,
+  .event-fee-box,
+  .instruction-box {
+    color: var(--smith-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box h3,
+  .notice-box h4,
+  .event-fee-box h3,
+  .instruction-box h3,
+  .notice-box p,
+  .event-fee-box p,
+  .instruction-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .address-badge,
+  .hero-card .address-badge {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.18);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-radius: 4px;
+    backdrop-filter: none;
+    font-size: max(12pt, 0.9rem);
+    line-height: 1.45;
+  }
+
+  .btn-action,
+  .btn-request {
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--smith-white) !important;
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-outline {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  .step-number {
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+  }
+
+  .step-card h3,
+  .step-content h3 {
+    color: var(--smith-black);
+  }
+
+  .step-card p,
+  .step-content p {
+    color: var(--smith-gray-700);
+  }
+
+  .server-code,
+  .config-block,
+  code {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .video-container,
+  .media-display,
+  .diagram-container,
+  .campus-image-container {
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .media-display img:not(.campus-image),
+  .diagram-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .campus-image-container img,
+  .media-display img.campus-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 8%;
+  }
+
+  .feature-tag,
+  .tag-item,
+  .cloud-tag {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .feature-tag.highlight,
+  .cloud-tag {
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.2);
+    border-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .lab-card,
+  .satellite-card,
+  .network-card {
+    border-left-color: var(--smith-red);
+  }
+
+  .schedule-list li {
+    color: var(--smith-gray-700);
+    background: var(--smith-white);
+    border-color: var(--smith-gray-200);
+    border-radius: 0;
+  }
+
+  [class*="container"] a:focus-visible,
+  [class*="container"] button:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 700px) {
+    [class*="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1rem 1.2rem;
+    }
+
+    .campus-image-container,
+    .campus-image-frame {
+      height: 280px;
+    }
+
+    .step-item {
+      gap: 0.8rem;
+    }
+  }
+</style>

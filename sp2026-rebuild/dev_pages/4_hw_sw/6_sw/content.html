@@ -1,0 +1,752 @@
+<style>
+  /* Base Container */
+  .software-page-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Style */
+  .research-header {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    padding: 32px 28px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .research-header h1 {
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+  }
+
+  .research-header p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1.05em);
+  }
+
+  /* Section Card Styling */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 25px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  .section-card p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: max(12pt, 0.98em);
+    color: #454545;
+  }
+
+  /* Grid Layouts */
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .card-item {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ba182e;
+    font-size: max(12pt, 1.15em);
+  }
+
+  .card-item p {
+    margin: 0 0 16px 0;
+    font-size: max(12pt, 0.95em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Notice & Alert Boxes */
+  .warning-box {
+    background-color: #fff7df;
+    border: 1px solid #f0d27a;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-size: max(12pt, 0.95em);
+    color: #454545;
+    line-height: 1.6;
+  }
+
+  .alert-box {
+    background-color: #fbe8eb;
+    border: 1px solid #e8b9c1;
+    border-left: 4px solid #8d1324;
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: max(12pt, 0.95em);
+    color: #8d1324;
+    line-height: 1.6;
+  }
+
+  /* Buttons & Action Links */
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-secondary {
+    background-color: #f7f7f7;
+    color: #ba182e !important;
+    border: 1px solid #e6e6e6;
+  }
+
+  .btn-secondary:hover {
+    background-color: #e6e6e6;
+  }
+
+  .location-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    font-size: max(12pt, 0.92em);
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="software-page-container"><!-- HERO HEADER -->
+<div class="research-header">
+<div class="eyebrow">Hardware &amp; Software</div>
+<h1>Software Resources</h1>
+<p>Access, purchase, and request software for Business School faculty, staff, classrooms, and personal devices.</p>
+</div>
+</div>
+<!-- CLASSROOMS, LABS & VSMITH -->
+<div class="section-card">
+<h2>🖥︎ Classrooms, Labs &amp; vSmith Software</h2>
+<p>Software installations on lab computers and <a href="https://umdrhsmithtest2.service-now.com/sp?id=vsmith" target="_blank" rel="noopener">vSmith</a> are purchased and updated based on Faculty requests processed twice a year in <strong>May</strong> and <strong>November</strong>.</p>
+<div class="btn-group"><a class="btn-action" href="https://umdrhsmithtest2.service-now.com/sp?id=software_list" target="_blank" rel="noopener">📋︎ View Installed Software List</a> <a class="btn-action btn-secondary" href="https://go.umd.edu/swrequest" target="_blank" rel="noopener">✍︎ Request New Software</a></div>
+</div>
+<!-- SOFTWARE PLATFORMS & PORTALS -->
+<div class="grid-2col" style="margin-bottom: 25px;"><!-- TERPWARE -->
+<div class="card-item">
+<div>
+<h3>🌐︎ TERPware</h3>
+<p>A wide variety of software products is available at no cost to UMD students, faculty, and staff through agreements managed by the Division of IT (DIT).</p>
+</div>
+<div><a class="btn-action" href="http://terpware.umd.edu/" target="_blank" rel="noopener">📥︎ Visit TERPware Portal</a></div>
+</div>
+<!-- VSMITH -->
+<div class="card-item">
+<div>
+<h3>☁︎ vSmith Virtual Desktop</h3>
+<p>Access Van Munching Hall lab applications and files from any personal computer or mobile device using the VMware Horizon client.</p>
+</div>
+<div><a class="btn-action" href="https://umdrhsmithtest2.service-now.com/sp?id=vsmith" target="_blank" rel="noopener">🚀︎ Get Started with vSmith</a></div>
+</div>
+</div>
+<!-- PURCHASING SOFTWARE & REIMBURSEMENT POLICY -->
+<div class="section-card">
+<h2>🛒︎ Purchasing Software</h2>
+<p>You can purchase software with negotiated UMD discounts through the Division of IT software licensing site or directly from vendors.</p>
+<p>If you are using an <strong>RHS Spending Account</strong>, the Office of Finance and Administration can assist with placing the order. Please contact the manager responsible for your spending account before purchasing.</p>
+<div class="btn-group" style="margin-bottom: 20px;"><a class="btn-action" href="https://umd.service-now.com/itsupport?id=service&amp;service=d5dc3c3f3708c20041271f9543990ebe&amp;t=so" target="_blank" rel="noopener">🛒︎ DIT Software Licensing Website</a></div>
+<!-- REIMBURSEMENT POLICY ALERT -->
+<div class="warning-box"><strong>⚠︎ Important Policy Note on Reimbursement:</strong><br>While you may install non-standard software on your PC, the Office of Administration advises that <strong>non-supported software will not be reimbursed</strong>, nor can spending ceiling funds be used for non-standard software purchases. Contact your account Business Manager for questions regarding this policy.</div>
+<!-- LICENSING COMPLIANCE ALERT -->
+<div class="alert-box"><strong>🚫︎ License Agreement &amp; Compliance Notice:</strong><br>Standard software and OS pre-installed on University PCs are licensed for individual use only. Redistribution of software or operating systems is illegal and strictly prohibited.</div>
+</div>
+<!-- STANDARD SOFTWARE & SECURE COMPUTING -->
+<div class="grid-2col"><!-- STANDARD SOFTWARE -->
+<div class="card-item">
+<div>
+<h3>⚙︎ Standard Software Builds</h3>
+<p>Smith IT manages standardized software deployments for all new office workstations, as well as computer labs across campuses.</p>
+<div class="location-links"><a href="https://umdrhsmithtest2.service-now.com/sp?id=labs_college_park" target="_blank" rel="noopener">College Park</a> &bull; <a href="https://umdrhsmithtest2.service-now.com/sp?id=dc" target="_blank" rel="noopener">Washington D.C.</a> &bull; <a href="https://umdrhsmithtest2.service-now.com/sp?id=baltimore" target="_blank" rel="noopener">Baltimore</a></div>
+</div>
+<div><a class="btn-action btn-secondary" href="https://umdrhsmithtest2.service-now.com/sp?id=standard_software" target="_blank" rel="noopener">📄︎ View Standard Software Details</a></div>
+</div>
+<!-- SECURE COMPUTING -->
+<div class="card-item">
+<div>
+<h3>🛡︎ Secure Computing</h3>
+<p>Maintain your device security with recommended tools and security practices. Download security software directly via TERPware.</p>
+<p style="font-size: max(12pt, 0.88em); color: #7f7f7f; margin-top: -8px;">Suspect a compromised system? Contact the Help Desk immediately.</p>
+</div>
+<div class="btn-group"><a class="btn-action btn-secondary" href="https://umdrhsmithtest2.service-now.com/sp?id=secure_computing" target="_blank" rel="noopener">🔒︎ Security Pages</a> <a class="btn-action btn-secondary" href="mailto:helpme@rhsmith.umd.edu">✉︎ Email Help Desk</a></div>
+</div>
+</div>
+<!-- SMITH HW/SW OVERRIDES -->
+<style>
+  .section-card,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .contact-banner,
+  .action-banner,
+  .policy-grid,
+  .policy-card,
+  .grid-2col,
+  .grid-3col,
+  .process-grid,
+  .step-card,
+  .info-box,
+  .checklist,
+  .checklist-item,
+  .card-item,
+  .software-grid,
+  .software-item,
+  .location-grid,
+  .locations-grid,
+  .location-card,
+  .deadline-grid,
+  .deadline-card,
+  .table-responsive,
+  .spec-table,
+  .hero-card,
+  .footnotes-container,
+  .table-footer-note,
+  .table-responsive {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  :root {
+    --hw-red: #ba182e;
+    --hw-red-dark: #8d1324;
+    --hw-yellow: #ffc845;
+    --hw-black: #000000;
+    --hw-gray-700: #454545;
+    --hw-gray-500: #7f7f7f;
+    --hw-gray-200: #e6e6e6;
+    --hw-gray-100: #f7f7f7;
+    --hw-white: #ffffff;
+  }
+
+  .research-container,
+  .desktops-container,
+  .laptops-container,
+  .peripherals-container,
+  .mobile-page-container,
+  .software-page-container,
+  .standard-software-container,
+  .software-list-container {
+    box-sizing: border-box;
+    color: var(--hw-black);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .research-header,
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--hw-black);
+    background: var(--hw-white);
+    border: 0;
+    border-bottom: 4px solid var(--hw-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .research-header::before,
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--hw-red);
+  }
+
+  .research-header .eyebrow,
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--hw-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .research-header h1,
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--hw-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .research-header p,
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0;
+    color: var(--hw-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    box-sizing: border-box;
+    margin: 0 0 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--hw-black);
+    background: var(--hw-white);
+    border: 1px solid var(--hw-gray-200);
+    border-top: 4px solid var(--hw-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.65rem;
+    color: var(--hw-black);
+    border-bottom: 2px solid var(--hw-gray-200);
+    font-size: max(12pt, clamp(1.25rem, 2vw, 1.6rem));
+    line-height: 1.25;
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    color: var(--hw-white);
+    background: var(--hw-red);
+    border: 3px solid var(--hw-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.7rem);
+    font-weight: 800;
+  }
+
+  .section-card p,
+  .info-box p,
+  .card-item p,
+  .step-card p,
+  .location-card p,
+  .contact-banner p,
+  .action-banner-text p,
+  .intro-text {
+    color: var(--hw-gray-700);
+  }
+
+  .grid-2col,
+  .grid-3col,
+  .policy-grid,
+  .process-grid,
+  .software-grid,
+  .location-grid,
+  .locations-grid,
+  .team-grid,
+  .deadline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+  }
+
+  .info-box,
+  .policy-card,
+  .card-item,
+  .location-card,
+  .step-card,
+  .checklist-item,
+  .software-item,
+  .deadline-card,
+  .team-card {
+    box-sizing: border-box;
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 4px solid var(--hw-red);
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+  }
+
+  .info-box,
+  .policy-card,
+  .card-item,
+  .location-card,
+  .step-card,
+  .checklist-item,
+  .software-item,
+  .deadline-card,
+  .team-card {
+    padding: 1rem;
+  }
+
+  .info-box h3,
+  .card-item h3,
+  .step-card h3,
+  .location-card h3,
+  .checklist-item-content h3,
+  .software-item-content h3,
+  .team-card h3,
+  .action-banner-text h3,
+  .contact-banner h3 {
+    color: var(--hw-black);
+  }
+
+  .info-box h3,
+  .card-item h3,
+  .step-card h3,
+  .location-card h3,
+  .checklist-item-content h3,
+  .software-item-content h3,
+  .team-card h3 {
+    margin-top: 0;
+    font-weight: 700;
+  }
+
+  .checklist-item .icon,
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--hw-white);
+    background: var(--hw-red);
+    border: 2px solid var(--hw-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.72rem);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .table-responsive {
+    max-width: 100%;
+    margin-top: 1rem;
+    overflow-x: auto;
+    border: 1px solid var(--hw-gray-200);
+    border-radius: 0;
+    background: var(--hw-white);
+  }
+
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: var(--hw-gray-700);
+    font-size: max(12pt, 0.94rem);
+  }
+
+  .spec-table th {
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border-bottom: 3px solid var(--hw-red);
+    border-right: 1px solid var(--hw-gray-200);
+    font-weight: 700;
+    vertical-align: top;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 0.8rem;
+    border-right: 1px solid var(--hw-gray-200);
+    border-bottom: 1px solid var(--hw-gray-200);
+  }
+
+  .spec-table td {
+    color: var(--hw-gray-700);
+    vertical-align: top;
+  }
+
+  .spec-table tr:hover td {
+    background: rgba(255, 200, 69, 0.08);
+  }
+
+  .spec-label,
+  th.spec-label {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: auto;
+    min-width: 120px;
+    color: var(--hw-black) !important;
+    background: var(--hw-gray-100) !important;
+    border-right: 2px solid var(--hw-gray-200) !important;
+    font-weight: 700;
+  }
+
+  th.spec-label {
+    z-index: 3;
+  }
+
+  .link-subtext {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--hw-gray-500);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 400;
+  }
+
+  .notice-box,
+  .warning-box {
+    padding: 1rem 1.2rem;
+    color: var(--hw-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--hw-red);
+    border-radius: 0;
+  }
+
+  .alert-box {
+    padding: 1rem 1.2rem;
+    color: var(--hw-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.25);
+    border-left: 4px solid var(--hw-red-dark);
+    border-radius: 0;
+  }
+
+  .contact-banner,
+  .action-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.1rem 1.2rem;
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 5px solid var(--hw-red);
+    border-radius: 0;
+  }
+
+  .badge-warranty,
+  .feature-tag,
+  .btn-3d,
+  .btn-spec,
+  .btn-outline {
+    color: var(--hw-red) !important;
+    background: var(--hw-white);
+    border: 1px solid var(--hw-red);
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .badge-warranty,
+  .feature-tag,
+  .btn-3d,
+  .btn-spec,
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .feature-tag.highlight,
+  .risk-moderate {
+    color: #3b2e00;
+    background: rgba(255, 200, 69, 0.3);
+    border-color: rgba(255, 200, 69, 0.75);
+  }
+
+  .badge-soldered,
+  .risk-high {
+    color: var(--hw-red-dark);
+    background: rgba(186, 24, 46, 0.07);
+    border: 1px solid rgba(186, 24, 46, 0.28);
+    border-radius: 3px;
+    font-weight: 700;
+  }
+
+  .btn-link,
+  .btn-action,
+  .btn-request {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.55rem 0.9rem;
+    color: var(--hw-white) !important;
+    background: var(--hw-red);
+    border: 1px solid var(--hw-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-link:focus-visible,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--hw-white) !important;
+    background: var(--hw-red-dark);
+    border-color: var(--hw-red-dark);
+  }
+
+  .btn-secondary {
+    color: var(--hw-red) !important;
+    background: var(--hw-white);
+    border: 1px solid var(--hw-red);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    color: var(--hw-red-dark) !important;
+    background: var(--hw-gray-100);
+  }
+
+  .policy-card {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    color: var(--hw-red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .policy-card:hover,
+  .policy-card:focus-visible {
+    background: rgba(255, 200, 69, 0.12);
+    border-color: var(--hw-red);
+  }
+
+  .policy-card:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--hw-yellow);
+    outline-offset: 2px;
+  }
+
+  .table-footer-note,
+  .compat-footer-cell {
+    padding: 0.9rem;
+    color: var(--hw-gray-700);
+    background: var(--hw-gray-100);
+    border-top: 2px solid var(--hw-red);
+    text-align: center;
+  }
+
+  .footnotes-container {
+    padding: 1rem 1.2rem;
+    margin-top: 1.2rem;
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 4px solid var(--hw-red);
+  }
+
+  .footnotes-container h3,
+  .footnotes-list .marker {
+    color: var(--hw-red);
+  }
+
+  .sheet-wrapper {
+    max-width: 100%;
+    overflow: auto;
+    border: 1px solid var(--hw-gray-200);
+    box-shadow: none;
+  }
+
+  .sheet-wrapper iframe {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  @media (max-width: 700px) {
+    .research-container,
+    .desktops-container,
+    .laptops-container,
+    .peripherals-container,
+    .mobile-page-container,
+    .software-page-container,
+    .standard-software-container,
+    .software-list-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1rem;
+    }
+
+    .table-responsive {
+      border-radius: 0;
+    }
+
+    .spec-table {
+      min-width: 700px;
+    }
+
+    .banner-actions,
+    .btn-group {
+      gap: 0.55rem;
+    }
+  }
+</style>

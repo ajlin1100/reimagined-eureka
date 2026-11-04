@@ -1,0 +1,267 @@
+<style>
+  .visitor-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .visitor-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .visitor-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .visitor-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .visitor-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .visitor-header h1 {
+    color: var(--smith-black);
+    margin: 0 0 0.5rem;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .visitor-header p {
+    color: var(--smith-gray-700);
+    margin: 0;
+    max-width: 65ch;
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: var(--smith-radius);
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+    margin-bottom: 1.75rem;
+    padding: 1.5rem;
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    margin: 0 0 1.1rem;
+    font-size: max(12pt, 1.5rem);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--smith-gray-200);
+    padding-bottom: 0.75rem;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 800;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+  }
+
+  .info-box h3 {
+    margin: 0 0 0.65rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .info-box p,
+  .notice-box p,
+  .section-card > p {
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .info-box p {
+    margin: 0 0 0.85rem;
+  }
+
+  .notice-box {
+    margin-top: 1.1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 200, 69, 0.15);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+  }
+
+  .notice-box p {
+    margin: 0;
+  }
+
+  .contact-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1rem;
+    padding: 1.1rem 1.2rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red-dark);
+    border-left: 5px solid var(--smith-yellow);
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+  }
+
+  .contact-banner-text h3 {
+    margin: 0 0 0.25rem;
+    color: var(--smith-white);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .contact-banner-text p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: max(12pt, 0.95rem);
+  }
+
+  .section-card a:not(.btn-link) {
+    color: var(--smith-red);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .btn-link {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.65rem 1rem;
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: calc(var(--smith-radius) / 2);
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .contact-banner .btn-link {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border-color: var(--smith-white);
+  }
+
+  .contact-banner .btn-link:hover,
+  .contact-banner .btn-link:focus-visible {
+    color: var(--smith-red-dark) !important;
+    background: var(--smith-gray-100);
+  }
+
+  @media (max-width: 600px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .section-card h2 {
+      font-size: max(12pt, 1.3rem);
+    }
+  }
+</style>
+<div class="visitor-container"><!-- HERO HEADER -->
+<div class="visitor-header">
+<div class="eyebrow">Getting Started</div>
+<h1>Visitor Guide &amp; Wireless Access</h1>
+<p>Connecting to technology resources at the Robert H. Smith School of Business.</p>
+</div>
+</div>
+<!-- SECTION 1: WIRELESS ACCESS -->
+<div class="section-card">
+<h2><span class="badge">1</span> Accessing the Wireless Network</h2>
+<div class="grid-2col"><!-- Individual Visitors -->
+<div class="info-box">
+<div>
+<h3>Individual Guest Access</h3>
+<p>Visitors to the University of Maryland campus can connect directly to the guest Wi-Fi network for self-service internet access on personal devices.</p>
+</div>
+<a class="btn-link" href="https://umdrhsmithtest2.service-now.com/sp?id=kb_article_view&amp;sysparm_article=KB0010119">Guest Wi-Fi Setup Guide</a></div>
+<!-- Bulk / Event Group Access -->
+<div class="info-box">
+<div>
+<h3>Bulk / Event Group Access</h3>
+<p>Sponsoring a conference or group visit? Event organizers can request temporary bulk wireless credentials for guests through Smith IT.</p>
+</div>
+<a class="btn-link" href="https://umdrhsmithtest2.service-now.com/sp?id=sc_cat_item&amp;sys_id=5537221147550750ecefb8ca116d43bb&amp;sysparm_category=e15706fc0a0a0aa7007fc21e1ab70c2f">Submit GWA Request</a></div>
+</div>
+<div class="notice-box">
+<p><strong>Advance Notice Required:</strong> Bulk Guest Wireless Access (GWA) requests must be submitted at least <strong>one week prior</strong> to your visitors' scheduled arrival on campus.</p>
+</div>
+<p style="margin-top: 20px; font-size: max(12pt, 0.95em);">For additional information on campus network coverage, eduroam, and wireless policies, visit the Division of Information Technology's <a href="https://umd.service-now.com/itsupport?id=service&amp;service=70810d7f3708c20041271f9543990e1f">UMD Wireless Portal</a>.</p>
+</div>
+<!-- SECTION 2: LOCATIONS & DIRECTIONS -->
+<div class="section-card">
+<h2><span class="badge">2</span> Locations &amp; Campus Navigation</h2>
+<div class="contact-banner">
+<div class="contact-banner-text">
+<h3>Visiting Our Campus Locations</h3>
+<p>Find directions, parking details, and building maps for College Park, Baltimore Peninsula, and the Ronald Reagan Building in Washington, D.C.</p>
+</div>
+<a class="btn-link" href="https://www.rhsmith.umd.edu/about/location">Directions &amp; Location Info</a></div>
+</div>

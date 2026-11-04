@@ -1,0 +1,408 @@
+<style>
+  .directory-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .directory-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .directory-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .directory-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .directory-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .directory-header h1 {
+    color: var(--smith-black);
+    margin: 0 0 0.5rem;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .directory-header p {
+    color: var(--smith-gray-700);
+    margin: 0;
+    max-width: 65ch;
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    margin: 0 0 1rem;
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: start;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--smith-gray-200);
+  }
+
+  .section-card h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 0.5rem;
+    background: var(--smith-red);
+    grid-column: 1 / -1;
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 0;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 800;
+  }
+
+  .intro-text,
+  .section-card > p,
+  .info-box p,
+  .checklist-item-content p,
+  .notice-box p,
+  .notice-box-info p,
+  .contact-banner-text p {
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .intro-text {
+    margin: 0 0 1rem;
+  }
+
+  .grid-2col,
+  .grid-3col {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .grid-2col {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+
+  .grid-3col {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .info-box h3 {
+    margin: 0 0 0.55rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .info-box p {
+    margin: 0 0 0.75rem;
+  }
+
+  .info-box > a {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .info-box > a:hover,
+  .info-box > a:focus-visible {
+    color: var(--smith-red-dark);
+    background: var(--smith-gray-100);
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .checklist-item .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.4rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.65rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .checklist-item-content {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .checklist-item-content h3 {
+    margin: 0 0 0.45rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.08rem);
+  }
+
+  .checklist-item-content p {
+    margin: 0 0 0.65rem;
+  }
+
+  .notice-box,
+  .notice-box-info {
+    margin-top: 1.1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box {
+    background: rgba(255, 200, 69, 0.15);
+  }
+
+  .notice-box-info {
+    background: var(--smith-gray-100);
+  }
+
+  .notice-box p,
+  .notice-box-info p {
+    margin: 0;
+  }
+
+  .contact-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.1rem 1.2rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+  }
+
+  .contact-banner-text h3 {
+    margin: 0 0 0.25rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .contact-banner-text p {
+    margin: 0;
+  }
+
+  .section-card a:not(.btn-link):not(.info-box a) {
+    color: var(--smith-red);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .section-card a:not(.btn-link):not(.info-box a):hover,
+  .section-card a:not(.btn-link):not(.info-box a):focus-visible {
+    color: var(--smith-red-dark);
+  }
+
+  .btn-link {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.65rem 1rem;
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  @media (max-width: 600px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .section-card h2 .badge {
+      flex-shrink: 0;
+    }
+  }
+</style>
+<div class="directory-container"><!-- HERO HEADER -->
+<div class="directory-header">
+<div class="eyebrow">Getting Started</div>
+<h1>Campus Directory Accounts &amp; Email</h1>
+<p>Authentication, storage, and communication services</p>
+</div>
+</div>
+<!-- SECTION 1: DIRECTORY ID SETUP -->
+<div class="section-card">
+<h2><span class="badge">1</span> Campus Directory ID Overview</h2>
+<p class="intro-text">Your Directory ID is the primary login used to access essential University systems, including Canvas (ELMS), UMD Email, campus Wi-Fi, and Business School network resources (such as classroom/lab PCs and shared network drives).</p>
+<div class="checklist">
+<div class="checklist-item">
+<div class="icon">🔑︎</div>
+<div class="checklist-item-content">
+<h3>Payroll-Activated Setup</h3>
+<p>Account setup becomes available as soon as HR/Payroll activates your appointment in the system. If you encounter setup errors, please verify your appointment status with HR.<br></p>
+<a class="btn-link" href="https://account.umd.edu/claim/initial">Activate Campus Directory ID</a></div>
+</div>
+</div>
+<!-- Non-Payroll Sponsorship -->
+<div class="notice-box">
+<p><strong>Not on UMD Payroll?</strong> Individuals not processed through campus payroll do not receive automatic directory accounts. If access is needed, your host department can sponsor an <a href="https://umd.service-now.com/itsupport?id=kb_article_view&amp;sysparm_article=KB0019198">Affiliate Account</a> or an <a href="https://umd.service-now.com/itsupport?id=service&amp;sys_id=9d1dd1141b76c110642d5287624bcb1d&amp;table=u_service_offering_portal_content&amp;searchTerm=associate">Associate Account</a> on your behalf.</p>
+</div>
+</div>
+<!-- SECTION 2: ACCOUNTS USED AT SMITH -->
+<div class="section-card">
+<h2><span class="badge">2</span> Key Accounts &amp; Resources</h2>
+<p class="intro-text">The Smith School relies on protected systems to deliver administrative and academic services:</p>
+<div class="grid-3col">
+<div class="info-box">
+<div>
+<h3>Directory ID</h3>
+<p>Central credential for system authentication across campus.</p>
+</div>
+<a href="https://account.umd.edu/">Password &amp; ID Info</a></div>
+<div class="info-box">
+<div>
+<h3>UMD Email</h3>
+<p>Google Workspace mail for faculty, staff, and graduate students.</p>
+</div>
+<a href="https://www.gmail.com/">Access Webmail</a></div>
+<div class="info-box">
+<div>
+<h3>Network Storage</h3>
+<p>Secure shared drive access (K: and O: Drives) for departmental work.</p>
+</div>
+<a href="https://umdrhsmithlive.service-now.com/sp?id=kb_article_view&sysparm_article=KB0010080">Storage Info</a></div>
+</div>
+<div class="contact-banner">
+<div class="contact-banner-text">
+<h3>Provisioning &amp; Departure Policy</h3>
+<p>File storage and email are generated automatically after HR confirms payroll appointments. Faculty and staff accounts remain active until the final day of employment. <strong>Be sure to copy or remove personal files before your end date</strong>, as access ends upon departure.</p>
+</div>
+<a class="btn-link" href="mailto:hr@rhsmith.umd.edu">Contact HR Office</a></div>
+</div>
+<!-- SECTION 3: EMAIL SERVICES BY ROLE -->
+<div class="section-card">
+<h2><span class="badge">3</span> Email Services by Role</h2>
+<div class="checklist"><!-- Faculty & Staff -->
+<div class="checklist-item">
+<div class="icon">👔︎</div>
+<div class="checklist-item-content">
+<h3>Faculty &amp; Staff</h3>
+<p>Email accounts are created automatically by the Division of IT (DIT). Review technical specifications and client setup guides in the <a href="https://umd.service-now.com/itsupport?id=service&amp;service=3bc5477637911e406574c97a43990e9b&amp;t=so&amp;cat_id=d41580fc6f16e20051281ecbbb3ee4cb">DIT Knowledge Repository</a>.</p>
+</div>
+</div>
+<!-- Graduate Students -->
+<div class="checklist-item">
+<div class="icon">🎓︎</div>
+<div class="checklist-item-content">
+<h3>MBA &amp; Specialty Masters Students</h3>
+<p>Official communication is sent to your <code>&lt;directoryid&gt;@umd.edu</code> account hosted on <strong>UMD G Suite</strong> (Google Workspace for Education). Learn more at <a href="http://go.umd.edu/umdgsuite">go.umd.edu/umdgsuite</a>.</p>
+<p style="margin-top: 8px;">Graduate students also receive a secondary <strong>Terpmail</strong> account (<code>&lt;directoryid&gt;@terpmail.umd.edu</code>). Approximately two semesters after graduation, official <code>@umd.edu</code> mail forwards to Terpmail for post-graduation use. Find details at <a href="http://go.umd.edu/umdterpmail">go.umd.edu/umdterpmail</a>.</p>
+</div>
+</div>
+<!-- Undergraduate Students -->
+<div class="checklist-item">
+<div class="icon">🎒︎</div>
+<div class="checklist-item-content">
+<h3>Undergraduate Students</h3>
+<p>Undergraduate students receive a <strong>Terpmail</strong> account on the Google Workspace platform for all university communication.</p>
+</div>
+</div>
+</div>
+<div class="notice-box-info">
+<p><strong>Note on Legacy Email:</strong> Since Spring 2022, all graduate students use the central UMD G Suite account (<code>@umd.edu</code>). Legacy options such as Smoogle or @rhsmith email accounts have been decommissioned.</p>
+</div>
+</div>

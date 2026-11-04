@@ -1,0 +1,1382 @@
+<style>
+  /* Base Container & Typography */
+  .vsmith-data-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1.02em);
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Info Cards & Grids */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .info-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-card h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Step Lists */
+  .step-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  .step-list li {
+    margin-bottom: 10px;
+  }
+
+  .step-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Critical Alert & Action Boxes */
+  .warning-box {
+    background: #fbe8eb;
+    border: 1px solid #e8b9c1;
+    border-left: 5px solid #8d1324;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .warning-box h3 {
+    margin: 0 0 8px 0;
+    color: #8d1324;
+    font-size: max(12pt, 1.1em);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .warning-box p {
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 0.9em);
+    color: #8d1324;
+    line-height: 1.55;
+  }
+
+  .action-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .action-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .action-box p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Key Highlight Badge List */
+  .tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .tag-item {
+    background: #e6e6e6;
+    color: #111111;
+    font-size: max(12pt, 0.82em);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="vsmith-data-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">vSmith</p>
+<h1>Working with Data</h1>
+<p>Learn how latency impacts heavy analytical workloads in virtual environments and follow essential workflow guidelines to optimize software performance and prevent data loss.</p>
+</div>
+</div>
+<!-- LATENCY & PERFORMANCE OVERVIEW -->
+<div class="section-card">
+<h2>⚡︎ Understanding Data Location &amp; Latency</h2>
+<p>When working in vSmith, application processing occurs on physical servers located in the Smith IT Data Center in College Park. However, your personal files reside on your local machine or external cloud storage providers (Google Drive, Box, Dropbox).</p>
+<div class="info-grid">
+<div class="info-card">
+<div>
+<h3>Standard Documents vs. Analytical Datasets</h3>
+<p>Opening basic spreadsheets or word documents across network drives causes minimal delay. However, intensive analytical tools perform frequent read/write cycles across the network, leading to severe latency and slow performance if files remain stored remotely during execution.</p>
+<div class="tag-group"><span class="tag-item">Tableau</span> <span class="tag-item">IDEA</span> <span class="tag-item">Palisade Decision Tools</span> <span class="tag-item">Large Excel Data</span></div>
+</div>
+</div>
+<div class="info-card">
+<div>
+<h3>Recommended High-Performance Workflow</h3>
+<p>1. <strong>Copy</strong> the analytical file locally to the session's <strong>Documents</strong> folder.<br>2. <strong>Run</strong> your analysis and calculations inside vSmith.<br>3. <strong>Save</strong> changes and <strong>copy the file back</strong> to cloud/local storage before ending your session.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- STEP-BY-STEP INSTRUCTIONS -->
+<div class="section-card">
+<h2>📂︎ File Transfer &amp; Execution Guide</h2>
+<div class="info-grid"><!-- Launch Method 1 -->
+<div class="info-card">
+<div>
+<h3>Method A: Standalone Applications</h3>
+<ol class="step-list">
+<li>Launch your application from Omnissa Horizon to connect to an assigned server.</li>
+<li>Leave the application open, then launch <strong>File Explorer</strong> from Omnissa Horizon so it opens on the same server.</li>
+<li>In File Explorer, select <strong>This PC</strong> from the left menu.</li>
+</ol>
+</div>
+</div>
+<!-- Launch Method 2 -->
+<div class="info-card">
+<div>
+<h3>Method B: Student Desktop Session</h3>
+<ol class="step-list">
+<li>Log in to the <strong>Student Desktop</strong> session normally.</li>
+<li>Open Windows Explorer by clicking the <strong>Start Menu</strong> and choosing <strong>Student Desktop / File Explorer</strong>.</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- Step-by-Step Data Handling -->
+<div class="action-box">
+<h3>Executing Your Work via File Explorer</h3>
+<ol class="step-list">
+<li><strong>Locate Source Files:</strong> If mapped via TerpDrives, access your cloud drive letters or mapped local computer user profile.</li>
+<li><strong>Copy to Session:</strong> Drag or copy/paste target datasets into the virtual machine's local <strong>Documents</strong> folder.</li>
+<li><strong>Perform Analysis:</strong> Open your application, load the dataset from the <strong>Documents</strong> folder, complete your assignment, and save your changes.</li>
+<li><strong>Copy Back Output:</strong> Drag or copy/paste the updated files from <strong>Documents</strong> back to TerpDrive or your local host machine.</li>
+</ol>
+</div>
+<!-- CRITICAL WARNING BOX -->
+<div class="warning-box">
+<h3>🚨︎ CRITICAL NOTICE: Unsaved Session Data is Permanently Lost</h3>
+<p><strong>YOU MUST COPY YOUR COMPLETED FILES OFF THE VIRTUAL MACHINE BEFORE LOGGING OFF.</strong></p>
+<p>Virtual desktops and application servers are dynamically destroyed upon session logoff. Anything left in the local <em>Documents</em> folder will be immediately deleted. <strong>Smith IT cannot recover un-copied or lost files.</strong></p>
+</div>
+</div>
+<!-- SUPPORT SECTION -->
+<div class="section-card">
+<h2>📞︎ Technical Assistance</h2>
+<p>If you need assistance configuring TerpDrive mapping or transferring session files, reach out to the Office of Smith IT Service Desk:</p>
+<div class="action-buttons"><a class="btn-action" href="mailto:helpme@rhsmith.umd.edu">Email Smith IT Helpdesk ↗</a> <a class="btn-outline" href="tel:3014052269">Call 301-405-2269 ↗</a></div>
+</div>
+<style>
+  /* Base Container & Typography */
+  .vsmith-saving-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Critical Warning Banner */
+  .critical-warning-banner {
+    background-color: #fbe8eb;
+    border: 1px solid #e8b9c1;
+    border-left: 6px solid #8d1324;
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .critical-warning-banner h2 {
+    margin: 0 0 6px 0;
+    color: #8d1324;
+    font-size: max(12pt, 1.2em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .critical-warning-banner p {
+    margin: 0;
+    font-size: max(12pt, 0.95em);
+    color: #8d1324;
+    line-height: 1.5;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1.02em);
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Image Container */
+  .diagram-container {
+    text-align: center;
+    margin: 20px 0;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .diagram-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Grid Layouts for Options */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .option-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .option-card .badge {
+    align-self: flex-start;
+    background: #f7f7f7;
+    color: #8d1324;
+    border: 1px solid #e6e6e6;
+    font-size: max(12pt, 0.75em);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .option-card .badge.recommended {
+    background: #c6f6d5;
+    color: #22543d;
+    border-color: #9ae6b4;
+  }
+
+  .option-card h3 {
+    margin: 0 0 8px 0;
+    font-size: max(12pt, 1.1em);
+    color: #ba182e;
+  }
+
+  .option-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.5;
+  }
+
+  .cloud-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .cloud-badge {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    font-size: max(12pt, 0.8em);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #454545;
+  }
+
+  /* Faculty Network Drives Box */
+  .faculty-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  .faculty-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .faculty-box p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  .drive-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .drive-item {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  .drive-item strong {
+    color: #ba182e;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Timeout Rules Grid */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .rule-card {
+    background: #fff7df;
+    border: 1px solid #f0d27a;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .rule-card h4 {
+    margin: 0 0 6px 0;
+    color: #8d1324;
+    font-size: max(12pt, 1em);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .rule-card p {
+    margin: 0;
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+  }
+
+  /* Interactive Buttons */
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="vsmith-saving-container"><!-- CRITICAL WARNING BANNER -->
+<div class="critical-warning-banner">
+<h2>⚠︎ Critical Data Loss Warning</h2>
+<p><strong>Do not attempt to save files directly to the vSmith application server or desktop machine.</strong> Because vSmith uses non-persistent virtual environments, all data saved in non-approved local folders <strong>will be permanently deleted when you log out or disconnect</strong>. The virtual desktop Recycle Bin is disabled, so deleted or lost files cannot be recovered.</p>
+</div>
+<!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">vSmith / Working with Data</p>
+<h1>Saving Your Data</h1>
+<p>To preserve your coursework and project files, you must store your data in approved locations such as university-provided cloud drives, mapped local computer storage, or network shares.</p>
+</div>
+</div>
+<!-- DIAGRAM PREVIEW -->
+<div class="diagram-container"><img src="SaveData.png" alt="vSmith File Explorer Interface showing shared local drives and Terpdrive connections" width="425" height="255"></div>
+<!-- APPROVED STORAGE METHODS -->
+<div class="section-card">
+<h2>📂︎ Approved Storage Methods for Students</h2>
+<p>We strongly recommend using <strong>Terpdrive</strong> or mapping your physical computer's folders before starting your work.</p>
+<div class="options-grid"><!-- Option 1: Terpdrive Cloud -->
+<div class="option-card">
+<div><span class="badge recommended">Top Recommendation</span>
+<h3>1. Terpdrive Cloud Integration</h3>
+<p>Connect your University accounts via <a href="http://kumo.umd.edu/" target="_blank" rel="noopener">Kumo</a> to automatically mount your cloud storage as local drives inside vSmith.</p>
+<div class="cloud-badges"><span class="cloud-badge">📁︎ Google Drive (Smoogle)</span> <span class="cloud-badge">📦︎ Box (50 GB)</span> <span class="cloud-badge">💧︎ Dropbox</span> <span class="cloud-badge">🔷︎ OneDrive</span></div>
+</div>
+</div>
+<!-- Option 2: Local Computer Sharing -->
+<div class="option-card">
+<div><span class="badge recommended">Top Recommendation</span>
+<h3>2. Save to Your Local Computer</h3>
+<p>Map folders from your physical computer directly to your vSmith session via the Horizon client settings.</p>
+<p style="font-size: max(12pt, 0.88em); color: #454545;">&bull; <strong>Windows Client:</strong> Offers to share your <code>Userprofile</code> folder by default.<br>&bull; <strong>Mac Client:</strong> Offers to share your <code>Home</code> library by default.<br>&bull; Use <code>File &gt; Save As</code> within your vSmith apps and navigate to your shared computer folder.</p>
+</div>
+</div>
+<!-- Option 3: Browser Cloud Storage -->
+<div class="option-card">
+<div><span class="badge">Web Access</span>
+<h3>3. Web Browser Uploads</h3>
+<p>Open a web browser inside or outside your vSmith session to upload files directly to web portals:</p>
+<div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px;"><a class="btn-outline" href="https://drive.google.com/drive" target="_blank" rel="noopener">Google Drive Web ↗</a> <a class="btn-outline" href="http://box.umd.edu/" target="_blank" rel="noopener">UMD Box Web Portal ↗</a></div>
+</div>
+</div>
+<!-- Option 4: USB Storage -->
+<div class="option-card">
+<div><span class="badge">Hardware</span>
+<h3>4. External USB Flash Drives</h3>
+<p>You can plug in and save data to a USB flash drive or external hard drive on Windows, Mac, and supported Android hardware running the Horizon client.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- FACULTY & STAFF NETWORK DRIVES -->
+<div class="section-card">
+<h2>🏢︎ Faculty &amp; Staff Network Drives</h2>
+<p>Faculty and staff logging into the Faculty &amp; Staff Desktops have access to dedicated network drives that are backed up nightly by Smith IT.</p>
+<div class="faculty-box">
+<h3>Automatic Network Storage Mapping</h3>
+<p>Your <code>My Documents</code> folder is automatically redirected to your secure personal server space.</p>
+<div class="drive-list">
+<div class="drive-item"><strong>K:\ Drive (Personal Work)</strong> Stores personal work documents securely. Restricted to your account only.</div>
+<div class="drive-item"><strong>O:\ Drive (Department Share)</strong> Use for shared departmental files, group projects, or storing a large volume of files.</div>
+</div>
+<p style="font-size: max(12pt, 0.85em); color: #454545; margin-top: 10px; margin-bottom: 0;"><em>Note: K:\ Drives have been discontinued for new hires. Please store only work-appropriate data on school network drives.</em></p>
+</div>
+</div>
+<!-- SESSION TIMEOUT RULES -->
+<div class="section-card">
+<h2>⏱︎ Inactivity &amp; Disconnect Session Rules</h2>
+<p>To ensure server capacity for all users, idle sessions are automatically terminated. <strong>Always save your work and manually log off when finished.</strong></p>
+<div class="rules-grid">
+<div class="rule-card">
+<h4>⏳ 30-Minute Inactivity Timeout</h4>
+<p>Students are automatically logged off if no mouse or keyboard activity is detected for 30 minutes. Unsaved work will be lost.</p>
+</div>
+<div class="rule-card">
+<h4>🔌︎ 15-Minute Disconnect Limit</h4>
+<p>If you close your client window or lose internet connection without explicitly logging off, your session stays active for only 15 minutes before being force-closed.</p>
+</div>
+<div class="rule-card">
+<h4>🚫︎ Disabled Recycle Bin</h4>
+<p>The Recycle Bin is disabled on all virtual desktops. Files deleted inside vSmith cannot be restored.</p>
+</div>
+</div>
+</div>
+<style>
+  /* Base Container & Typography */
+  .vsmith-terpdrive-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1.02em);
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Info Cards Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .info-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-card h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Provider Card Grid */
+  .provider-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .provider-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    text-align: center;
+  }
+
+  .provider-card h3 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: max(12pt, 1.15em);
+  }
+
+  .provider-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 14px;
+  }
+
+  .provider-card p {
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+    margin-bottom: 0;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  /* Highlight & Action Boxes */
+  .action-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .action-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .action-box p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  .feature-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .feature-box h3 {
+    margin: 0 0 8px 0;
+    color: #8d1324;
+    font-size: max(12pt, 1.1em);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .feature-box p {
+    margin: 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Media Display */
+  .media-display {
+    text-align: center;
+    margin: 20px 0;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .media-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Step Lists */
+  .step-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  .step-list li {
+    margin-bottom: 8px;
+  }
+
+  .step-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="vsmith-terpdrive-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">vSmith / Working with Data</p>
+<h1>TerpDrive Cloud Integration</h1>
+<p>Connect your cloud storage providers directly to Windows Explorer in vSmith, SmithApps, and Van Munching Hall lab computers to open and save files as if they were on a local drive.</p>
+</div>
+</div>
+<!-- OVERVIEW & SETUP PORTAL -->
+<div class="section-card">
+<h2>☁︎ What is Terpdrive?</h2>
+<p>Terpdrive links your personal or campus cloud storage accounts through Kumo. Once authorized, your cloud drives seamlessly map as drive letters in Windows Explorer whenever you log into any vSmith session, SmithApp, or campus computer lab.</p>
+<div class="media-display"><img src="Kumopage.png" alt="Kumo Cloud Storage Integration Portal" width="657" height="268"></div>
+<div class="action-box">
+<h3>Getting Started with Kumo Portal</h3>
+<p>To map your cloud drives, log into <strong>Kumo</strong> using your official UMD Directory ID credentials:</p>
+<div class="action-buttons"><a class="btn-action" href="https://kumo.umd.edu/" target="_blank" rel="noopener">Log in to Kumo Portal ↗</a> <a class="btn-outline" href="https://itsupport.umd.edu/itsupport/en?id=kb_article_view&amp;table=kb_knowledge&amp;sys_kb_id=400a3b4d470ae1142d65a709536d4336" target="_blank" rel="noopener">Division of IT FAQ ↗</a></div>
+</div>
+<!-- Storage Allocations Feature Box -->
+<div class="feature-box">
+<h3>📁︎ Included Student &amp; Staff Cloud Storage</h3>
+<p>&bull; <strong>Box Account:</strong> Every student, faculty, and staff member receives a <strong>50 GB account</strong> (<a href="http://box.umd.edu/" target="_blank" rel="noopener">box.umd.edu</a>).<br>&bull; <strong>Google Drive:</strong> Provided via your official campus email account (@umd.edu) with <strong>256 GB</strong>.</p>
+</div>
+</div>
+<!-- CONNECTING PROVIDERS -->
+<div class="section-card">
+<h2>🔗︎ Authorizing Cloud Providers</h2>
+<p>Log into <a href="https://kumo.umd.edu/" target="_blank" rel="noopener">Kumo</a>, select your desired cloud provider, and click <strong>Authorize</strong>. You can return at any time to remove or adjust authorization.</p>
+<div class="media-display"><img src="KumoPref.png" alt="Kumo Cloud Preferences Selection" width="505" height="223"></div>
+<div class="provider-grid"><!-- Box -->
+<div class="provider-card">
+<h3>Box</h3>
+<img src="BoxAccess.png" alt="Box Access Authorization" width="271" height="431">
+<p>1. Select Box and click <strong>Use Single Sign On (SSO)</strong>.<br>2. Enter your campus email (e.g., <code>jdoe@umd.edu</code>) and click <strong>Authorize</strong>.<br>3. Complete standard UMD login with your Directory ID.</p>
+</div>
+<!-- Google Drive -->
+<div class="provider-card">
+<h3>Google Drive</h3>
+<img src="Google.png" alt="Google Drive Authorization" width="308" height="556">
+<p>1. Select Google Drive and click <strong>Authorize</strong>.<br>2. Log in with your UMD Google account (or select your active session).<br>3. Grant permissions for Kumo/Terpdrive to display files.</p>
+</div>
+<!-- Dropbox -->
+<div class="provider-card">
+<h3>Dropbox</h3>
+<img src="Dropbox.png" alt="Dropbox Authorization" width="713" height="221">
+<p>1. Select Dropbox and click <strong>Authorize</strong>.<br>2. Log in using your Dropbox credentials.<br>3. Grant permission for Kumo/Terpdrive to access and display files.</p>
+</div>
+</div>
+</div>
+<!-- SUMMARY / HELP -->
+<div class="section-card">
+<h2>💡︎ Accessing Mapped Drives</h2>
+<p>Once authorized, open <strong>Windows Explorer / File Explorer</strong> in vSmith or a VMH lab machine. Your linked cloud services will automatically appear mapped directly to individual drive letters under <em>This PC</em>.</p>
+<div class="action-buttons"><a class="btn-outline" href="https://kumo.umd.edu/Home/Faq" target="_blank" rel="noopener">Kumo FAQ &amp; Troubleshooting ↗</a></div>
+</div>
+<!-- SMITH SHARED PAGE OVERRIDES -->
+<style>
+  :root {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+  }
+
+  [class*="-container"],
+  .hero-card,
+  .section-card,
+  .announcement-banner,
+  .emergency-alert-banner,
+  .emergency-contact-card,
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-box,
+  .action-box,
+  .instruction-box,
+  .contact-card,
+  .network-card,
+  .program-card,
+  .course-card,
+  .support-card,
+  .action-banner,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .portal-notice-box,
+  .feature-box,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .location-card,
+  .lab-card,
+  .sticker-card,
+  .parking-section,
+  .guide-card,
+  .cloud-tag,
+  .rebrand-box,
+  .config-block,
+  .server-code {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 0;
+    border-bottom: 4px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0 0 0.7rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    border-bottom-color: var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    font-weight: 800;
+  }
+
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-card,
+  .network-card,
+  .contact-card,
+  .program-card,
+  .course-card,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .step-card,
+  .location-card,
+  .lab-card,
+  .parking-section,
+  .parking-stickers-grid .sticker-card {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .info-card h3,
+  .info-box h3,
+  .feature-card h3,
+  .feature-item h3,
+  .overview-item h3,
+  .support-card h3,
+  .network-card h3,
+  .contact-card h3,
+  .program-card h3,
+  .course-card h3,
+  .practice-card h3,
+  .benefit-card h3,
+  .location-card h3,
+  .lab-card h3,
+  .parking-section h3,
+  .action-box h3,
+  .support-box h3 {
+    color: var(--smith-black);
+  }
+
+  .info-card p,
+  .info-box p,
+  .feature-card p,
+  .feature-item p,
+  .overview-item p,
+  .tech-item,
+  .support-card p,
+  .network-card p,
+  .contact-card p,
+  .program-card p,
+  .course-card p,
+  .practice-card p,
+  .benefit-card p,
+  .location-card p,
+  .lab-card p,
+  .parking-steps,
+  .action-box p,
+  .support-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .announcement-banner,
+  .support-box,
+  .action-box,
+  .rebrand-box,
+  .portal-notice-box,
+  .alert-banner {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .announcement-banner p,
+  .alert-banner p,
+  .portal-notice-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .emergency-alert-banner,
+  .warning-box,
+  .alert-box {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 5px solid var(--smith-red-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .emergency-alert-banner h2,
+  .emergency-alert-banner p,
+  .emergency-contact-card strong,
+  .emergency-contact-card .phone-num,
+  .warning-box h3,
+  .warning-box p,
+  .alert-box {
+    color: var(--smith-red-dark);
+  }
+
+  .emergency-contact-card {
+    background: var(--smith-white);
+    border-color: rgba(186, 24, 46, 0.24);
+    border-radius: 0;
+  }
+
+  .notice-box,
+  .event-fee-box,
+  .instruction-box {
+    color: var(--smith-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box h3,
+  .notice-box h4,
+  .event-fee-box h3,
+  .instruction-box h3,
+  .notice-box p,
+  .event-fee-box p,
+  .instruction-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .address-badge {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.18);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-radius: 4px;
+    backdrop-filter: none;
+  }
+
+  .btn-action,
+  .btn-request {
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--smith-white) !important;
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-outline {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  .step-number {
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+  }
+
+  .step-card h3,
+  .step-content h3 {
+    color: var(--smith-black);
+  }
+
+  .step-card p,
+  .step-content p {
+    color: var(--smith-gray-700);
+  }
+
+  .server-code,
+  .config-block,
+  code {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .video-container,
+  .media-display,
+  .diagram-container,
+  .campus-image-container {
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .media-display img,
+  .diagram-container img,
+  .campus-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .feature-tag,
+  .tag-item,
+  .cloud-tag {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .feature-tag.highlight,
+  .cloud-tag {
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.2);
+    border-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .lab-card,
+  .satellite-card,
+  .network-card {
+    border-left-color: var(--smith-red);
+  }
+
+  .schedule-list li {
+    color: var(--smith-gray-700);
+    background: var(--smith-white);
+    border-color: var(--smith-gray-200);
+    border-radius: 0;
+  }
+
+  [class*="container"] a:focus-visible,
+  [class*="container"] button:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 700px) {
+    [class*="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1rem 1.2rem;
+    }
+
+    .step-item {
+      gap: 0.8rem;
+    }
+  }
+</style>

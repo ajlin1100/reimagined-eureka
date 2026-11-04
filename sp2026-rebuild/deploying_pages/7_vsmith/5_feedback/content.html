@@ -1,0 +1,612 @@
+<style>
+  /* Base Container & Typography */
+  .vsmith-feedback-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1.02em);
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Media Display */
+  .media-display {
+    text-align: center;
+    margin: 20px 0;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .media-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Info Cards Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .info-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-card h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Highlight & Action Boxes */
+  .action-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .action-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .action-box p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="vsmith-feedback-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">vSmith</p>
+<h1>Feedback &amp; Suggestions</h1>
+<p>Help us improve vSmith! We continuously work to enhance the virtual desktop experience, and your input is vital to making it as effective as possible.</p>
+</div>
+</div>
+<!-- FEATURED MEDIA -->
+<div class="media-display"><img src="Feedback.png" alt="vSmith Feedback &amp; Support" width="475" height="283"></div>
+<!-- CONTACT OPTIONS GRID -->
+<div class="section-card">
+<h2>💬︎ Share Your Thoughts &amp; Get Support</h2>
+<p>Whether you have suggestions for feature improvements, feedback on your user experience, or need technical assistance with a bug, reach out through any of the channels below.</p>
+<div class="info-grid"><!-- Direct Feedback Channel -->
+<div class="info-card">
+<div>
+<h3>Send Product Feedback</h3>
+<p>Share your thoughts, feature requests, or suggestions directly with the vSmith product team to help guide future updates.</p>
+</div>
+<div class="action-buttons"><a class="btn-action" href="mailto:vsmithfeedback@rhsmith.umd.edu?subject=vSmith%20Feedback">Email Feedback Team ↗</a></div>
+</div>
+<!-- General IT Helpdesk -->
+<div class="info-card">
+<div>
+<h3>Smith IT Service Desk</h3>
+<p>If you are experiencing immediate technical issues, bugs, or access errors, contact the Office of Smith IT Helpdesk directly.</p>
+</div>
+<div class="action-buttons"><a class="btn-action" href="mailto:helpme@rhsmith.umd.edu?subject=vSmith%20Technical%20Assistance">Email IT Support ↗</a> <a class="btn-outline" href="tel:3014052269">Call (301) 405-2269 ↗</a></div>
+</div>
+</div>
+<!-- Additional Context Box -->
+<div class="action-box">
+<h3>What should I include in my feedback?</h3>
+<p style="margin-bottom: 0;">For bug reports or performance issues, please include details such as the application name, whether you are using a standalone app or Student Desktop, and any error messages you received.</p>
+</div>
+</div>
+<!-- SMITH SHARED PAGE OVERRIDES -->
+<style>
+  :root {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+  }
+
+  [class*="-container"],
+  .hero-card,
+  .section-card,
+  .announcement-banner,
+  .emergency-alert-banner,
+  .emergency-contact-card,
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-box,
+  .action-box,
+  .instruction-box,
+  .contact-card,
+  .network-card,
+  .program-card,
+  .course-card,
+  .support-card,
+  .action-banner,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .portal-notice-box,
+  .feature-box,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .location-card,
+  .lab-card,
+  .sticker-card,
+  .parking-section,
+  .guide-card,
+  .cloud-tag,
+  .rebrand-box,
+  .config-block,
+  .server-code {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 0;
+    border-bottom: 4px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0 0 0.7rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    border-bottom-color: var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    font-weight: 800;
+  }
+
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-card,
+  .network-card,
+  .contact-card,
+  .program-card,
+  .course-card,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .step-card,
+  .location-card,
+  .lab-card,
+  .parking-section,
+  .parking-stickers-grid .sticker-card {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .info-card h3,
+  .info-box h3,
+  .feature-card h3,
+  .feature-item h3,
+  .overview-item h3,
+  .support-card h3,
+  .network-card h3,
+  .contact-card h3,
+  .program-card h3,
+  .course-card h3,
+  .practice-card h3,
+  .benefit-card h3,
+  .location-card h3,
+  .lab-card h3,
+  .parking-section h3,
+  .action-box h3,
+  .support-box h3 {
+    color: var(--smith-black);
+  }
+
+  .info-card p,
+  .info-box p,
+  .feature-card p,
+  .feature-item p,
+  .overview-item p,
+  .tech-item,
+  .support-card p,
+  .network-card p,
+  .contact-card p,
+  .program-card p,
+  .course-card p,
+  .practice-card p,
+  .benefit-card p,
+  .location-card p,
+  .lab-card p,
+  .parking-steps,
+  .action-box p,
+  .support-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .announcement-banner,
+  .support-box,
+  .action-box,
+  .rebrand-box,
+  .portal-notice-box,
+  .alert-banner {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .announcement-banner p,
+  .alert-banner p,
+  .portal-notice-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .emergency-alert-banner,
+  .warning-box,
+  .alert-box {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 5px solid var(--smith-red-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .emergency-alert-banner h2,
+  .emergency-alert-banner p,
+  .emergency-contact-card strong,
+  .emergency-contact-card .phone-num,
+  .warning-box h3,
+  .warning-box p,
+  .alert-box {
+    color: var(--smith-red-dark);
+  }
+
+  .emergency-contact-card {
+    background: var(--smith-white);
+    border-color: rgba(186, 24, 46, 0.24);
+    border-radius: 0;
+  }
+
+  .notice-box,
+  .event-fee-box,
+  .instruction-box {
+    color: var(--smith-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box h3,
+  .notice-box h4,
+  .event-fee-box h3,
+  .instruction-box h3,
+  .notice-box p,
+  .event-fee-box p,
+  .instruction-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .address-badge {
+    display: inline-block;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.18);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-radius: 4px;
+    backdrop-filter: none;
+  }
+
+  .btn-action,
+  .btn-request {
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--smith-white) !important;
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-outline {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  .step-number {
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+  }
+
+  .step-card h3,
+  .step-content h3 {
+    color: var(--smith-black);
+  }
+
+  .step-card p,
+  .step-content p {
+    color: var(--smith-gray-700);
+  }
+
+  .server-code,
+  .config-block,
+  code {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .video-container,
+  .media-display,
+  .diagram-container,
+  .campus-image-container {
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .media-display img,
+  .diagram-container img,
+  .campus-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .feature-tag,
+  .tag-item,
+  .cloud-tag {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .feature-tag.highlight,
+  .cloud-tag {
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.2);
+    border-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .lab-card,
+  .satellite-card,
+  .network-card {
+    border-left-color: var(--smith-red);
+  }
+
+  .schedule-list li {
+    color: var(--smith-gray-700);
+    background: var(--smith-white);
+    border-color: var(--smith-gray-200);
+    border-radius: 0;
+  }
+
+  [class*="container"] a:focus-visible,
+  [class*="container"] button:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 700px) {
+    [class*="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1rem 1.2rem;
+    }
+
+    .step-item {
+      gap: 0.8rem;
+    }
+  }
+</style>

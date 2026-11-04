@@ -1,0 +1,311 @@
+<p style="line-height: 1.39; text-align: center; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 22pt; font-family: Arial, sans-serif; color: rgb(0, 0, 0);">Shell Shop Order in Workday</span></strong></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">The following are step-by-step instructions for completing a &ldquo;Shell Shop Order&rdquo; in Workday. Use Shell Shop orders for any company listed as a Storefront supplier in Shell Shop. If the supplier is not a Shell Shop supplier, use Non-Catalog Orders in Workday instructions.</span></p>
+<p>&nbsp;</p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 14pt; font-family: Aptos; color: rgb(0, 0, 0);">Note: Labor Cost Configuration for Capital Assets</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">When a Capital Asset and Labor/Installation is included on the requisition, calculate the specific labor cost allocation using the following formula sequence:</span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">1. [Capital Asset Amount] x 100 = [Base Multiplier]</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><br></span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">2. [Base Multiplier] &divide; [Total Labor/Installation Amount] = [Factor]</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><br></span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">3. [Factor] x 100 = </span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Labor Cost Allocation</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 14pt; font-family: Aptos; color: rgb(0, 0, 0);">Example:</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">$5,200 (CA) x 100 = 520,000 &divide; $33,000 (L) = 15.7575 x 100 = </span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">$1,575.00</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">*This calculated amount represents the labor cost for the individual Capital Asset. It must be entered as a distinct line item on the REQ and subsequently subtracted from the gross total of the primary Installation/Labor line item. Under </span></em><strong><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">"Review Required"&nbsp;</span></em></strong><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">use&nbsp;</span></em><strong><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">"Modify System or Asset"</span></em></strong><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">, and in the memo of this line item, note the description of the Capital Asset for labor cost.</span></em></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">&nbsp;** Subtract all individual labor cost entries from the total cost of the Installation/Labor line item.</span></em></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 14pt; font-family: Aptos; color: rgb(0, 0, 0);">Required Procurement Resource Libraries</span></strong></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Smith IT Procurement Catalog (ServiceNow):</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><a style="text-decoration: none;" href="https://rhs.umd.edu/procurement" rel="nofollow"><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">https://rhs.umd.edu/procurement</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0); text-wrap-mode: wrap;"><br></span></a><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Used to log purchases and upload critical transaction documents.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Workday Purchases Tracker (Google Sheets):</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><a style="text-decoration: none;" href="https://rhs.umd.edu/wdpurchase" rel="nofollow"><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">https://rhs.umd.edu/wdpurchase</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0); text-wrap-mode: wrap;"><br></span></a><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Centralized log for all orders submitted through Workday.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Procurement Codes Reference Chart (Google Sheets):</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><a style="text-decoration: none;" href="https://rhs.umd.edu/pcodes" rel="nofollow"><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">https://rhs.umd.edu/pcodes</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0); text-wrap-mode: wrap;"><br></span></a><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Contains Commodity Codes, Spend/Object Codes, USource Department Numbers, and F&amp;A Business Manager assignments.</span></p>
+</li>
+</ul>
+<p><br><br><br></p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 234px;"><col style="width: 486px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=6a7b434d837f8b149e639b326daad368" width="217" height="429"></span></p>
+</td>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">System Autofill Note:</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"> Selecting the non-catalog request wizard automatically maps internal profile information into the form fields. These default system values must remain intact.</span></p>
+<br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Critical Accounting &amp; Logistics Attributes Required:</span></strong></p>
+<br>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Requisition Type:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Determines operational routing paths (refer to the classification map below).</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>USource Number:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Identifies the specific department accounts covering the acquisition. Cross-reference these indices on the </span><a style="text-decoration: none;" href="https://rhs.umd.edu/pcodes" rel="nofollow"><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">Procurement Codes Sheet</span></a><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Location Asset ID:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Destination where the items will be placed. Enter the room designation (e.g., 3520J) and select the corresponding facility mapping from the auto-complete array list.</span></p>
+</li>
+</ul>
+<br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">*Note: Line items scaling above $5,000 threshold values require specific configurations in the 'Review Required' attribute block.</span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 168px;"><col style="width: 552px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=6e7b0f4d837f8b149e639b326daad3b3" width="147" height="122"></span></p>
+</td>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Requisition Type Classification Map for Shell Shop Transactions)</span></strong></p>
+<br>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Catalog &ndash; Shell Shop:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> This will be the chosen type for all Store Front suppliers in Shell Shop. (</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(238, 0, 0); text-wrap-mode: wrap;">For these instructions, all choices will be for Shell Shop</span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">)</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Delegated-Standard PO:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Standard operational selection criteria utilized for requests remaining completely under the $25,000 cap.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Delegated &ndash; Supplier Agreement:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Mandatory configuration selected if vendor terms dictate countersigning signatures on contractual agreements prior to executing purchase orders.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Non-Delegated &ndash; All Others:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> System criteria flag used for singular transactions extending beyond the $25,000 ceiling.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Non-Delegated &ndash; Multi-Year Agreement:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Selected if contractual footprints span across multi-year cycles. Annual operational cost splits must be broken out into clear line-item entries.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">To access the Shell Shop storefront, choose Connect and it will redirect you to the page.</span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=6e7b0f4d837f8b149e639b326daad3a8" width="617" height="142"></span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 16pt; font-family: Aptos; color: rgb(0, 0, 0);">Shell Shop Storefront&nbsp;</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Choose the supplier that you are requesting Goods or Services from.&nbsp;</span></p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 210px;"><col style="width: 510px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=ee7b4f4d837f8b149e639b326daad3ad" width="192" height="194"></span></p>
+</td>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">The storefront suppliers in Shellshop are:</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>General Supplies:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Guy Brown, Rudolph&rsquo;s Office, and B&amp;H Photo Video</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Technology Equipment &amp; Supplies:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Dell, CDW, and GovConnection</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Facilities &amp; MRO Supplies:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Grainger, Graybar, McMaster-Carr, MSC Industrial, and Fastenal</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong>Research &amp; Scientific Supplies:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Fisher Scientific, Life Technologies, Neta Scientific, VWR, and Thor Labs</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br><br></p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 412px;"><col style="width: 308px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=ee7b434d837f8b149e639b326daad31e" width="400" height="191"></span></p>
+</td>
+<td style="vertical-align: top;"><br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">In this example, will use CDW-G as the supplier for the request.&nbsp;</span></p>
+<br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">In the Search bar, add the quote number received from CDW to locate the storefront quote.</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><br><br></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br><br></p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 162px;"><col style="width: 186px;"><col style="width: 372px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=aa7b838d837f8b149e639b326daad3cc" width="131" height="256"></span></p>
+</td>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=227b8b4d837f8b149e639b326daad389" width="152" height="242"></span></p>
+</td>
+<td style="vertical-align: top;"><br><br><br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Steps to complete &ldquo;Checkout&rdquo; for CDW.</span></strong></p>
+<br>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 0pt;">Once the quote appears, choose &ldquo;<strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Add to Cart</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">&rdquo;</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;">Once the Item has been added to the cart, choose &ldquo;<strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Checkout</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">&rdquo;</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 547px;"><col style="width: 173px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=667b0f4d837f8b149e639b326daad3bb" width="535" height="170"></span></p>
+</td>
+<td style="vertical-align: top;"><br><br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">An item list appears, and once verified it is correct, choose &ldquo;</span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Checkout</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">&rdquo;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 370px;"><col style="width: 350px;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=6a7b874d837f8b149e639b326daad3b3" width="358" height="157"></span></p>
+</td>
+<td style="vertical-align: top;">
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Required prior to &ldquo;Checkout&rdquo;</span></p>
+<br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Memo Field:</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"> Re-apply the strict string index layout applied at row levels:</span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><br></span><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Project Code / FY / Vendor Name / Item Details</span></p>
+<br>
+<p style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Once all &ldquo;Memo&rdquo; have been documented, choose &ldquo;Checkout&rdquo; to continue with the REQ.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><br></span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Completion of the REQUEST (REQ)</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">The comprehensive breakdown below details the remaining administrative information inputs required during order checkout phases to ensure successful routing logs.</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Memo to Suppliers Block:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Input your reference quote identifiers along with target end-user / structural destination profiles.</span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"><br></span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Format Example: Quote #987654 - Attn: Jane Doe / Room 3520</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Internal Memo Field:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Re-apply the strict string index layout applied at row levels:</span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"><br></span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Project Code / FY / Vendor Name / Item Details</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Audit Checks:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Scroll through the system autofill text fields to confirm the accuracy of institutional profile information.</span></p>
+</li>
+</ul>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=ae7b4b4d837f8b149e639b326daad344" width="469" height="301"></span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Requested Delivery Date Field:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Open the system calendar dialog and specify the exact date the baseline document packet is being submitted to workflows.</span></p>
+</li>
+</ul>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=767b0f4d837f8b149e639b326daad3ae" alt="Workday Delivery Date Scheduling Form Panel" width="686" height="249"></span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Line Item Financial Audit Guardrails (&gt;$5K Rules)</span></strong></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Review Required Flag:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> This dropdown choice is absolutely mandatory for each singular line element containing an individual </span><strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Unit Cost of $5,000 or greater</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;">Select the option attribute value marked <strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">"New"</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> in most instances. Alternate values are reserved for formal Change Orders processed by designated Cost Center managers.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Additional Worktags Warning:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Do NOT delete, overwrite, or mutate</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> any automatically mapped strings or values populated inside this column field.</span></p>
+</li>
+</ul>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=b27b0f4d837f8b149e639b326daad3cd" alt="Workday Line Item Worktags and Asset Valuation Field Panel" width="689" height="236"></span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><em><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">*Note on Services: Service lines require no secondary data entries during checkout stages, as full lifecycle dates remain captured during initial line creation.</span></em></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Document Attachments Module</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">To finalize compliance metrics, drag and drop target file sheets directly into the active UI Drop Zone, or select files manually via system explorers.</span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=3a7b0f4d837f8b149e639b326daad3e9" alt="Workday Drag and Drop File Upload Zone Interface" width="566" height="172"></span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Once files populate the upload queue, you must apply explicit indexing metrics to each item:</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;">Assign a matching <strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Attachment Category</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> from the default profile dictionary catalog.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;">Add a concise document summary within the <strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Comments</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> block or paste the standardized </span><strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">Internal Memo</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> string.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;">Ensure the checkbox option labeled <strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">"External"</span></strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> remains </span><span style="font-size: 12pt; font-family: Aptos; text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">unchecked</span><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">.</span></p>
+</li>
+</ul>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=7e7b4f4d837f8b149e639b326daad363" alt="Workday Document Comment and Privacy Attribute Controls" width="566" height="123"></span></p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 239px;"><col style="width: 515px;"></colgroup>
+<tbody>
+<tr style="height: 203.7pt;">
+<td style="vertical-align: top; background-color: rgb(255, 255, 255);">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=3a7b478d837f8b149e639b326daad3b0" alt="Workday Attachment Category Dropdown Selection Panel" width="223" height="223"></span></p>
+</td>
+<td style="vertical-align: top; background-color: rgb(255, 255, 255);">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Attachment Category Selection Matrix</span></strong></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Delegated Agreement Requiring Signature:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Maps to any contract, software licensing agreement, or legal text sheet requiring formal UMD administrative signature clearance.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Quote:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Standard vendor itemization invoice/cost breakdown files.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Scope of Work:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Detailed technical sheets mapping exact operational tasks to be completed by the contract vendor.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Supporting Documentation:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> General supplemental logs covering validation proofs, single-source justifications, or general corporate Terms &amp; Conditions documents.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>&nbsp;</p>
+<div align="left">
+<table style="border-width: medium; border-color: currentcolor;"><colgroup><col style="width: 311px;"><col style="width: 434px;"></colgroup>
+<tbody>
+<tr style="height: 189.5pt;">
+<td style="vertical-align: top; background-color: rgb(255, 255, 255);">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=327b478d837f8b149e639b326daad3ee" alt="Workday Workflow Final Submit Button Confirmation Screen" width="296" height="231"></span></p>
+</td>
+<td style="vertical-align: top; background-color: rgb(255, 255, 255);">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Submitting the REQ</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Once all entries are fully balanced and attachments properly labeled, click the green </span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">"Submit"</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"> action button to trigger the institutional procurement lifecycle.</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Approval Route 1:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Form review transitions to the localized Cost Center designees and Business Managers mapped to the specific department USource string.</span></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Approval Route 2:</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> Following local clearance, files transfer to the Campus Procurement Level for final Purchase Order (PUR) generation.</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Post-Submission Logging Steps</span></strong></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">The instance processing screen displays your official 10-digit Requisition identity handle (e.g., </span><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">REQ-XXXXXXXXXX</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">).</span></p>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);">Mandatory Tracking Requirement:</span></strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"> You must immediately log this active REQ string profile inside the shared organizational databases below to ensure operational alignment:</span></p>
+<ul style="margin-top: 0px; margin-bottom: 0px; padding-inline-start: 48px; list-style-position: inside;">
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Workday Purchases Sheet (Google Sheets Log):</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><a style="text-decoration: none;" href="https://rhs.umd.edu/wdpurchase" rel="nofollow"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">https://rhs.umd.edu/wdpurchase</span></strong></a></p>
+</li>
+<li style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;">
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><strong>Smith IT Procurement Tracker (ServiceNow Catalog):</strong><span style="font-size: 12pt; font-family: Aptos; text-wrap-mode: wrap;"> </span><a style="text-decoration: none;" href="https://rhs.umd.edu/procurement" rel="nofollow"><strong><span style="font-size: 12pt; font-family: Aptos; color: rgb(70, 120, 134); text-decoration: underline; text-decoration-skip-ink: none; text-wrap-mode: wrap;">https://rhs.umd.edu/procurement</span></strong></a></p>
+</li>
+</ul>
+<p style="line-height: 1.39; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 12pt; font-family: Aptos; color: rgb(0, 0, 0);"><img style="border-width: medium; border-color: currentcolor;" src="/sys_attachment.do?sys_id=7a7b478d837f8b149e639b326daad3f8" alt="Workday Requisition Successful Submission Confirmation Dialogue Banner" width="594" height="202"></span></p>

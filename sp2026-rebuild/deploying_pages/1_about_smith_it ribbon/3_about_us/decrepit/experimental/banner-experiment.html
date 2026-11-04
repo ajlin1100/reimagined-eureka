@@ -1,0 +1,250 @@
+<style>
+  .roster-page-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-curtain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9996;
+    pointer-events: none;
+    animation: fadeOutOverlay 3.2s ease-in-out forwards;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, #003366 0%, #002244 100%);
+    color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .page-header h1 {
+    margin: 0 0 12px 0;
+    font-size: 2.1em;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .page-header p {
+    margin: 0;
+    font-size: 1.05em;
+    color: #e2e8f0;
+  }
+
+  .hero-flyby-badge {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    background: linear-gradient(135deg, #e21833 0%, #a30e22 100%);
+    color: #ffffff;
+    padding: 28px 56px;
+    border-radius: 12px;
+    text-align: center;
+    border: 4px solid #ffc52f;
+    box-shadow: 0 20px 60px rgba(226, 24, 51, 0.5), 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: heroFlyAcross 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-flyby-badge .main-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .hero-flyby-badge .slogan {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffc52f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .forward-streaks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9997;
+    pointer-events: none;
+  }
+
+  .streak {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif;
+    font-weight: 900;
+    line-height: 0.85;
+    color: var(--streak-color);
+    -webkit-text-stroke: 2px var(--streak-outline);
+    filter: drop-shadow(0 0 14px rgba(255, 197, 47, 0.8)) drop-shadow(0 5px 0 rgba(163, 14, 34, 0.45));
+    opacity: 0;
+    animation: chevronMotion 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .streak > span + span {
+    margin-left: -0.16em;
+  }
+
+  .streak > span:nth-child(even) {
+    color: var(--streak-highlight);
+    transform: translateY(-0.07em);
+  }
+
+  .streak > span:nth-child(3n) {
+    transform: translateY(0.05em);
+  }
+
+  .streak-1 {
+    --streak-opacity: 0.72;
+    --streak-color: #ffc52f;
+    --streak-highlight: #fff4cc;
+    --streak-outline: #a30e22;
+    --streak-y: 0;
+    top: 20%;
+    font-size: 7rem;
+    animation-delay: 0.1s;
+  }
+
+  .streak-2 {
+    --streak-opacity: 0.95;
+    --streak-color: #ffc52f;
+    --streak-highlight: #fff7dc;
+    --streak-outline: #a30e22;
+    --streak-y: -50%;
+    top: 50%;
+    font-size: 14rem;
+    animation-delay: 0s;
+  }
+
+  .streak-3 {
+    --streak-opacity: 0.86;
+    --streak-color: #e21833;
+    --streak-highlight: #ffc52f;
+    --streak-outline: #ffc52f;
+    --streak-y: 0;
+    top: 75%;
+    font-size: 9rem;
+    animation-delay: 0.15s;
+  }
+
+  @media (max-width: 768px) {
+    .hero-flyby-badge .main-title { font-size: 1.4rem; }
+    .hero-flyby-badge .slogan { font-size: 1rem; letter-spacing: 1px; }
+    .hero-flyby-badge { padding: 18px 32px; gap: 5px; }
+    .streak-1 { font-size: 5rem; }
+    .streak-2 { font-size: 9rem; }
+    .streak-3 { font-size: 6.5rem; }
+  }
+
+  @keyframes heroFlyAcross {
+    0% { transform: translate(calc(-50% - 130vw), -50%) scale(0.8); opacity: 0; }
+    10% { opacity: 1; }
+    33% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    66% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(calc(-50% + 130vw), -50%) scale(0.9); opacity: 0; }
+  }
+
+  @keyframes chevronMotion {
+    0% { transform: translate(-150vw, var(--streak-y)) scale(var(--streak-scale, 1)) scaleX(0.85); opacity: 0; }
+    10%, 90% { opacity: var(--streak-opacity); }
+    100% { transform: translate(150vw, var(--streak-y)) scale(var(--streak-scale, 1)) scaleX(1.1); opacity: 0; }
+  }
+
+  @keyframes fadeOutOverlay {
+    0%, 66% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+</style>
+
+<div class="forward-streaks">
+  <div class="streak streak-1"><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span></div>
+  <div class="streak streak-2"><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span></div>
+  <div class="streak streak-3"><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span><span>&#10095;</span></div>
+</div>
+
+<div class="hero-curtain-overlay"></div>
+
+<div class="roster-page-container">
+  <div class="hero-flyby-badge">
+    <p class="main-title">Motion Graphic Example!</p>
+    <p class="slogan">Epic Subtitle</p>
+  </div>
+
+  <div class="page-header">
+    <h1>Example Page</h1>
+    <p>Welcome to the Example Page. This is a simple example of page content. The motion graphic animation is played when the page loads. At the animation's conclusion, the page content becomes visible.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var streaks = document.querySelectorAll('.streak');
+    var lanes = [
+      { min: 12, max: 30, centered: false },
+      { min: 38, max: 62, centered: true },
+      { min: 65, max: 78, centered: false }
+    ];
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    var margin = 12;
+
+    for (var laneIndex = lanes.length - 1; laneIndex > 0; laneIndex--) {
+      var swapIndex = Math.floor(Math.random() * (laneIndex + 1));
+      var lane = lanes[laneIndex];
+      lanes[laneIndex] = lanes[swapIndex];
+      lanes[swapIndex] = lane;
+    }
+
+    for (var i = 0; i < streaks.length; i++) {
+      var streak = streaks[i];
+      var lane = lanes[i];
+      var scale = 0.82 + Math.random() * 0.46;
+      var elementHeight = streak.offsetHeight * scale;
+      var minTop = lane.min;
+      var maxTop = lane.max;
+
+      streak.style.setProperty('--streak-scale', scale.toFixed(2));
+      streak.style.setProperty('--streak-opacity', (0.7 + Math.random() * 0.28).toFixed(2));
+      streak.style.setProperty('--streak-y', lane.centered ? '-50%' : '0');
+      streak.style.animationDelay = (Math.random() * 0.25).toFixed(2) + 's';
+
+      if (lane.centered) {
+        minTop = Math.max(minTop, ((elementHeight / 2 + margin) / viewportHeight) * 100);
+        maxTop = Math.min(maxTop, ((viewportHeight - elementHeight / 2 - margin) / viewportHeight) * 100);
+      } else {
+        maxTop = Math.min(maxTop, ((viewportHeight - elementHeight - margin) / viewportHeight) * 100);
+      }
+
+      if (maxTop < minTop) {
+        minTop = maxTop;
+      }
+
+      streak.style.top = (minTop + Math.random() * (maxTop - minTop)) + '%';
+    }
+  })();
+</script>

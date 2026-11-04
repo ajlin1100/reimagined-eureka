@@ -1,0 +1,771 @@
+<style>
+  /* Base Container & Typography */
+  .software-list-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0;
+    font-size: max(12pt, 1em);
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Locations Grid */
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .location-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .location-card h3 {
+    margin: 0 0 6px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.05em);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .location-card p {
+    margin: 0;
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+    line-height: 1.5;
+  }
+
+  .location-card .reserve-link {
+    margin-top: 10px;
+    font-size: max(12pt, 0.85em);
+  }
+
+  /* Spreadsheet Responsive Wrapper */
+  .sheet-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+  }
+
+  .sheet-wrapper iframe {
+    width: 100%;
+    height: 75vh;
+    min-height: 500px;
+    border: 0;
+    display: block;
+  }
+
+  /* Footnotes Grid */
+  .footnotes-container {
+    background-color: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 18px 20px;
+    margin-top: 24px;
+  }
+
+  .footnotes-container h3 {
+    margin: 0 0 12px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1em);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .footnotes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footnotes-list li {
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footnotes-list .marker {
+    color: #8d1324;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Interactive Buttons */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="software-list-container">
+<div class="hero-card">
+<div class="eyebrow">Hardware &amp; Software</div>
+<h1>Software Availability List</h1>
+<p>Find out which software applications are installed across Business School classrooms, computer labs, conference rooms, and the vSmith virtual environment. Software availability varies by location due to licensing restrictions and course-specific requirements.</p>
+</div>
+</div>
+<div class="section-card">
+<h2>📍︎ Campus &amp; Virtual Locations Overview</h2>
+<div class="locations-grid">
+<div class="location-card">
+<div>
+<h3>👨︎&zwj;🏫︎ Instructor Classrooms</h3>
+<p>Instructor PCs in VMH, DC, and Baltimore classrooms equipped with teaching tools like Panopto and TurningPoint.</p>
+</div>
+</div>
+<div class="location-card">
+<div>
+<h3>💻︎ vSmith Virtual Environment</h3>
+<p>Available to BMGT faculty, staff, and enrolled students. Certain specialized tools (e.g., MS Project) require course enrollment.</p>
+</div>
+</div>
+<div class="location-card">
+<div>
+<h3>🖥︎ VMH Open Labs</h3>
+<p>Available for all UMD students. Check building schedules for current lab availability.</p>
+</div>
+<div class="reserve-link"><a class="btn-outline" href="/sp?id=college_park" target="_blank" rel="noopener">View VMH Labs ↗</a></div>
+</div>
+<div class="location-card">
+<div>
+<h3>📈︎ Finance Lab &amp; Terminals</h3>
+<p>Bloomberg terminals are also accessible in Open Learning Spaces VMH 1101 and 1107.</p>
+</div>
+<div class="reserve-link"><a class="btn-outline" href="mailto:scheduling@rhsmith.umd.edu">Reserve via Email ↗</a></div>
+</div>
+<div class="location-card">
+<div>
+<h3>⚗︎ Lab Classrooms</h3>
+<p>Specialized instruction spaces available exclusively through formal room reservations.</p>
+</div>
+<div class="reserve-link"><a class="btn-outline" href="mailto:scheduling@rhsmith.umd.edu">Reserve via Email ↗</a></div>
+</div>
+<div class="location-card">
+<div>
+<h3>💼︎ Conference Rooms (VMH Only)</h3>
+<p>Meeting spaces available for faculty and staff use strictly via scheduling reservations.</p>
+</div>
+<div class="reserve-link"><a class="btn-outline" href="mailto:scheduling@rhsmith.umd.edu">Reserve via Email ↗</a></div>
+</div>
+</div>
+</div>
+<div class="section-card">
+<h2>📊︎ Software Installation Chart</h2>
+<p style="font-size: max(12pt, 0.9em); color: #454545; margin-bottom: 16px;">Use the interactive spreadsheet below to search and filter software applications across all locations:</p>
+<div class="sheet-wrapper"><iframe title="Smith School Software Availability Matrix" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTx9-KB8GICcXQ7qAiisi2GVH_sJntcDyY7Cfn3MqLBGBOM-01CNEFzrCjsOGNm0g68NqY6pvQXPPFN/pubhtml?widget=true&amp;headers=false"></iframe></div>
+<div class="footnotes-container">
+<h3>Table Notes &amp; Licensing Conditions</h3>
+<ul class="footnotes-list">
+<li><span class="marker">*</span> <strong>Microsoft Office:</strong> Includes Access, Excel, PowerPoint, and Word. <em>Note: Access is available on the vSmith Student Desktop, not as a standalone web application.</em></li>
+<li><span class="marker">**</span> <strong>Palisade DecisionTools Suite:</strong> Includes @RISK, Evolver, NeuralTools, PrecisionTree, StatTools, and TopRank.</li>
+<li><span class="marker">***</span> <strong>Course-Restricted Software:</strong> Installed or enabled only for students enrolled in or teaching specific courses for which the software was requested.</li>
+<li><span class="marker">****</span> <strong>Capital IQ:</strong> Available exclusively on the Instructor PC in VMH 3505.</li>
+<li><span class="marker">*****</span> <strong>Bloomberg Software:</strong> Installed only on dedicated Bloomberg Terminal workstations at listed locations, not on standard PCs.</li>
+</ul>
+</div>
+</div>
+<!-- SMITH HW/SW OVERRIDES -->
+<style>
+  .section-card,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .contact-banner,
+  .action-banner,
+  .policy-grid,
+  .policy-card,
+  .grid-2col,
+  .grid-3col,
+  .process-grid,
+  .step-card,
+  .info-box,
+  .checklist,
+  .checklist-item,
+  .card-item,
+  .software-grid,
+  .software-item,
+  .location-grid,
+  .locations-grid,
+  .location-card,
+  .deadline-grid,
+  .deadline-card,
+  .table-responsive,
+  .spec-table,
+  .hero-card,
+  .footnotes-container,
+  .table-footer-note,
+  .table-responsive {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  :root {
+    --hw-red: #ba182e;
+    --hw-red-dark: #8d1324;
+    --hw-yellow: #ffc845;
+    --hw-black: #000000;
+    --hw-gray-700: #454545;
+    --hw-gray-500: #7f7f7f;
+    --hw-gray-200: #e6e6e6;
+    --hw-gray-100: #f7f7f7;
+    --hw-white: #ffffff;
+  }
+
+  .research-container,
+  .desktops-container,
+  .laptops-container,
+  .peripherals-container,
+  .mobile-page-container,
+  .software-page-container,
+  .standard-software-container,
+  .software-list-container {
+    box-sizing: border-box;
+    color: var(--hw-black);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .research-header,
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--hw-black);
+    background: var(--hw-white);
+    border: 0;
+    border-bottom: 4px solid var(--hw-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .research-header::before,
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--hw-red);
+  }
+
+  .research-header .eyebrow,
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--hw-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .research-header h1,
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--hw-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .research-header p,
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0;
+    color: var(--hw-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    box-sizing: border-box;
+    margin: 0 0 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--hw-black);
+    background: var(--hw-white);
+    border: 1px solid var(--hw-gray-200);
+    border-top: 4px solid var(--hw-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 1rem;
+    padding-bottom: 0.65rem;
+    color: var(--hw-black);
+    border-bottom: 2px solid var(--hw-gray-200);
+    font-size: max(12pt, clamp(1.25rem, 2vw, 1.6rem));
+    line-height: 1.25;
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    color: var(--hw-white);
+    background: var(--hw-red);
+    border: 3px solid var(--hw-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.7rem);
+    font-weight: 800;
+  }
+
+  .section-card p,
+  .info-box p,
+  .card-item p,
+  .step-card p,
+  .location-card p,
+  .contact-banner p,
+  .action-banner-text p,
+  .intro-text {
+    color: var(--hw-gray-700);
+  }
+
+  .grid-2col,
+  .grid-3col,
+  .policy-grid,
+  .process-grid,
+  .software-grid,
+  .location-grid,
+  .locations-grid,
+  .team-grid,
+  .deadline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+  }
+
+  .info-box,
+  .policy-card,
+  .card-item,
+  .location-card,
+  .step-card,
+  .checklist-item,
+  .software-item,
+  .deadline-card,
+  .team-card {
+    box-sizing: border-box;
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 4px solid var(--hw-red);
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+  }
+
+  .info-box,
+  .policy-card,
+  .card-item,
+  .location-card,
+  .step-card,
+  .checklist-item,
+  .software-item,
+  .deadline-card,
+  .team-card {
+    padding: 1rem;
+  }
+
+  .info-box h3,
+  .card-item h3,
+  .step-card h3,
+  .location-card h3,
+  .checklist-item-content h3,
+  .software-item-content h3,
+  .team-card h3,
+  .action-banner-text h3,
+  .contact-banner h3 {
+    color: var(--hw-black);
+  }
+
+  .info-box h3,
+  .card-item h3,
+  .step-card h3,
+  .location-card h3,
+  .checklist-item-content h3,
+  .software-item-content h3,
+  .team-card h3 {
+    margin-top: 0;
+    font-weight: 700;
+  }
+
+  .checklist-item .icon,
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--hw-white);
+    background: var(--hw-red);
+    border: 2px solid var(--hw-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.72rem);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .table-responsive {
+    max-width: 100%;
+    margin-top: 1rem;
+    overflow-x: auto;
+    border: 1px solid var(--hw-gray-200);
+    border-radius: 0;
+    background: var(--hw-white);
+  }
+
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: var(--hw-gray-700);
+    font-size: max(12pt, 0.94rem);
+  }
+
+  .spec-table th {
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border-bottom: 3px solid var(--hw-red);
+    border-right: 1px solid var(--hw-gray-200);
+    font-weight: 700;
+    vertical-align: top;
+  }
+
+  .spec-table th,
+  .spec-table td {
+    padding: 0.8rem;
+    border-right: 1px solid var(--hw-gray-200);
+    border-bottom: 1px solid var(--hw-gray-200);
+  }
+
+  .spec-table td {
+    color: var(--hw-gray-700);
+    vertical-align: top;
+  }
+
+  .spec-table tr:hover td {
+    background: rgba(255, 200, 69, 0.08);
+  }
+
+  .spec-label,
+  th.spec-label {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    width: auto;
+    min-width: 120px;
+    color: var(--hw-black) !important;
+    background: var(--hw-gray-100) !important;
+    border-right: 2px solid var(--hw-gray-200) !important;
+    font-weight: 700;
+  }
+
+  th.spec-label {
+    z-index: 3;
+  }
+
+  .link-subtext {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--hw-gray-500);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 400;
+  }
+
+  .notice-box,
+  .warning-box {
+    padding: 1rem 1.2rem;
+    color: var(--hw-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--hw-red);
+    border-radius: 0;
+  }
+
+  .alert-box {
+    padding: 1rem 1.2rem;
+    color: var(--hw-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.25);
+    border-left: 4px solid var(--hw-red-dark);
+    border-radius: 0;
+  }
+
+  .contact-banner,
+  .action-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.1rem 1.2rem;
+    color: var(--hw-black);
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 5px solid var(--hw-red);
+    border-radius: 0;
+  }
+
+  .badge-warranty,
+  .feature-tag,
+  .btn-3d,
+  .btn-spec,
+  .btn-outline {
+    color: var(--hw-red) !important;
+    background: var(--hw-white);
+    border: 1px solid var(--hw-red);
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .badge-warranty,
+  .feature-tag,
+  .btn-3d,
+  .btn-spec,
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .feature-tag.highlight,
+  .risk-moderate {
+    color: #3b2e00;
+    background: rgba(255, 200, 69, 0.3);
+    border-color: rgba(255, 200, 69, 0.75);
+  }
+
+  .badge-soldered,
+  .risk-high {
+    color: var(--hw-red-dark);
+    background: rgba(186, 24, 46, 0.07);
+    border: 1px solid rgba(186, 24, 46, 0.28);
+    border-radius: 3px;
+    font-weight: 700;
+  }
+
+  .btn-link,
+  .btn-action,
+  .btn-request {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.55rem 0.9rem;
+    color: var(--hw-white) !important;
+    background: var(--hw-red);
+    border: 1px solid var(--hw-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-link:focus-visible,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--hw-white) !important;
+    background: var(--hw-red-dark);
+    border-color: var(--hw-red-dark);
+  }
+
+  .btn-secondary {
+    color: var(--hw-red) !important;
+    background: var(--hw-white);
+    border: 1px solid var(--hw-red);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    color: var(--hw-red-dark) !important;
+    background: var(--hw-gray-100);
+  }
+
+  .policy-card {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    color: var(--hw-red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .policy-card:hover,
+  .policy-card:focus-visible {
+    background: rgba(255, 200, 69, 0.12);
+    border-color: var(--hw-red);
+  }
+
+  .policy-card:focus-visible,
+  a:focus-visible {
+    outline: 3px solid var(--hw-yellow);
+    outline-offset: 2px;
+  }
+
+  .table-footer-note,
+  .compat-footer-cell {
+    padding: 0.9rem;
+    color: var(--hw-gray-700);
+    background: var(--hw-gray-100);
+    border-top: 2px solid var(--hw-red);
+    text-align: center;
+  }
+
+  .footnotes-container {
+    padding: 1rem 1.2rem;
+    margin-top: 1.2rem;
+    background: var(--hw-gray-100);
+    border: 1px solid var(--hw-gray-200);
+    border-left: 4px solid var(--hw-red);
+  }
+
+  .footnotes-container h3,
+  .footnotes-list .marker {
+    color: var(--hw-red);
+  }
+
+  .sheet-wrapper {
+    max-width: 100%;
+    overflow: auto;
+    border: 1px solid var(--hw-gray-200);
+    box-shadow: none;
+  }
+
+  .sheet-wrapper iframe {
+    width: 100%;
+    min-height: 500px;
+  }
+
+  @media (max-width: 700px) {
+    .research-container,
+    .desktops-container,
+    .laptops-container,
+    .peripherals-container,
+    .mobile-page-container,
+    .software-page-container,
+    .standard-software-container,
+    .software-list-container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1rem;
+    }
+
+    .table-responsive {
+      border-radius: 0;
+    }
+
+    .spec-table {
+      min-width: 700px;
+    }
+
+    .banner-actions,
+    .btn-group {
+      gap: 0.55rem;
+    }
+  }
+</style>

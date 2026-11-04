@@ -1,0 +1,365 @@
+<style>
+  .research-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .research-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .research-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .research-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .research-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .research-header h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .research-header p {
+    margin: 0;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: var(--smith-radius);
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+  }
+
+  .section-card h2 {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: start;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--smith-black);
+    border-bottom: 2px solid var(--smith-gray-200);
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+  }
+
+  .section-card h2::after {
+    content: "";
+    grid-column: 1 / -1;
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 0.5rem;
+    background: var(--smith-red);
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 800;
+  }
+
+  .section-card > p,
+  .checklist-item-content p,
+  .storage-list li,
+  .notice-box p,
+  .contact-banner p {
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .checklist-item .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.62rem);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .checklist-item-content {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .checklist-item-content h3 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .checklist-item-content p {
+    margin: 0 0 0.65rem;
+    line-height: 1.6;
+  }
+
+  .software-list {
+    margin-top: 0.65rem;
+    padding: 0.7rem 0.9rem;
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    font-size: max(12pt, 0.9rem);
+  }
+
+  .notice-box {
+    margin-bottom: 1.1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box p {
+    margin: 0 0 0.65rem;
+    line-height: 1.6;
+  }
+
+  .notice-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-banner {
+    padding: 1.1rem 1.2rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+  }
+
+  .contact-banner h3 {
+    margin: 0 0 0.45rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .contact-banner p {
+    margin: 0 0 1rem;
+  }
+
+  .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .risk-badge {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.12rem 0.45rem;
+    border: 1px solid transparent;
+    font-size: max(12pt, 0.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  .risk-moderate {
+    color: #3b2e00;
+    background: rgba(255, 200, 69, 0.35);
+    border-color: rgba(255, 200, 69, 0.75);
+  }
+
+  .risk-high {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.08);
+    border-color: rgba(186, 24, 46, 0.28);
+  }
+
+  .storage-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+  }
+
+  .storage-list li {
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--smith-gray-200);
+  }
+
+  .storage-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .section-card a:not(.btn-link) {
+    color: var(--smith-red);
+    font-weight: 700;
+  }
+
+  .btn-link {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-secondary {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border-color: var(--smith-red);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  @media (max-width: 700px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+  }
+</style>
+<div class="research-container"><!-- HERO HEADER -->
+<div class="research-header">
+<div class="eyebrow">Research Support</div>
+<h1>Infrastructure &amp; Computing</h1>
+<p>High-performance resources, cloud compute, and dedicated research servers</p>
+</div>
+</div>
+<!-- INTRO CARD -->
+<div class="section-card">
+<p style="margin-top: 0; margin-bottom: 20px; font-size: max(12pt, 1.05em);">Research Computing empowers Business School researchers to achieve more with cutting-edge computational resources and innovative solutions. For access to our research infrastructure, or to learn more about available options, please complete our consultation request.</p>
+<div class="contact-banner">
+<h3>Request Research Infrastructure &amp; Support</h3>
+<p>Submit a consultation form or reach out directly to the Research Computing Team.</p>
+<div class="banner-actions"><a class="btn-link" href="https://docs.google.com/forms/d/e/1FAIpQLSejA-RZPUuSwmAq-Gq5IvNTHFnecJNwJi8uXStix_HttAwaUA/viewform?usp=sf_link">Research Consultation Form</a> <a class="btn-link btn-secondary" href="mailto:researchsupport@rhsmith.umd.edu">Email Research Support</a></div>
+</div>
+</div>
+<!-- SECTION 1: COMPUTE & STORAGE -->
+<div class="section-card">
+<h2><span class="badge">1</span> Compute &amp; Storage Resources</h2>
+<div class="checklist"><!-- AWS -->
+<div class="checklist-item">
+<div class="icon">☁︎</div>
+<div class="checklist-item-content">
+<h3>AWS Compute Cloud</h3>
+<p>Cloud virtual machines for hosting applications and running research workloads. UMD's negotiated contract reduces computing costs and prevents work product siloing. Centralized account management through Smith IT's AWS Team Account simplifies provisioning and enables automated F&amp;A chargebacks to relevant KFS accounts.</p>
+<div style="margin-top: 12px;"><a class="btn-link" href="https://itsupport.umd.edu/itsupport?id=service&amp;service=e4acd05fdbc66c106aa4151748961988">AWS Portal Info</a></div>
+</div>
+</div>
+<!-- Storage & Backups -->
+<div class="checklist-item">
+<div class="icon">💾︎</div>
+<div class="checklist-item-content">
+<h3>Storage &amp; Backup Solutions</h3>
+<ul class="storage-list">
+<li><strong><a href="https://itsupport.umd.edu/itsupport?id=service&amp;service=af96cf7637911e406574c97a43990e7c">Google Cloud Storage</a>:</strong> Cloud storage integrated with UMD Workspace accounts <span class="risk-badge risk-moderate">Moderate Risk Data</span></li>
+<li><strong><a href="https://umd.account.box.com/login">UMD Box</a>:</strong> Campus-provided cloud storage starting at 25GB <span class="risk-badge risk-high">High Risk Data</span></li>
+<li><strong><a href="https://itsupport.umd.edu/itsupport?id=service&amp;service=aaddbc3f3708c20041271f9543990e45">Networked Storage</a>:</strong> Multi-protocol data storage hosted by DivIT for research units.</li>
+<li><strong><a href="https://itsupport.umd.edu/itsupport?id=service&amp;service=7ebd7c3f3708c20041271f9543990e8d">Data Backups</a>:</strong> Local UMD data backup running IBM Spectrum Protect.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: USAGE POLICIES -->
+<div class="section-card">
+<h2><span class="badge">2</span> Usage Policies &amp; Data Classification</h2>
+<div class="notice-box">
+<p><strong>Software Licensing:</strong> All UMD and Smith School software platforms are licensed strictly for academic, educational, and research use.</p>
+</div>
+<div class="checklist">
+<div class="checklist-item">
+<div class="icon">🛡︎</div>
+<div class="checklist-item-content">
+<h3>Data Classification Standards</h3>
+<p>Faculty and staff must adhere to UMD data protection regulations when storing research data:</p>
+<p style="margin-top: 8px;">&bull; <strong>Google Drive:</strong> Approved for data categorized up to <strong>Moderate Risk</strong>.<br>&bull; <strong>UMD Box:</strong> Approved for data categorized up to <strong>High Risk</strong>.</p>
+<p style="margin-top: 10px;">Review the <a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&amp;sysparm_article=KB0012438">IT-2 Data Classification Standard</a>, review the <a href="http://www.it.umd.edu/aup.html">UMD Acceptable Use Policy</a>, or contact <a href="https://itsupport.umd.edu/itsupport?id=service&amp;sys_id=726fc01f6fcf2a0051281ecbbb3ee4e0">IT Compliance</a> with questions.</p>
+</div>
+</div>
+</div>
+</div>

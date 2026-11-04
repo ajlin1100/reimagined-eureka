@@ -1,0 +1,481 @@
+<style>
+  .page-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+    box-shadow: none;
+    text-align: left;
+    position: relative;
+  }
+
+  .page-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    background: var(--smith-red);
+    margin-bottom: 1rem;
+  }
+
+  .page-header .eyebrow {
+    display: inline-block;
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--smith-red);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--smith-black);
+    letter-spacing: -0.03em;
+  }
+
+  .page-header p {
+    margin: 0;
+    max-width: 920px;
+    font-size: max(12pt, 1.05rem);
+    color: var(--smith-gray-700);
+  }
+</style>
+<div class="hours-page-container">
+  <div class="page-header">
+    <div class="eyebrow">About Us</div>
+    <h1>Operating Hours and Who to Call</h1>
+    <p>Your gateway to information technology services, classroom support, departmental contacts, and emergency assistance at the Robert H. Smith School of Business.</p>
+  </div>
+</div>
+<style>
+  .hours-page-container {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #111111;
+    --smith-gray-900: #1d1d1d;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-shadow: 0 8px 24px rgba(17, 17, 17, 0.08);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 0 2rem 0;
+  }
+
+  .section-card,
+  .hours-card,
+  .emergency-card,
+  .notice-banner {
+    box-sizing: border-box;
+  }
+
+  .section-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    padding: 1.5rem 1.75rem;
+    margin: 0 0 1.5rem 0;
+    box-shadow: none;
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--smith-gray-200);
+    display: block;
+  }
+
+  .section-card h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: var(--smith-red);
+    margin-top: 0.5rem;
+  }
+
+  .notice-banner {
+    background: linear-gradient(90deg, rgba(186, 24, 46, 0.08), rgba(255, 200, 69, 0.12));
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: max(12pt, 0.95rem);
+    color: var(--smith-gray-900);
+    font-weight: 600;
+  }
+
+  .notice-banner strong {
+    color: var(--smith-red);
+  }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .grid-3col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .hours-card {
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .hours-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.15rem);
+    font-weight: 700;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.75rem;
+  }
+
+  .hours-table td {
+    padding: 0.45rem 0;
+    font-size: max(12pt, 0.93rem);
+    border-bottom: 1px dashed var(--smith-gray-200);
+    color: var(--smith-gray-700);
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--smith-black);
+  }
+
+  .location-badge {
+    display: inline-block;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.77rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--smith-red);
+    color: var(--smith-white) !important;
+    padding: 0.7rem 1rem;
+    border-radius: 0;
+    font-size: max(12pt, 0.88rem);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: 1px solid var(--smith-red);
+  }
+
+  .btn-action:hover {
+    background-color: var(--smith-red-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background-color: var(--smith-white);
+    color: var(--smith-red) !important;
+    border: 1px solid var(--smith-red);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(186, 24, 46, 0.04);
+  }
+
+  .emergency-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 200, 69, 0.08));
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+  }
+
+  .emergency-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 1.3rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .emergency-card p {
+    margin: 0 0 0.75rem 0;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .emergency-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(186, 24, 46, 0.2);
+  }
+
+  .emergency-contacts a,
+  a {
+    color: var(--smith-red);
+    font-weight: 700;
+  }
+
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    font-size: max(12pt, 0.94rem);
+  }
+
+  .styled-table th {
+    background-color: var(--smith-gray-100);
+    color: var(--smith-black);
+    text-align: left;
+    padding: 0.8rem 0.8rem;
+    border-bottom: 2px solid var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .styled-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--smith-gray-200);
+    color: var(--smith-gray-700);
+    vertical-align: top;
+  }
+
+  .styled-table tbody tr:nth-child(even) {
+    background: rgba(247, 247, 247, 0.6);
+  }
+
+  .mission-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.75rem 0 0 0;
+  }
+
+  .mission-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+    font-size: max(12pt, 0.95rem);
+    color: var(--smith-gray-700);
+  }
+
+  .mission-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background: var(--smith-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255, 200, 69, 0.2);
+  }
+
+  .hours-page-container p,
+  .hours-page-container li,
+  .hours-page-container td,
+  .hours-page-container th,
+  .hours-page-container div,
+  .hours-page-container strong,
+  .hours-page-container em {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  }
+</style>
+<div class="hours-page-container">
+  <!-- PRIMARY RECOMMENDATION BANNER -->
+  <div class="notice-banner"><strong>Contacting the Service Desk First:</strong> Always contact the main Service Desk first to ensure your request is routed efficiently. Directly reaching out to individuals may result in longer delays due to schedules, teaching responsibilities, or time off.</div>
+
+  <!-- OPERATING HOURS GRID -->
+  <div class="section-card">
+    <h2>Operating Hours</h2>
+    <div class="grid-2col">
+      <!-- NORMAL HOURS -->
+      <div class="hours-card">
+        <h3>Normal Academic Hours</h3>
+        <div style="margin-bottom: 15px;">
+          <span class="location-badge">VMH Suite 3520</span>
+          <strong style="display: block; color: var(--smith-black); font-size: max(12pt, 0.95em);">Service Desk</strong>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Friday</td>
+                <td>8:30 am &ndash; 5:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <span class="location-badge">VMH Room 1530A</span>
+          <strong style="display: block; color: var(--smith-black); font-size: max(12pt, 0.95em);">Classroom Support</strong>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Thursday</td>
+                <td>8:00 am &ndash; 10:00 pm</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>8:00 am &ndash; 6:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top: 15px;">
+          <a class="btn-action" href="https://umdrhsmithlive.service-now.com/sp?id=sc_cat_item&amp;sys_id=0c00790383351e909e639b326daad378" target="_blank" rel="noopener">Submit Audio Visual Request</a>
+        </div>
+      </div>
+
+      <!-- BREAK HOURS -->
+      <div class="hours-card">
+        <h3>Summer and Winter Break Hours</h3>
+        <div style="margin-bottom: 15px;">
+          <span class="location-badge">VMH Suite 3520</span>
+          <strong style="display: block; color: var(--smith-black); font-size: max(12pt, 0.95em);">Service Desk</strong>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Friday</td>
+                <td>9:00 am &ndash; 5:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <span class="location-badge">VMH Room 1530A</span>
+          <strong style="display: block; color: var(--smith-black); font-size: max(12pt, 0.95em);">Classroom Support</strong>
+          <table class="hours-table">
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Friday</td>
+                <td>8:00 am &ndash; 6:00 pm*</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: max(12pt, 0.82em); color: var(--smith-gray-500); margin: 5px 0 0 0;"><em>*Note: Closing time varies based on summer and winter class schedules.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGENCY OUTAGES -->
+  <div class="emergency-card">
+    <h3>After-Hours Network or Server Outages</h3>
+    <p>Enterprise Infrastructure, Applications, and Security (EIAS) maintains a <strong>24/7 Enterprise Infrastructure Emergency Response Team</strong>. Automated monitoring tools check systems around the clock to alert on-call staff of critical service failures.</p>
+    <p>While most issues are detected and addressed proactively before impacting users, please report any suspected critical system outage immediately.</p>
+    <div class="emergency-contacts">
+      <div><strong>Phone:</strong> <a href="tel:3014052269">301-405-2269</a></div>
+      <div><strong>Email:</strong> <a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a></div>
+    </div>
+  </div>
+
+  <!-- DISCIPLINE SPECIFIC OFFICERS -->
+  <div class="section-card">
+    <h2>Discipline-Specific Technology Officers (DTOs)</h2>
+    <p style="font-size: max(12pt, 0.93em); color: var(--smith-gray-700); margin: 0 0 0.75rem 0;">Academic departments have dedicated technology officers for discipline-specific software and specialized departmental projects. <strong style="color: var(--smith-red);">Routine desktop support requests should still go through the main Service Desk.</strong></p>
+    <div style="overflow-x: auto;">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Contact Person</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LBPP &amp; Supply Chain</strong></td>
+            <td>Holly Zhang</td>
+            <td><a href="mailto:hzhang@rhsmith.umd.edu">hzhang@rhsmith.umd.edu</a></td>
+            <td>301-405-2850</td>
+          </tr>
+          <tr>
+            <td><strong>DO&amp;IT</strong></td>
+            <td>Tony Zhang</td>
+            <td><a href="mailto:tonyzhang@rhsmith.umd.edu">tonyzhang@rhsmith.umd.edu</a></td>
+            <td>301-405-1890</td>
+          </tr>
+          <tr>
+            <td><strong>M&amp;O, Marketing &amp; Bloomberg</strong></td>
+            <td>Vinesh Gupta</td>
+            <td><a href="mailto:vinesh@rhsmith.umd.edu">vinesh@rhsmith.umd.edu</a></td>
+            <td>301-405-4245</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- REGIONAL CAMPUSES -->
+  <div class="section-card">
+    <h2>Regional Campus IT Support</h2>
+    <div class="grid-3col">
+      <div style="background: var(--smith-gray-100); padding: 18px; border: 1px solid var(--smith-gray-200);">
+        <h3 style="margin-top: 0; margin-bottom: 8px; font-size: max(12pt, 1.05em); color: var(--smith-black);">Baltimore Peninsula</h3>
+        <p style="font-size: max(12pt, 0.88em); color: var(--smith-gray-700); margin-bottom: 12px;">IT support is provided by appointment.</p>
+        <a class="btn-action btn-secondary" style="font-size: max(12pt, 0.8em); padding: 6px 10px;" href="mailto:helpme@rhsmith.umd.edu">Schedule via Email</a>
+      </div>
+      <div style="background: var(--smith-gray-100); padding: 18px; border: 1px solid var(--smith-gray-200);">
+        <h3 style="margin-top: 0; margin-bottom: 8px; font-size: max(12pt, 1.05em); color: var(--smith-black);">DC Ronald Reagan Building</h3>
+        <p style="font-size: max(12pt, 0.88em); color: var(--smith-gray-700); margin-bottom: 12px;">IT support is provided by appointment.</p>
+        <a class="btn-action btn-secondary" style="font-size: max(12pt, 0.8em); padding: 6px 10px;" href="mailto:helpme@rhsmith.umd.edu">Schedule via Email</a>
+      </div>
+      <div style="background: var(--smith-gray-100); padding: 18px; border: 1px solid var(--smith-gray-200);">
+        <h3 style="margin-top: 0; margin-bottom: 8px; font-size: max(12pt, 1.05em); color: var(--smith-black);">Shady Grove (USG OIT)</h3>
+        <p style="font-size: max(12pt, 0.88em); color: var(--smith-gray-700); margin: 0 0 4px 0;"><strong>Phone:</strong> <a href="tel:3017386363">301-738-6363</a></p>
+        <p style="font-size: max(12pt, 0.88em); color: var(--smith-gray-700); margin: 0;"><strong>Email:</strong> <a href="mailto:usg-itservicedesk@umd.edu">usg-itservicedesk@umd.edu</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR MISSION -->
+  <div class="section-card">
+    <h2>Our Mission</h2>
+    <p style="font-size: max(12pt, 0.95em); color: var(--smith-gray-700); margin-bottom: 12px;">The Office of Smith IT provides excellent customer service in support of the unique computing needs of the Robert H. Smith School community (students, alumni, faculty, staff, and visitors). We accomplish this by:</p>
+    <ul class="mission-list">
+      <li>Cultivating an adaptable IT environment that embraces evolving technologies</li>
+      <li>Building a world-class, robust, secure, and heterogeneous infrastructure</li>
+      <li>Delivering technology that is innovative, convenient, optimized, secure, and always available</li>
+      <li>Supporting and strengthening the strategic pillars of the Smith School through state-of-the-art technology</li>
+    </ul>
+  </div>
+</div>

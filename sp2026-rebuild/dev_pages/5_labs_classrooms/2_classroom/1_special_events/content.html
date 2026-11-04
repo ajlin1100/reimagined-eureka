@@ -1,0 +1,643 @@
+<style>
+  /* Base Container & Typography */
+  .special-events-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #2d3748;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #003366 0%, #002244 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 2.1em;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e2e8f0;
+    margin: 0;
+    font-size: 1.02em;
+    line-height: 1.6;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 1.35em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f0f4f8;
+    padding-bottom: 12px;
+  }
+
+  .section-card h3 {
+    color: #003366;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+  }
+
+  /* Functions Grid */
+  .functions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .function-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: #003366;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Policy List & Callouts */
+  .policy-box {
+    background: #f0f4f8;
+    border: 1px solid #cbd5e0;
+    border-left: 5px solid #003366;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  .policy-box h3 {
+    margin: 0 0 10px 0;
+    color: #003366;
+    font-size: 1.1em;
+  }
+
+  .policy-box ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .policy-box li {
+    margin-bottom: 8px;
+    font-size: 0.93em;
+    color: #334155;
+  }
+
+  .policy-box li:last-child {
+    margin-bottom: 0;
+  }
+
+  .warning-box {
+    background: #fffaf0;
+    border: 1px solid #feebc8;
+    border-left: 5px solid #dd6b20;
+    border-radius: 0 8px 8px 0;
+    padding: 18px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  .warning-box h3 {
+    margin: 0 0 8px 0;
+    color: #c05621;
+    font-size: 1.05em;
+  }
+
+  .warning-box p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #7b341e;
+  }
+
+  /* Styled Tables */
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 14px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e0;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.92em;
+  }
+
+  .pricing-table th {
+    background-color: #003366;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    font-size: 0.82em;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+
+  .pricing-table tr:nth-child(even) {
+    background-color: #f8fafc;
+  }
+
+  .pricing-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .table-footnote {
+    font-size: 0.82em;
+    color: #718096;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  /* Action & Contact Section */
+  .action-box {
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 20px;
+  }
+
+  .action-box h3 {
+    margin: 0 0 10px 0;
+    color: #003366;
+    font-size: 1.15em;
+  }
+
+  .action-box p {
+    margin: 0 0 16px 0;
+    font-size: 0.93em;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #003366;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #002244;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffffff;
+    border: 1px solid #003366;
+    color: #003366 !important;
+    padding: 9px 16px;
+    border-radius: 5px;
+    font-size: 0.88em;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f0f4f8;
+  }
+
+  a {
+    color: #003366;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Smith brand treatment */
+  .special-events-container {
+    color: #454545;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .special-events-container .hero-card {
+    padding: 22px 0 24px;
+    color: #454545;
+    background: #ffffff;
+    border-top: 4px solid #ba182e;
+    border-bottom: 4px solid #ffc845;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .special-events-container .hero-card .eyebrow {
+    margin: 0 0 6px;
+    color: #ba182e;
+    font-size: max(12pt, 0.9em);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .special-events-container .hero-card h1 {
+    color: #000000;
+    font-size: max(12pt, 2.1em);
+  }
+
+  .special-events-container .hero-card p {
+    color: #454545;
+    font-size: max(12pt, 1.02em);
+  }
+
+  .special-events-container .section-card {
+    border-color: #e6e6e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .special-events-container .section-card h2 {
+    display: block;
+    color: #000000;
+    border-bottom-color: #e6e6e6;
+    font-size: max(12pt, 1.35em);
+  }
+
+  .special-events-container .section-card h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 8px;
+    background: #ba182e;
+  }
+
+  .special-events-container .section-card h3 {
+    color: #000000;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .special-events-container .functions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+
+  .special-events-container .function-item {
+    color: #454545;
+    background: #f7f7f7;
+    border-color: #e6e6e6;
+    border-left: 4px solid #ba182e;
+    border-radius: 6px;
+    font-size: max(12pt, 1em);
+  }
+
+  .special-events-container .policy-box {
+    color: #454545;
+    background: #fff9e8;
+    border-color: #e6e6e6;
+    border-left-color: #ffc845;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .special-events-container .policy-box h3 {
+    color: #000000;
+  }
+
+  .special-events-container .policy-box li {
+    color: #454545;
+    font-size: max(12pt, 0.93em);
+  }
+
+  .special-events-container .warning-box {
+    background: #fff4f4;
+    border-color: #e6e6e6;
+    border-left-color: #ba182e;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .special-events-container .warning-box h3 {
+    color: #8d1324;
+    font-size: max(12pt, 1.05em);
+  }
+
+  .special-events-container .warning-box p {
+    color: #454545;
+    font-size: max(12pt, 0.9em);
+  }
+
+  .special-events-container .table-wrapper {
+    border-color: #e6e6e6;
+    border-radius: 6px;
+  }
+
+  .special-events-container .pricing-table {
+    font-size: max(12pt, 0.92em);
+  }
+
+  .special-events-container .pricing-table th {
+    background-color: #ba182e;
+    font-size: max(12pt, 0.82em);
+  }
+
+  .special-events-container .pricing-table td {
+    color: #454545;
+    border-bottom-color: #e6e6e6;
+  }
+
+  .special-events-container .pricing-table tr:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+
+  .special-events-container .table-footnote {
+    color: #7f7f7f;
+    font-size: max(12pt, 0.82em);
+  }
+
+  .special-events-container .action-box {
+    background: #f7f7f7;
+    border-color: #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 6px;
+  }
+
+  .special-events-container .action-box h3 {
+    color: #000000;
+    font-size: max(12pt, 1.15em);
+  }
+
+  .special-events-container .action-box p {
+    color: #454545;
+    font-size: max(12pt, 0.93em);
+  }
+
+  .special-events-container .action-box p[style] {
+    color: #7f7f7f !important;
+    font-size: max(12pt, 0.85em) !important;
+  }
+
+  .special-events-container a {
+    color: #ba182e;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .special-events-container a:hover {
+    color: #8d1324;
+  }
+
+  .special-events-container a:focus-visible {
+    outline: 3px solid #ffc845;
+    outline-offset: 3px;
+  }
+
+  .special-events-container .btn-action,
+  .special-events-container .btn-outline {
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #ba182e;
+    border-radius: 5px;
+    font-size: max(12pt, 0.9em);
+    line-height: 1.35;
+  }
+
+  .special-events-container .btn-action {
+    color: #ffffff !important;
+    background: #ba182e;
+    text-decoration: none !important;
+  }
+
+  .special-events-container .btn-action:hover,
+  .special-events-container .btn-action:focus-visible {
+    color: #ffffff !important;
+    background: #8d1324;
+    border-color: #8d1324;
+  }
+
+  .special-events-container .btn-outline {
+    color: #ba182e !important;
+    background: #ffffff;
+    text-decoration: none !important;
+  }
+
+  .special-events-container .btn-outline:hover,
+  .special-events-container .btn-outline:focus-visible {
+    color: #8d1324 !important;
+    background: #f7f7f7;
+    border-color: #8d1324;
+  }
+
+  @media (max-width: 700px) {
+    .special-events-container {
+      padding: 16px;
+    }
+
+    .special-events-container .section-card {
+      padding: 18px;
+    }
+  }
+</style>
+<div class="special-events-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">Labs & Classrooms / Classroom Support</p>
+<h1>Special Events &amp; Departmental AV Support</h1>
+<p>Smith IT provides specialized staffing, custom equipment staging, and technical installation services for events, conferences, and departmental facility upgrades.</p>
+</div>
+<!-- SUPPORTED FUNCTIONS & GENERAL POLICIES -->
+<div class="section-card">
+<h2>🎯&#xfe0e; Supported Functions &amp; Use Guidelines</h2>
+<p>Smith IT staff support standard institutional functions including academic lectures, visual presentations, professional conferences, and general business meetings.</p>
+<div class="functions-grid">
+<div class="function-item">🎤&#xfe0e; Academic Lectures</div>
+<div class="function-item">📊&#xfe0e; Visual Presentations</div>
+<div class="function-item">🏛&#xfe0e; Conferences</div>
+<div class="function-item">🤝&#xfe0e; General Meetings</div>
+</div>
+<div class="policy-box">
+<h3>🔑&#xfe0e; Mandatory Requirements for Event Organizers</h3>
+<ul>
+<li><strong>Training &amp; Orientation:</strong> Any group planning to operate facility AV equipment must schedule mandatory prior instruction and orientation with Audio Visual Services.</li>
+<li><strong>Non-Smith School Groups:</strong> Any external or non-Smith School organization seeking to utilize technology in Van Munching Hall spaces must obtain prior authorization from Smith IT Management.</li>
+</ul>
+</div>
+</div>
+<!-- REQUESTING EVENT SUPPORT & RULES -->
+<div class="section-card">
+<h2>📋&#xfe0e; Requesting Support &amp; Operational Rules</h2>
+<p>Special events place heightened operational demands on support personnel. All event assistance is subject to service fees determined by Audio Visual Services Management.</p>
+<div class="policy-box">
+<h3>📌&#xfe0e; Room Booking &amp; Staffing Guidelines</h3>
+<ul>
+<li><strong>Schedule Room First:</strong> Secure your venue through Smith Operations (301-405-2189) prior to submitting AV requests. Always include setup and teardown buffers in your reservation time.</li>
+<li><strong>Support Level Determination:</strong> Required technician staffing levels and equipment allocations are evaluated and assigned directly by Smith IT Management.</li>
+</ul>
+</div>
+<div class="warning-box">
+<h3>⏰&#xfe0e; Weekend &amp; Overtime Premium Rates</h3>
+<p><strong>Saturday &amp; Sunday Events:</strong> Weekend bookings require a 4-hour (half-day) minimum charge, plus a <strong>50% surcharge</strong> for work outside standard operating hours.<br><strong>Overtime Rates:</strong> Any support duration exceeding 8 hours in a single day is billed at <strong>double the standard hourly rate</strong>.</p>
+</div>
+</div>
+<!-- EVENT SUPPORT COST STRUCTURE -->
+<div class="section-card">
+<h2>💰&#xfe0e; Special Event Support Fee Schedule</h2>
+<p>Total event charges are calculated by combining the required <strong>IT Support Staffing Type</strong> plus the <strong>Facility Technology Type</strong>. In-room equipment packages are non-itemized and bundled into the facility fee.</p>
+<!-- Table 1: Staffing -->
+<h3>1. IT Support Staffing Rates</h3>
+<div class="table-wrapper">
+<table class="pricing-table">
+<thead>
+<tr>
+<th>IT Support Type</th>
+<th>Hourly Rate*</th>
+<th>Half-Day (4 Hrs)</th>
+<th>Full Day (8 Hrs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Student Technician</strong></td>
+<td>$75</td>
+<td>$275</td>
+<td>$550</td>
+</tr>
+<tr>
+<td><strong>Full-Time Technician</strong></td>
+<td>$150</td>
+<td>$550</td>
+<td>$1,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-footnote">*Customer must provide required recording/presentation media.</div>
+<!-- Table 2: Facility Tech -->
+<h3>2. Facility Technology Rates</h3>
+<div class="table-wrapper">
+<table class="pricing-table">
+<thead>
+<tr>
+<th>IT Technology Type</th>
+<th>Hourly Rate</th>
+<th>Half-Day (4 Hrs)</th>
+<th>Full Day (8 Hrs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard Classroom</strong></td>
+<td>$50</td>
+<td>$175</td>
+<td>$350</td>
+</tr>
+<tr>
+<td><strong>Auditorium</strong></td>
+<td>$110</td>
+<td>$450</td>
+<td>$700</td>
+</tr>
+<tr>
+<td><strong>Mobile Setup</strong> (Within Building)</td>
+<td>$150</td>
+<td>$525</td>
+<td>$1,050</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- DEPARTMENTAL EQUIPMENT INSTALLATIONS -->
+<div class="section-card">
+<h2>🛠&#xfe0e; Departmental Equipment Installation Services</h2>
+<p>The AV Services team performs professional installation and configuration of hardware inside departmental spaces. All hardware must be formally recommended by Smith IT and approved by the AV Manager prior to purchase; non-endorsed equipment cannot be installed or serviced.</p>
+<div class="warning-box">
+<h3>⚠&#xfe0e; Scope of Work &amp; Construction Limitations</h3>
+<p>Installation billing covers technical mounting, hardware connections, and software configuration only. It <strong>does not include</strong> electrical wiring, data port drops, or structural facility modifications. Estimates provided by the AV Manager are preliminary and subject to final adjustments.</p>
+</div>
+<!-- Table 3: Installs -->
+<h3>Departmental Installation Rates</h3>
+<div class="table-wrapper">
+<table class="pricing-table">
+<thead>
+<tr>
+<th>IT Support Type*</th>
+<th>Hourly Rate</th>
+<th>Half-Day (4 Hrs)</th>
+<th>Full Day (8 Hrs)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Full-Time Technician</strong></td>
+<td>$150</td>
+<td>$550</td>
+<td>$1,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-footnote">*Student technicians are often scheduled alongside full-time staff for installations and are not deployed alone.</div>
+</div>
+<!-- REQUEST SUBMISSION & PAYMENT -->
+<div class="section-card">
+<h2>📩&#xfe0e; Submitting Requests &amp; Payment Options</h2>
+<p>Support resources, technician availability, and required hours are determined by Smith IT. <strong>Service is not guaranteed</strong> until you receive formal confirmation and accept the provided cost estimate.</p>
+<div class="policy-box">
+<h3>💳&#xfe0e; Accepted Payment Methods</h3>
+<ul>
+<li><strong>USource Accounts:</strong> Internal University financial account transfer.</li>
+<li><strong>Checks:</strong> Made payable directly to the <em>University of Maryland</em>.</li>
+</ul>
+</div>
+<div class="action-box">
+<h3>Initiate an AV Service or Special Event Request</h3>
+<p>Submit your event details or equipment installation request through the online portal. Our team will contact you to confirm scope, technical requirements, and pricing estimates.</p>
+<div class="action-buttons"><a class="btn-action" href="https://umdrhsmithlive.service-now.com/sp?id=sc_cat_item&amp;sys_id=e222e962dbf11b0099e65a994b96190e">Submit Audio Visual Request Form ↗</a> <a class="btn-outline" href="mailto:helpme@rhsmith.umd.edu">Email Helpdesk (helpme@rhsmith.umd.edu) ↗</a></div>
+<p style="font-size: 0.85em; color: #718096; margin-top: 14px; margin-bottom: 0;">📞&#xfe0e; Direct Telephone Inquiries: Contact the Smith IT Helpdesk at <strong>301-405-2269</strong>.</p>
+</div>
+</div>
+</div>

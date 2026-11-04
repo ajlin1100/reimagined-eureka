@@ -1,0 +1,382 @@
+<style>
+  .new-faculty-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-900: #222222;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    --smith-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .new-faculty-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .faculty-header {
+    position: relative;
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .faculty-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .faculty-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .faculty-header h1 {
+    color: var(--smith-black);
+    margin: 0 0 0.5rem;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .faculty-header p {
+    color: var(--smith-gray-700);
+    margin: 0;
+    max-width: 920px;
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: var(--smith-radius);
+    box-shadow: var(--smith-shadow);
+    margin-bottom: 1.75rem;
+    padding: 1.5rem;
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    margin: 0 0 1.1rem;
+    font-size: max(12pt, 1.5rem);
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--smith-gray-200);
+    padding-bottom: 0.75rem;
+  }
+
+  .section-card h2 .badge {
+    background-color: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 800;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.2rem;
+    margin-top: 0.9rem;
+  }
+
+  .info-box {
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    padding: 1.2rem;
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-box h3,
+  .checklist-item-content h3 {
+    margin: 0 0 0.65rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+    font-weight: 700;
+  }
+
+  .info-box p,
+  .checklist-item-content p,
+  .notice-box p,
+  .notice-box-danger p,
+  .section-card > p {
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .info-box p {
+    margin: 0 0 0.75rem;
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.9rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: var(--smith-radius);
+    box-shadow: 0 2px 8px rgba(17, 17, 17, 0.04);
+  }
+
+  .checklist-item .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 1.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.1rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.85rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .checklist-item-content {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .checklist-item-content p {
+    margin: 0 0 0.65rem;
+  }
+
+  .notice-box,
+  .notice-box-danger {
+    padding: 1rem 1.2rem;
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+    margin-top: 1.1rem;
+  }
+
+  .notice-box {
+    background: rgba(255, 200, 69, 0.16);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+  }
+
+  .notice-box-danger {
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 4px solid var(--smith-red-dark);
+  }
+
+  .notice-box p,
+  .notice-box-danger p {
+    margin: 0;
+  }
+
+  .contact-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 1.1rem 1.2rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red-dark);
+    border-left: 5px solid var(--smith-yellow);
+    border-radius: 0 var(--smith-radius) var(--smith-radius) 0;
+  }
+
+  .contact-banner-text {
+    color: var(--smith-white);
+    font-size: max(12pt, 0.98rem);
+    font-weight: 700;
+  }
+
+  .section-card a:not(.btn-link) {
+    color: var(--smith-red);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.15em;
+  }
+
+  .section-card a:not(.btn-link):hover,
+  .section-card a:not(.btn-link):focus-visible {
+    color: var(--smith-red-dark);
+  }
+
+  .contact-banner a:not(.btn-link) {
+    color: var(--smith-white);
+  }
+
+  .btn-link {
+    display: inline-block;
+    background-color: var(--smith-red);
+    color: var(--smith-white) !important;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--smith-red);
+    border-radius: calc(var(--smith-radius) / 2);
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    margin-top: 0.65rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background-color: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  @media (max-width: 600px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .section-card h2 {
+      font-size: max(12pt, 1.3rem);
+    }
+  }
+</style>
+<div class="new-faculty-container"><!-- HERO HEADER -->
+<div class="faculty-header">
+<div class="eyebrow">Getting Started</div>
+<h1>For New Faculty</h1>
+<p>Welcome to the Robert H. Smith School of Business!</p>
+</div>
+</div>
+<!-- SECTION 1: BEFORE YOU ARRIVE -->
+<div class="section-card">
+<h2><span class="badge">1</span> Before You Arrive</h2>
+<div class="grid-2col">
+<div class="info-box">
+<div>
+<h3>Part-Time Faculty</h3>
+<p>Department administrators should contact Smith IT directly to ensure part-time faculty are appropriately equipped prior to their start date.</p>
+</div>
+<div><a class="btn-link" href="https://umdrhsmithtest2.service-now.com/sp?id=sc_cat_item&sys_id=9fab39e2d7532100a9ad1e173e24d484">Submit a Ticket</a></div>
+</div>
+<div class="info-box">
+<div>
+<h3>Full-Time Faculty</h3>
+<p>New full-time faculty receive a standard laptop or desktop from Smith IT. Submit your equipment choices via the online request portal.</p>
+</div>
+<div><a class="btn-link" href="https://umdrhsmithtest2.service-now.com/sp?id=sc_cat_item&amp;sys_id=54180a4383b51e909e639b326daad3bb&amp;sysparm_category=e15706fc0a0a0aa7007fc21e1ab70c2f">Submit Tech Request</a></div>
+</div>
+</div>
+<div class="notice-box">
+<p><strong>Additional Hardware &amp; Software:</strong> Equipment beyond standard options can be purchased using departmental or personal funds. If you require specialized software outside our <a href="https://umdrhsmithtest2.service-now.com/sp?id=standard_software">standard software image</a>, please note it in your request form so we can assist in identifying funding options.</p>
+</div>
+</div>
+<!-- SECTION 2: WHEN YOU ARRIVE -->
+<div class="section-card">
+<h2><span class="badge">2</span> When You Arrive</h2>
+<div class="checklist"><!-- Item 1 -->
+<div class="checklist-item">
+<div class="icon">🔑︎</div>
+<div class="checklist-item-content">
+<h3>Set Up Your Campus Directory ID</h3>
+<p>Your Directory ID grants access to essential systems including Canvas (ELMS), campus Wi-Fi, and lab/classroom computers. <em>Note: Account setup is available as soon as HR/Payroll activates your appointment.</em></p>
+<a class="btn-link" href="https://account.umd.edu/claim/initial">Activate Directory ID</a></div>
+</div>
+<!-- Item 2 -->
+<div class="checklist-item">
+<div class="icon">💻︎</div>
+<div class="checklist-item-content">
+<h3>Schedule an IT Orientation</h3>
+<p>Sit down with a Smith IT team member for a 20-minute orientation to walk through our systems and ensure all your access points are configured properly.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="checklist-item">
+<div class="icon">📚︎</div>
+<div class="checklist-item-content">
+<h3>Teaching Preparation &amp; Software</h3>
+<p><strong>Course Setup:</strong> Log into <a href="http://elms.umd.edu/">Canvas (ELMS)</a> using your Directory ID to prepare course sites. For Canvas support, email <a href="mailto:canvas@rhsmith.umd.edu">canvas@rhsmith.umd.edu</a>.</p>
+<p style="margin-top: 8px;"><strong>Lab &amp; Classroom Software:</strong> Need specific software installed for your courses? Submit a request as early as possible (standard collection periods occur in January and May).</p>
+<a class="btn-link" href="https://go.umd.edu/swrequest">Request Classroom Software</a></div>
+</div>
+<!-- Item 4 -->
+<div class="checklist-item">
+<div class="icon">🎙︎</div>
+<div class="checklist-item-content">
+<h3>Classroom &amp; AV Walkthrough</h3>
+<p>Schedule a hands-on introduction to the AV equipment in your assigned classrooms and conference rooms with the Smith IT AV Unit.</p>
+<p style="margin-top: 6px; font-size: max(12pt, 0.9em);"><strong>Contact AV Support:</strong> <a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a> | 301-405-5213</p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="checklist-item">
+<div class="icon">🔬︎</div>
+<div class="checklist-item-content">
+<h3>Connect with your Departmental Technology Officer (DTO)</h3>
+<p>If your work involves research computing or specialized departmental labs, connect with your DTO to discuss infrastructure and computing resources.</p>
+<p style="margin-top: 6px;"><a href="https://umdrhsmithtest2.service-now.com/sp?id=about_smith_it">Find Your DTO &rarr;</a></p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="checklist-item">
+<div class="icon">🏢︎</div>
+<div class="checklist-item-content">
+<h3>Verify Office Setup</h3>
+<p>Inspect the hardware and network setup in your assigned office. If anything needs adjustment or troubleshooting, visit us in person at <strong>3520 Van Munching Hall</strong> or contact the Service Desk.</p>
+</div>
+</div>
+</div>
+<!-- Contact Banner -->
+<div class="contact-banner">
+<div class="contact-banner-text">Need Immediate Support?</div>
+<div><a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a> &bull; 📞︎ 301-405-2269</div>
+</div>
+</div>
+<!-- SECTION 3: BEFORE DEPARTING -->
+<div class="section-card">
+<h2><span class="badge">3</span> Before Departing</h2>
+<p>When concluding your appointment with the School of Business, please schedule an exit interview with HR. In addition to returning physical keys and your campus ID, you must return all official IT hardware:</p>
+<div class="notice-box-danger">
+<p><strong>University &amp; Grant-Funded Equipment:</strong> All laptops, mobile devices, monitors, and peripherals purchased using University funds, departmental accounts, ceiling funds or grants must be returned prior to your departure date.</p>
+</div>
+<p style="margin-top: 15px; font-size: max(12pt, 0.95em);">For questions regarding the HR exit process, please contact Bobvita Salters at <strong>x59571</strong> or via email at <a href="mailto:bsjones@umd.edu">bsjones@umd.edu</a>.</p>
+</div>

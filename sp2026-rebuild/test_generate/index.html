@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smith IT Page-Type Examples</title>
+  <style>
+    :root {
+      --red: #ba182e;
+      --red-dark: #8d1324;
+      --yellow: #ffc845;
+      --black: #000000;
+      --gray-700: #454545;
+      --gray-500: #7f7f7f;
+      --gray-200: #e6e6e6;
+      --gray-100: #f7f7f7;
+      --white: #ffffff;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: var(--red); font-weight: 700; text-decoration: underline; text-underline-offset: 0.15em; }
+    a:hover, a:focus-visible { color: var(--red-dark); }
+    a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .brand { display: flex; align-items: center; min-height: 86px; border-bottom: 1px solid var(--gray-200); }
+    .brand img { display: block; width: 198px; max-width: 55vw; height: auto; }
+    .page-header { padding: 2.1rem 0 1.6rem; border-bottom: 4px solid var(--yellow); }
+    .page-header::before { content: ""; display: block; width: 110px; height: 4px; margin-bottom: 1rem; background: var(--red); }
+    .eyebrow { margin: 0 0 0.45rem; color: var(--red); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.08; }
+    .page-header p { max-width: 65ch; margin: 0.7rem 0 0; color: var(--gray-700); font-size: 1.08rem; }
+    main { padding: 2rem 0 3rem; }
+    .intro { max-width: 70ch; margin: 0 0 1.6rem; color: var(--gray-700); }
+    .example-list { border-top: 1px solid var(--gray-200); }
+    .example { display: grid; grid-template-columns: minmax(180px, 0.65fr) 1.5fr auto; align-items: center; gap: 1.25rem; padding: 1.3rem 0; border-bottom: 1px solid var(--gray-200); }
+    .example h2 { margin: 0; font-size: 1.2rem; }
+    .type { color: var(--red); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .example p { margin: 0; color: var(--gray-700); }
+    .example-link { white-space: nowrap; }
+    footer { padding: 1rem 0 2rem; color: var(--gray-500); font-size: 0.85rem; border-top: 1px solid var(--gray-200); }
+    @media (max-width: 700px) {
+      .example { grid-template-columns: 1fr; gap: 0.25rem; }
+      .example-link { margin-top: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="brand wrap"><img src="../standards/smith_style_guide_files/umd-smith-logo.png" alt="Robert H. Smith School of Business, University of Maryland"></div>
+  <header class="page-header wrap">
+    <p class="eyebrow">Smith IT / Design examples</p>
+    <h1>Page types in practice</h1>
+    <p>Three distinct page patterns, grounded in the Smith brand and shaped around what visitors need to do.</p>
+  </header>
+  <main class="wrap">
+    <p class="intro">Choose an example to see how the shared red, yellow, black, and neutral palette adapts to policy reading, service routing, and people-focused content.</p>
+    <div class="example-list">
+      <article class="example">
+        <div><span class="type">Informational / policy</span><h2>Acceptable Use</h2></div>
+        <p>Structured reference content, document navigation, and an emphasized policy callout.</p>
+        <a class="example-link" href="informational-policy.html">View example</a>
+      </article>
+      <article class="example">
+        <div><span class="type">Directional / service routing</span><h2>IT Support</h2></div>
+        <p>Clear service choices, office hours, contact routes, and after-hours escalation.</p>
+        <a class="example-link" href="directional-support.html">View example</a>
+      </article>
+      <article class="example">
+        <div><span class="type">Illustrative / people directory</span><h2>Meet the Team</h2></div>
+        <p>Team groupings and profile panels with a distinct illustrative-page header.</p>
+        <a class="example-link" href="illustrative-team.html">View example</a>
+      </article>
+    </div>
+  </main>
+  <footer><div class="wrap">Smith IT page-type style examples</div></footer>
+</body>
+</html>

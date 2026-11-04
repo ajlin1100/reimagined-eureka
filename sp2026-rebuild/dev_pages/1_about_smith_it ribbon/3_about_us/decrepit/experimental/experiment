@@ -1,0 +1,176 @@
+<style>
+  .roster-page-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden; /* Crucial for animation containment */
+  }
+
+  /* Full-Screen White Overlay (Fades away on badge exit) */
+  .hero-curtain-overlay {
+    position: fixed; top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #ffffff;
+    z-index: 9996; /* Stays under the streaks and badge */
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    animation: none;
+  }
+
+  .hero-motion-enabled .hero-curtain-overlay {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeOutOverlay 3.2s ease-in-out forwards;
+  }
+
+  /* ==========================================================
+     [Existing Header Styles] - Retained and functional
+     ========================================================== */
+  .page-header { background: linear-gradient(135deg, #003366 0%, #002244 100%); color: #ffffff; padding: 35px 30px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+  .page-header h1 { margin: 0 0 12px 0; font-size: 2.1em; font-weight: 700; color: #ffffff; }
+  .page-header p { margin: 0; font-size: 1.05em; color: #e2e8f0; }
+
+  /* ==========================================================
+     HERO FLYBY BADGE - Updated for UMD Branding
+     ========================================================== */
+  .hero-flyby-badge {
+    position: fixed; top: 50%; left: 50%;
+    z-index: 9999; /* Top layer, over everything */
+    pointer-events: none;
+    
+    /* Strong UMD Branding: Bold Red & Prominent Gold Border */
+    background: linear-gradient(135deg, #e21833 0%, #a30e22 100%); /* UMD Red */
+    color: #ffffff;
+    padding: 28px 56px;
+    border-radius: 12px; /* Switched to a bold corner radius over the pill shape */
+    text-align: center;
+    border: 4px solid #ffc52f; /* Heavy UMD Gold border accent */
+    box-shadow: 0 20px 60px rgba(226, 24, 51, 0.5), 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    /* Flex container for the internal elements */
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+
+    /* Original 3s animation duration, wider parameters for hero feel */
+    opacity: 0;
+    animation: none;
+  }
+
+  .hero-motion-enabled .hero-flyby-badge {
+    animation: heroFlyAcross 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Main Title text within the badge */
+  .hero-flyby-badge .main-title {
+    font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px;
+    white-space: nowrap; margin: 0;
+  }
+
+  /* Fearlessly Forward Slogan (Gold accent, bold) */
+  .hero-flyby-badge .slogan {
+    font-size: 1.4rem; font-weight: 700; color: #ffc52f; /* UMD Gold */
+    text-transform: uppercase; letter-spacing: 2px;
+    margin: 0; opacity: 0.9;
+  }
+
+  /* ==========================================================
+     TRAILING FORWARD CHEVRONS (Design Element)
+     Gold chevrons that streak behind the main badge
+     ========================================================== */
+  .forward-streaks {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 9997; /* Under the badge, over the content */
+    pointer-events: none;
+  }
+
+  .streak {
+    position: absolute;
+    left: 0;
+    color: #ffc52f;
+    opacity: var(--streak-opacity); /* Gold chevrons */
+    font-weight: 900;
+    
+    /* The main motion animation (wider travel than badge) */
+    opacity: 0;
+    animation: none;
+  }
+
+  .hero-motion-enabled .streak {
+    animation: chevronMotion 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Positioning the streaks (Staggered depth and height) */
+  .streak-1 { --streak-opacity: 0.25; top: 20%; font-size: 8rem; animation-delay: 0.1s; } /* Faint, background */
+  .streak-2 { --streak-opacity: 0.4; top: 50%; transform: translateY(-50%); font-size: 15rem; animation-delay: 0s; } /* Large, center, primary motion */
+  .streak-3 { --streak-opacity: 0.3; top: 75%; font-size: 10rem; animation-delay: 0.15s; } /* Medium, foreground */
+
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 768px) {
+    .hero-flyby-badge .main-title { font-size: 1.4rem; }
+    .hero-flyby-badge .slogan { font-size: 1rem; letter-spacing: 1px; }
+    .hero-flyby-badge { padding: 18px 32px; gap: 5px; }
+    .streak { font-size: 6rem; }
+    .streak-2 { font-size: 10rem; }
+  }
+
+  /* ==========================================================
+     KEYFRAMES
+     ========================================================= */
+
+  /* 1. The Main Badge (in-hold-out) */
+  @keyframes heroFlyAcross {
+    0% { transform: translate(calc(-50% - 130vw), -50%) scale(0.8); opacity: 0; }
+    10% { opacity: 1; }
+    33% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; } /* Centered hero spot */
+    66% { transform: translate(-50%, -50%) scale(1); opacity: 1; } /* Pause state */
+    90% { opacity: 1; }
+    100% { transform: translate(calc(-50% + 130vw), -50%) scale(0.9); opacity: 0; }
+  }
+
+  /* 2. The Gold Chevron Streaks (Travel wider/faster than badge) */
+  @keyframes chevronMotion {
+    0% { transform: translate(-150vw, 0); opacity: 0; }
+    10%, 90% { opacity: var(--streak-opacity); }
+    100% { transform: translate(150vw, 0); opacity: 0; }
+  }
+
+  /* 3. White Curtain Fade (Unchanged) */
+  @keyframes fadeOutOverlay {
+    0%, 66% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+</style>
+
+<!-- 1. The trailing Gold Chevron streaks (Deepest Layer) -->
+<div class="forward-streaks">
+  <div class="streak streak-1">>>></div>
+  <div class="streak streak-2">>>>>></div>
+  <div class="streak streak-3">>>></div>
+</div>
+
+<!-- 2. Full-screen white background curtain (Fades out) -->
+<div class="hero-curtain-overlay"></div>
+
+<!-- 3. Page Content (Bottom Layer) -->
+<div class="roster-page-container">
+  
+  <!-- Giant Hero Motion Badge (Top Layer) Updated for Slogan -->
+  <div class="hero-flyby-badge">
+    <p class="main-title">Welcome to the Office of Smith IT!</p>
+    <p class="slogan">Fearlessly Forward</p>
+  </div>
+
+  <div class="page-header">
+    <h1>The Office of Smith IT</h1>
+    <p>Welcome to The Office of Smith IT. Our goal is to empower the Robert H. Smith School of Business with the technology, infrastructure, and support needed to thrive in both online and in-person learning environments.</p>
+  </div>
+</div>
+
+<script>
+  if (Math.random() < 0.001) {
+    document.documentElement.classList.add('hero-motion-enabled');
+  }
+</script>

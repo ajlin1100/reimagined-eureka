@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow Application Platform Team Charter & SOP</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-left: 4px solid #0056b3;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ServiceNow Application Platform <br> Initial Team Charter</h1>
+    
+    <div class="highlight">
+        <strong>Mission Statement:</strong><br>
+        To provide a secure, scalable, and resilient ServiceNow platform that drives organizational efficiency. <br><br>By transitioning to a tiered operational structure, the Application Platform Team will ensure rapid fulfillment of routine requests while protecting the architecture required for long-term strategic development.
+    </div>
+
+    <h2>1. Team Structure & Responsibilities</h2>
+    <p>Platform operations are divided into three distinct tiers to ensure appropriate access levels, protect production data, and optimize resource allocation.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Role / Tier</th>
+                <th>Operational Scope & Duties</th>
+                <th>Environment Access</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Tier 1: Service Desk Delegate</strong></td>
+                <td><strong>Routine Fulfillment & Content:</strong> Manages standard user access/role provisioning via automated Catalog Items. Ensures brand and HTML compliance across all Knowledge Base articles. Performs initial triage and routing of platform incidents.</td>
+                <td>Production (Live)
+            </tr>
+            <tr>
+                <td><strong>Tier 2: Configuration Administrator</strong></td>
+                <td><strong>Low-Code Administration:</strong> Modifies ITSM form layouts and fields. Develops standard Service Catalog items. Configures UI Policies, simple Client Scripts, and Flow Designer workflows.</td>
+                <td>Test<br>Prod (Limited Admin)</td>
+            </tr>
+            <tr>
+                <td><strong>Tier 3: Lead Platform Architect</strong></td>
+                <td><strong>Architecture & Governance:</strong> Designs custom scoped applications and data models. Builds API integrations (REST/SOAP). Manages Update Set batching, conflict resolution, and all Production code deployments.</td>
+                <td>Dev<br>Test<br>Prod (Full Admin)</td>
+            </tr>
+            <tr>
+                <td><strong>Platform Owner</strong></td>
+                <td><strong>Strategic Oversight:</strong> Approves strategic roadmap priorities, reviews platform analytics, and provides final sign-off on Production release packages.</td>
+                <td>Prod (Executive Oversight)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Governance & Security Boundary</h2>
+    <ul>
+        <li><strong>Least Privilege Access:</strong> The <code>admin</code> role in the Production environment is strictly reserved for Tier 3 personnel. Tier 1 and Tier 2 staff will receive targeted roles (e.g., <code>knowledge_admin</code>, <code>catalog_admin</code>) and rely on automated workflows to execute production changes safely.</li>
+        <li><strong>Architecture Standard:</strong> All new custom departmental applications will be built as <strong>Scoped Applications</strong> to protect the Global namespace, isolate data, and prevent collisions with baseline ITSM functionality.</li>
+    </ul>
+
+    <hr style="border: 0; border-top: 2px dashed #ddd; margin: 40px 0;">
+
+    <h1>Standard Operating Procedure for<br> Platform Governance & Release Management</h1>
+
+    <h2>1. Request Intake & Triage</h2>
+    <ul>
+        <li><strong>Centralized Intake:</strong> Plan to deprecate direct messaging and emails for platform work. All requests, enhancements, and bug reports will be routed through the designated <strong>ServiceNow Platform Request</strong> catalog item.</li>
+        <li><strong>Triage Routing:</strong> Tier 1 monitors the intake queues (INC, RITM, CHG), resolving standard access/knowledge requests and escalating configuration/architecture requirements to Tiers 2 and 3.</li>
+    </ul>
+
+    <h2>2. The 4-Instance Deployment Pipeline</h2>
+    <p>Direct configuration in the Production environment is strictly prohibited. All configuration and development must traverse the approved instance pipeline to prevent instance drift and ensure thorough testing.</p>
+    <ul>
+        <li><strong>Dev:</strong> All code and configuration originate here.</li>
+        <li><strong>Test:</strong> The mandatory validation gate. Update Sets are fetched and previewed here to catch dependency errors before reaching Production.</li>
+        <li><strong>Prod:</strong> Locked runtime environment. Receives committed Update Sets exclusively during approved release windows.</li>
+        <li><strong>Build:</strong> Isolated sandbox utilized for Tier 1 and Tier 2 training and experimentation.</li>
+    </ul>
+
+    <h2>3. Update Set Management</h2>
+    <ul>
+        <li><strong>Adoption:</strong> Begin use of Update Sets to manage Dev to Test and Prod deployments.</li>
+        <li><strong>Naming Convention:</strong> All Update Sets must follow the standard nomenclature: <code>[App/Module] - [Task/Story #] - [Brief Description]</code> (e.g., <code>ITSM - ENHC00123 - Add Subcategory to Incident</code>).</li>
+        <li><strong>Batching:</strong> Complex deployments requiring multiple Update Sets will utilize the Update Set Batching feature. A single Parent Set will be used to move and commit all Child Sets simultaneously.</li>
+        <li><strong>Preview Discipline:</strong> 100% of preview errors (e.g., missing fields, scope conflicts) identified in Test or Prod must be resolved or explicitly documented before a commit is executed.</li>
+    </ul>
+
+    <h2>4. Release Windows</h2>
+    <ul>
+        <li>Releases to Production will occur on a scheduled, recurring basis to bundle changes into predictable deployment packages.</li>
+        <li>Emergency breaks/fixes are exempt from the scheduled window. It is advised to still follow the Dev &rarr; Test &rarr; Prod pipeline whenever possible to maintain consistency and prevent configuration drift. If deviations are necessary, they must be vetted by the next senior developer, documented and reviewed post-implementation.</li>
+    </ul>
+
+    <h2>5. Instance Maintenance & Cloning</h2>
+    <p>To maintain environmental parity and prevent Update Set preview errors, instances will be cloned using a <strong>Milestone-Based Schedule</strong>. Clones from Prod to Dev/Test will occur immediately following major application deployments.</p>
+    
+    <h3>Pre-Clone Backup Protocol (30 Minutes Prior)</h3>
+    <ol>
+        <li>Export all <code>In Progress</code> or locally <code>Complete</code> Update Sets to XML.</li>
+        <li>Commit all active Scoped Application changes to the Application Repository or Git source control.</li>
+        <li>Validate that Data Preservers (for sub-prod properties) and Exclude Tables (for logs/attachments) are active.</li>
+    </ol>
+
+    <h3>Post-Clone Restoration Protocol (30 Minutes Post)</h3>
+    <ol>
+        <li>Re-import saved Update Set XMLs into Dev via Retrieved Update Sets.</li>
+        <li>Revert imported Update Sets to <code>In Progress</code> to resume development.</li>
+        <li>Pull the latest Scoped Application branches from the repository.</li>
+    </ol>
+
+</div>
+
+</body>
+</html>

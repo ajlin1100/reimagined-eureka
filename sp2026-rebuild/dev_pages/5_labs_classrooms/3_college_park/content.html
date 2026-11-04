@@ -1,0 +1,742 @@
+<style>
+  /* Base Container & Typography */
+  .college-park-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero-card p {
+    color: #e6e6e6;
+    margin: 0 0 16px 0;
+    font-size: max(12pt, 1.02em);
+    line-height: 1.6;
+  }
+
+  .address-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: max(12pt, 0.9em);
+    color: #ffffff;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.35em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Full-Bleed Image Displays */
+  .media-display {
+    text-align: center;
+    margin: 20px 0;
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .media-display.campus-image-container {
+    box-sizing: border-box;
+    height: 650px;
+  }
+
+  .media-display img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: none;
+  }
+
+  /* Key Specs & Info Grids */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .info-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-card h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Specialized List Cards */
+  .labs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .lab-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 18px;
+  }
+
+  .lab-card h3 {
+    margin: 0 0 6px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.05em);
+  }
+
+  .lab-card .room-badge {
+    display: inline-block;
+    background: #f7f7f7;
+    color: #ba182e;
+    font-weight: 700;
+    font-size: max(12pt, 0.8em);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .lab-card p {
+    margin: 0;
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+    line-height: 1.5;
+  }
+
+  /* Action Boxes */
+  .action-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    border-radius: 0 8px 8px 0;
+    padding: 20px;
+    margin-top: 18px;
+  }
+
+  .action-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .action-box p {
+    margin: 0 0 14px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+    line-height: 1.55;
+  }
+
+  /* Action Buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.85em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="college-park-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">Labs &amp; Classrooms</p>
+<h1>Robert H. Smith School of Business</h1>
+<div class="address-badge">📍︎ <strong>Van Munching Hall:</strong> 7621 Mowatt Lane, College Park, MD 20742</div>
+</div>
+</div>
+<!-- LOCATION IMAGE -->
+<div class="media-display campus-image-container"><img class="campus-image" src="vmh.png" alt="Van Munching Hall - College Park Campus"></div>
+<!-- CLASSROOM FACILITIES -->
+<div class="section-card">
+<h2>🏛︎ Classrooms &amp; Learning Spaces</h2>
+<p>Van Munching Hall houses a comprehensive suite of instructional spaces designed for interactive lectures, team discussions, and specialized software instruction:</p>
+<div class="info-grid"><!-- General & Seminar Classrooms -->
+<div class="info-card">
+<div>
+<h3>Standard Classrooms &amp; Seminar Rooms</h3>
+<p>Includes <strong>23 standard classrooms</strong> (seating 24 to 65 students) and <strong>2 PhD seminar rooms</strong>. Auditoriums accommodate larger lectures of up to 250 students.</p>
+</div>
+</div>
+<!-- Computer Classrooms -->
+<div class="info-card">
+<div>
+<h3>Computer Classrooms</h3>
+<p>Equipped with dedicated workstations for hands-on technical instruction:</p>
+<p style="font-size: max(12pt, 0.88em); margin-bottom: 0;">&bull; <strong>VMH 2203 - IBM TQ Theatre</strong><br>&bull; <strong>VMH 3505 - Financial Markets Teaching Theatre</strong></p>
+<p style="font-size: max(12pt, 0.88em); margin-bottom: 0;">&bull; <strong>VMH 3522 - Supply Chain Lab</strong></p>
+</div>
+</div>
+</div>
+<!-- Reservations Box -->
+<div class="action-box">
+<h3>Classroom &amp; Event Reservations</h3>
+<p>Classrooms are primarily scheduled for academic coursework. To inquire about booking a classroom or auditorium for a special event, contact the Scheduling Office.</p>
+<div class="action-buttons"><a class="btn-action" href="mailto:scheduling@rhsmith.umd.edu">Email Scheduling Office (scheduling@rhsmith.umd.edu) ↗</a></div>
+</div>
+</div>
+<!-- OPEN COMPUTER LABS & VSMITH -->
+<div class="section-card">
+<h2>🖥︎ Open Computer Labs &amp; Virtual Access</h2>
+<p>Three open computer labs are available during active class hours to anyone holding a valid University Directory ID. Workstations come pre-configured with software required for BMGT coursework.</p>
+<div class="media-display software-overview-container"><img src="Software.png" alt="Lab Software &amp; Virtual Desktop Overview"></div>
+<div class="action-box">
+<h3>Remote Access via vSmith</h3>
+<p>If specific course software is unavailable in the physical labs due to seating or licensing limits, BMGT students can access required software remotely via the virtual environment.</p>
+</div>
+<div><br> 
+</div>
+<!-- RESEARCH & TEACHING LABS -->
+<div class="section-card">
+<h2>🔬︎ Research &amp; Specialized Teaching Labs</h2>
+<p>Van Munching Hall features specialized, discipline-specific facilities equipped with advanced hardware and analytical software:</p>
+<div class="labs-list"><!-- Financial Market Labs -->
+<div class="lab-card"><span class="room-badge">VMH 3505</span>
+<h3>Financial Markets Teaching Theatre</h3>
+<p>Equipped with professional financial data terminals and tools including Bloomberg, Thomson Reuters Eikon, and Capital IQ.</p>
+</div>
+<!-- Behavioral Lab -->
+<div class="lab-card"><span class="room-badge">VMH 3518</span>
+<h3>Behavioral Laboratory</h3>
+<p>Configured for empirical research using advanced tools such as MediaLab, DirectRT, and Eye Tracking systems.</p>
+</div>
+<!-- Supply Chain Lab -->
+<div class="lab-card"><span class="room-badge">VMH 3522</span>
+<h3>Supply Chain Lab</h3>
+<p>Dedicated environment for supply chain management, modeling, and logistics simulations.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SMITH SHARED PAGE OVERRIDES -->
+<style>
+  :root {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+  }
+
+  [class*="-container"],
+  .hero-card,
+  .section-card,
+  .announcement-banner,
+  .emergency-alert-banner,
+  .emergency-contact-card,
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-box,
+  .action-box,
+  .instruction-box,
+  .contact-card,
+  .network-card,
+  .program-card,
+  .course-card,
+  .support-card,
+  .action-banner,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .portal-notice-box,
+  .feature-box,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .location-card,
+  .lab-card,
+  .sticker-card,
+  .parking-section,
+  .guide-card,
+  .cloud-tag,
+  .rebrand-box,
+  .config-block,
+  .server-code {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 0;
+    border-bottom: 4px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0 0 0.7rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    border-bottom-color: var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    font-weight: 800;
+  }
+
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-card,
+  .network-card,
+  .contact-card,
+  .program-card,
+  .course-card,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .step-card,
+  .location-card,
+  .lab-card,
+  .parking-section,
+  .parking-stickers-grid .sticker-card {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .info-card h3,
+  .info-box h3,
+  .feature-card h3,
+  .feature-item h3,
+  .overview-item h3,
+  .support-card h3,
+  .network-card h3,
+  .contact-card h3,
+  .program-card h3,
+  .course-card h3,
+  .practice-card h3,
+  .benefit-card h3,
+  .location-card h3,
+  .lab-card h3,
+  .parking-section h3,
+  .action-box h3,
+  .support-box h3 {
+    color: var(--smith-black);
+  }
+
+  .info-card p,
+  .info-box p,
+  .feature-card p,
+  .feature-item p,
+  .overview-item p,
+  .tech-item,
+  .support-card p,
+  .network-card p,
+  .contact-card p,
+  .program-card p,
+  .course-card p,
+  .practice-card p,
+  .benefit-card p,
+  .location-card p,
+  .lab-card p,
+  .parking-steps,
+  .action-box p,
+  .support-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .announcement-banner,
+  .support-box,
+  .action-box,
+  .rebrand-box,
+  .portal-notice-box,
+  .alert-banner {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .announcement-banner p,
+  .alert-banner p,
+  .portal-notice-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .emergency-alert-banner,
+  .warning-box,
+  .alert-box {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 5px solid var(--smith-red-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .emergency-alert-banner h2,
+  .emergency-alert-banner p,
+  .emergency-contact-card strong,
+  .emergency-contact-card .phone-num,
+  .warning-box h3,
+  .warning-box p,
+  .alert-box {
+    color: var(--smith-red-dark);
+  }
+
+  .emergency-contact-card {
+    background: var(--smith-white);
+    border-color: rgba(186, 24, 46, 0.24);
+    border-radius: 0;
+  }
+
+  .notice-box,
+  .event-fee-box,
+  .instruction-box {
+    color: var(--smith-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box h3,
+  .notice-box h4,
+  .event-fee-box h3,
+  .instruction-box h3,
+  .notice-box p,
+  .event-fee-box p,
+  .instruction-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .address-badge,
+  .hero-card .address-badge {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.18);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-radius: 4px;
+    backdrop-filter: none;
+    font-size: max(12pt, 0.9rem);
+    line-height: 1.45;
+  }
+
+  .btn-action,
+  .btn-request {
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--smith-white) !important;
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-outline {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  .step-number {
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+  }
+
+  .step-card h3,
+  .step-content h3 {
+    color: var(--smith-black);
+  }
+
+  .step-card p,
+  .step-content p {
+    color: var(--smith-gray-700);
+  }
+
+  .server-code,
+  .config-block,
+  code {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .video-container,
+  .media-display,
+  .diagram-container,
+  .campus-image-container {
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .media-display img:not(.campus-image),
+  .diagram-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .media-display.software-overview-container {
+    box-sizing: border-box;
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .software-overview-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .campus-image-container img,
+  .media-display img.campus-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+  }
+
+  .feature-tag,
+  .tag-item,
+  .cloud-tag {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .feature-tag.highlight,
+  .cloud-tag {
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.2);
+    border-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .lab-card,
+  .satellite-card,
+  .network-card {
+    border-left-color: var(--smith-red);
+  }
+
+  .schedule-list li {
+    color: var(--smith-gray-700);
+    background: var(--smith-white);
+    border-color: var(--smith-gray-200);
+    border-radius: 0;
+  }
+
+  [class*="container"] a:focus-visible,
+  [class*="container"] button:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 700px) {
+    [class*="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1rem 1.2rem;
+    }
+
+    .media-display.campus-image-container,
+    .campus-image-container,
+    .campus-image-frame {
+      height: 280px;
+    }
+
+    .media-display.software-overview-container {
+      height: 280px;
+    }
+
+    .step-item {
+      gap: 0.8rem;
+    }
+  }
+</style>

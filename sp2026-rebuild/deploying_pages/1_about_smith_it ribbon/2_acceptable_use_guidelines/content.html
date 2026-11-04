@@ -1,0 +1,382 @@
+<div class="policy-page-container">
+  <div class="page-header">
+    <div class="eyebrow">About Us</div>
+    <h1>Acceptable Use Guidelines</h1>
+    <p>University of Maryland and Business School standards for responsible, secure, and ethical use of IT resources.</p>
+  </div>
+</div>
+<style>
+  .policy-page-container {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #111111;
+    --smith-gray-900: #1d1d1d;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 0 2rem 0;
+  }
+
+  .meta-banner,
+  .sticky-nav,
+  .policy-section,
+  .addendum-card {
+    box-sizing: border-box;
+  }
+
+  .meta-banner {
+    background: linear-gradient(90deg, rgba(255, 200, 69, 0.12), rgba(186, 24, 46, 0.04));
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .meta-banner h2 {
+    margin: 0 0 0.25rem 0;
+    font-size: max(12pt, 1.1rem);
+    color: var(--smith-black);
+    line-height: 1.3;
+  }
+
+  .meta-banner p {
+    margin: 0;
+    font-size: max(12pt, 0.9rem);
+    color: var(--smith-gray-700);
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .policy-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sticky-nav {
+    position: sticky;
+    top: 20px;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    padding: 0.85rem;
+    box-shadow: none;
+  }
+
+  .sticky-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .nav-heading {
+    font-size: max(12pt, 0.72rem);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--smith-gray-500);
+    padding: 0.5rem 0.75rem 0.2rem 0.75rem;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    color: var(--smith-gray-700);
+    text-decoration: none;
+    font-size: max(12pt, 0.92rem);
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background-color: var(--smith-gray-100);
+    color: var(--smith-red);
+    text-decoration: none;
+    border-left-color: var(--smith-red);
+  }
+
+  .nav-link.indent {
+    padding-left: 1.35rem;
+    font-size: max(12pt, 0.86rem);
+  }
+
+  .page-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+    box-shadow: none;
+    position: relative;
+  }
+
+  .page-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    background: var(--smith-red);
+    margin-bottom: 1rem;
+  }
+
+  .page-header .eyebrow {
+    display: inline-block;
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--smith-red);
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--smith-black);
+    letter-spacing: -0.03em;
+  }
+
+  .page-header p {
+    margin: 0;
+    max-width: 920px;
+    font-size: max(12pt, 1.05rem);
+    color: var(--smith-gray-700);
+  }
+  .policy-section {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+    scroll-margin-top: 20px;
+  }
+
+  .policy-section h2 {
+    color: var(--smith-black);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--smith-gray-200);
+  }
+
+  .policy-section h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: var(--smith-red);
+    margin-top: 0.5rem;
+  }
+
+  .policy-section h3 {
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .prohibited-box {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(186, 24, 46, 0.03));
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 5px solid var(--smith-red);
+  }
+
+  .prohibited-box h2 {
+    color: var(--smith-red);
+    border-bottom-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .prohibited-list {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .prohibited-list li {
+    margin-bottom: 0.6rem;
+    font-size: max(12pt, 0.95rem);
+    color: var(--smith-gray-700);
+  }
+
+  .addendum-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 0;
+    padding: 1.5rem 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .addendum-card h2 {
+    color: var(--smith-black);
+    margin-top: 0;
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    border-bottom: 2px solid var(--smith-gray-200);
+    padding-bottom: 0.5rem;
+  }
+
+  .addendum-card h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: var(--smith-yellow);
+    margin-top: 0.5rem;
+  }
+
+  .addendum-card h3 {
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--smith-red);
+    font-weight: 700;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="policy-page-container">
+  <!-- POLICY METADATA -->
+  <div class="meta-banner">
+    <h2>University of Maryland Policy on Acceptable Use of IT Resources</h2>
+    <p>Approved as amended by the University Senate on April 3, 2006. Signed by President Mote on April 5, 2006.</p>
+  </div>
+
+  <div class="policy-grid">
+    <!-- LEFT STICKY NAVIGATION -->
+    <div class="sticky-nav">
+      <nav>
+        <span class="nav-heading">UMD Policy</span>
+        <a class="nav-link" href="#principles">Primary Principles</a>
+        <a class="nav-link" href="#general">General Scope</a>
+        <a class="nav-link" href="#prohibited">Prohibited Conduct</a>
+        <a class="nav-link" href="#enforcement">Enforcement</a>
+        <a class="nav-link" href="#administration">Administration</a>
+        <span class="nav-heading" style="margin-top: 10px;">Smith Addendum</span>
+        <a class="nav-link" href="#smith-addendum">Addendum Overview</a>
+        <a class="nav-link indent" href="#passwords">&bull; Password Security</a>
+        <a class="nav-link indent" href="#data-ownership">&bull; Data Ownership</a>
+        <a class="nav-link indent" href="#data-storage">&bull; Data Storage</a>
+        <a class="nav-link indent" href="#privacy">&bull; Privacy Protection</a>
+        <a class="nav-link indent" href="#agreement">&bull; Service Agreement</a>
+        <a class="nav-link indent" href="#communication">&bull; Communications</a>
+      </nav>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-body">
+      <!-- PRINCIPLES -->
+      <section id="principles" class="policy-section">
+        <h2>Primary Principles: Freedom of Expression and Personal Responsibility</h2>
+        <p>Freedom of expression and an open environment to pursue scholarly inquiry and for sharing of information are encouraged, supported, and protected at the University of Maryland. These values lie at the core of our academic community. Censorship is not compatible with the tradition and goals of the university.</p>
+        <p>While some computing resources are dedicated to specific research, teaching, or administrative tasks that would limit their use, freedom of expression must, in general, be protected. The university does not limit access to information because of its content when it meets the standard of legality.</p>
+        <p>Concomitant with free expression are personal obligations of each member of our community to use computing resources responsibly, ethically, and in a manner which accords both with the law and the rights of others. The university depends first upon a spirit of mutual respect and cooperation to create and maintain an open community of responsible users.</p>
+      </section>
+
+      <!-- GENERAL -->
+      <section id="general" class="policy-section">
+        <h2>General Policy Scope</h2>
+        <p>This policy sets forth standards for responsible and acceptable use of university information technology (IT) resources. These resources include computer systems, computer labs, applications, networks, software, and files.</p>
+        <p>IT resources are provided to support the academic, research, instructional, and administrative objectives of the university. These resources are extended for the sole use of university faculty, staff, students, and all other authorized guests to accomplish tasks related to the status of that individual at the university and consistent with the university's mission.</p>
+        <p>Those using University IT resources, whether at the university or elsewhere, are responsible for complying with security standards set forth by the Vice President and Chief Information Officer (VP/CIO), safeguarding identification codes and passwords, and using them solely for their intended purposes. Individuals are solely responsible for their personal use of IT resources and are prohibited from representing or implying that statements related to such use constitute the views or policies of the University.</p>
+      </section>
+
+      <!-- PROHIBITED CONDUCT -->
+      <section id="prohibited" class="policy-section prohibited-box">
+        <h2>Prohibited Conduct</h2>
+        <p>The following activities are strictly prohibited under university policy:</p>
+        <ul class="prohibited-list">
+          <li>Altering system software or hardware configurations without authorization; disrupting or interfering with the delivery or administration of IT resources.</li>
+          <li>Attempting to access or accessing another's accounts, private files, or email messages, or intercepting network communication without permission.</li>
+          <li>Misrepresenting oneself as another individual in electronic communication.</li>
+          <li>Installing, copying, distributing, or using digital content (software, music, text, images, video) in violation of copyright laws or licensing agreements.</li>
+          <li>Engaging in conduct that interferes with others' access to shared IT resources.</li>
+          <li>Using University IT resources for commercial or profit-making purposes without prior written authorization.</li>
+          <li>Ignoring individual departmental or unit lab policies, procedures, and security protocols.</li>
+          <li>Facilitating unauthorized access to University IT resources by third parties.</li>
+          <li>Exposing sensitive or confidential information or disclosing electronic data without proper authority.</li>
+          <li>Using IT resources for illegal activities, including harassment, copyright infringement, trademark violations, defamation, identity theft, or unauthorized network intrusion.</li>
+        </ul>
+      </section>
+
+      <!-- ENFORCEMENT -->
+      <section id="enforcement" class="policy-section">
+        <h2>Enforcement and Compliance</h2>
+        <p>Violation of these provisions constitutes unacceptable use of IT resources and may violate state or federal law. Known or suspected violations should be reported to the appropriate computing unit or directly to the Division of IT Security team at <a href="mailto:abuse@umd.edu">abuse@umd.edu</a>.</p>
+        <p>Violations will be acted upon by appropriate University authorities or law enforcement agencies. Sanctions may include revocation of IT privileges, employee disciplinary procedures, academic dishonesty charges through the Student Honor Council, or legal action.</p>
+        <p>The VP/CIO or designee reserves the right to suspend or restrict access to network resources when necessary to protect system security, integrity, or functionality.</p>
+      </section>
+
+      <!-- ADMINISTRATION -->
+      <section id="administration" class="policy-section">
+        <h2>Policy Administration</h2>
+        <p>Individual divisions, colleges, schools, and departments may elaborate upon this policy with unit-specific additions provided they do not violate the core principles of this document.</p>
+        <p>In accordance with University System of Maryland standards, this policy is reviewed and updated periodically based on recommendations from the VP/CIO.</p>
+      </section>
+
+      <!-- SMITH SCHOOL ADDENDUM -->
+      <section id="smith-addendum" class="addendum-card">
+        <h2>Smith School Policy Addendum</h2>
+        <p style="font-size: max(12pt, 0.95em); color: var(--smith-gray-700); margin-bottom: 20px;">Specific operational rules and additions applicable to Robert H. Smith School of Business systems and support services. For more information, please see our <a href="https://umdrhsmithlive.service-now.com/sp?id=secure_computing">Secure Computing</a> advisories.</p>
+
+        <div id="passwords">
+          <h3>Password Protection</h3>
+          <p>User must comply with the strong password policy set forth by the Division of Information Technology. Sharing of passwords is strictly prohibited.</p>
+        </div>
+
+        <div id="data-ownership">
+          <h3>Data Ownership</h3>
+          <p>Users are responsible for the security, backup, and access control of data created, stored, or deleted on their assigned computers and accessible storage environments.</p>
+        </div>
+
+        <div id="data-storage">
+          <h3>Data Storage</h3>
+          <p>Storage of personal digital media files (audio/video) on central servers is prohibited unless directly required for teaching and learning. Storing email archives on assigned network drives is permitted.</p>
+        </div>
+
+        <div id="privacy">
+          <h3>Privacy Protection</h3>
+          <p>While user privacy is respected, system monitoring is required to maintain operational security. Privacy remains subject to federal and state disclosure laws, including the Maryland Public Information Act and institutional obligations.</p>
+        </div>
+
+        <div id="agreement">
+          <h3>Help Desk Support Access Agreement</h3>
+          <p>By accepting and using a computing device issued by the Smith School, users grant the IT Help Desk authorization to access the device remotely or in person for maintenance, security updates, and service calls.</p>
+          <p>If external protection, such as BIOS passwords or screen locks, is enabled, credentials must be provided to IT support upon request. Tampering with local administrative access will result in forfeiture of device support services.</p>
+        </div>
+
+        <div id="communication">
+          <h3>Official Communication</h3>
+          <p style="margin-bottom: 0;">Users are solely responsible for personal communications and must not imply or state that personal opinions represent official policies of the Smith School or the University of Maryland.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

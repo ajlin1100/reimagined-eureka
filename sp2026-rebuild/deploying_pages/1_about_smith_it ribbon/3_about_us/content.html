@@ -1,0 +1,366 @@
+<div class="roster-page-container">
+<div class="page-header">
+<h1>The Office of Smith IT</h1>
+<p>Welcome to The Office of Smith IT. Our goal is to empower the Robert H. Smith School of Business with the technology, infrastructure, and support needed to thrive in both online and in-person learning environments.</p>
+</div>
+</div>
+<style>
+  .page-header {
+    background: linear-gradient(135deg, var(--smith-red) 0%, var(--smith-red-dark) 100%);
+    color: var(--smith-white);
+    padding: 2.25rem 2rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 6px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .page-header h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: max(12pt, clamp(2rem, 3vw, 2.8rem));
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--smith-white);
+    line-height: 1.15;
+  }
+
+  .page-header p {
+    margin: 0;
+    max-width: 65ch;
+    font-size: max(12pt, 1.05rem);
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .roster-page-container {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #111111;
+    --smith-gray-900: #1d1d1d;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 1.25rem 2rem;
+  }
+
+  .roster-page-container .roster-section-title {
+    color: var(--smith-black);
+    font-weight: 700;
+    border-bottom: 2px solid var(--smith-gray-200);
+    padding-bottom: 0.55rem;
+    margin: 2.25rem 0 0.9rem;
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: left;
+  }
+
+  .roster-page-container .roster-section-title::after {
+    content: "";
+    display: block;
+    width: 68px;
+    height: 4px;
+    background: var(--smith-red);
+    margin-left: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .roster-page-container .section-lead {
+    font-size: max(12pt, 0.96rem);
+    color: var(--smith-gray-700);
+    margin: 0 0 1.25rem 0;
+    max-width: 72ch;
+  }
+
+  .roster-page-container .staff-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.4rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .roster-page-container .staff-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.3rem 1.1rem 1.15rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 310px;
+    flex: 0 1 310px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .roster-page-container .staff-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(17, 17, 17, 0.06);
+  }
+
+  .roster-page-container .avatar-container {
+    margin: 0 auto 0.8rem auto;
+    width: 105px;
+    height: 105px;
+  }
+
+  .roster-page-container .avatar-container img {
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border: 3px solid var(--smith-gray-200);
+    background-color: var(--smith-gray-100);
+  }
+
+  .roster-page-container .staff-card h3 {
+    margin: 0.4rem 0 0.3rem 0;
+    font-size: max(12pt, 1.15rem);
+    color: var(--smith-black);
+    font-weight: 700;
+  }
+
+  .roster-page-container .staff-title {
+    font-size: max(12pt, 0.9rem);
+    color: var(--smith-gray-700);
+    margin-bottom: 0.8rem;
+    line-height: 1.35;
+    font-weight: 600;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .roster-page-container .contact-box {
+    font-size: max(12pt, 0.85rem);
+    background-color: var(--smith-gray-100);
+    padding: 0.7rem 0.85rem;
+    border-radius: 0;
+    margin-bottom: 0.9rem;
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-yellow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .roster-page-container .contact-box a {
+    color: var(--smith-red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .roster-page-container .contact-box a:hover {
+    text-decoration: underline;
+  }
+
+  .roster-page-container .phone-text {
+    color: var(--smith-gray-700);
+    font-weight: 600;
+  }
+
+  .roster-page-container .bio-text {
+    font-size: max(12pt, 0.9rem);
+    color: var(--smith-gray-700);
+    margin: 0;
+    text-align: left;
+    border-top: 1px dashed var(--smith-gray-200);
+    padding-top: 0.8rem;
+    flex-grow: 1;
+    line-height: 1.5;
+  }
+</style>
+<div class="roster-page-container">
+<h2 class="roster-section-title">Senior Leadership</h2>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="hmann.png" alt="Holly Mann"></div>
+<h3>Holly Mann</h3>
+<div class="staff-title">Executive Director for Technology &amp; Operations</div>
+<div class="contact-box"><a href="mailto:hmann@umd.edu">hmann@umd.edu</a> <span class="phone-text">(301) 405-2271</span></div>
+<p class="bio-text">Holly is responsible for implementing technology strategy and managing support across the Business School, overseeing operations, policy, budget planning, and strategic priorities.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="hcoronaj.png" alt="Roy Corona"></div>
+<h3>Roy Corona</h3>
+<div class="staff-title">Senior Associate Director for IT Operations</div>
+<div class="contact-box"><a href="mailto:hcoronaj@umd.edu">hcoronaj@umd.edu</a> <span class="phone-text">(301) 405-1236</span></div>
+<p class="bio-text">Roy oversees Service Desk and AV units, manages IT renovations, technology procurement, and asset tracking at the Business School.</p>
+</div>
+</div>
+<h2 class="roster-section-title">Enterprise Infrastructure</h2>
+<p class="section-lead">These behind-the-scenes professionals keep our systems running, including websites, virtual servers, and research tools.</p>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="makani.png" alt="Monika Makani"></div>
+<h3>Monika Makani</h3>
+<div class="staff-title">Assistant Director &amp; Salesforce Integration Developer</div>
+<div class="contact-box"><a href="mailto:mmakani@umd.edu">mmakani@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Monika handles Salesforce development and integration, supports CRM and marketing tools, and leads solution design and data management.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="cgleeson.png" alt="Christopher Gleeson"></div>
+<h3>Christopher Gleeson</h3>
+<div class="staff-title">Systems &amp; Network Engineer</div>
+<div class="contact-box"><a href="mailto:cgleeson@umd.edu">cgleeson@umd.edu</a> <span class="phone-text">(301) 541-8455</span></div>
+<p class="bio-text">Chris manages infrastructure including physical and virtual servers, storage, network systems, and supports research computing.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="joelv.png" alt="Joel Veihmeyer"></div>
+<h3>Joel Veihmeyer</h3>
+<div class="staff-title">Jr Systems &amp; Network Engineer</div>
+<div class="contact-box"><a href="mailto:joelv@umd.edu">joelv@umd.edu</a> <span class="phone-text">(240) 464-4024</span></div>
+<p class="bio-text">Joel supports infrastructure and research technology, assisting with enterprise applications and server systems.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="skeifline.png" alt="Susan Keifline"></div>
+<h3>Susan Keifline</h3>
+<div class="staff-title">Applications Systems Analyst</div>
+<div class="contact-box"><a href="mailto:keifline@umd.edu">keifline@umd.edu</a> <span class="phone-text">(301) 405-6941</span></div>
+<p class="bio-text">Susan assists with software configuration, deployment, CRM tools, and system integration for the Business School.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="vgupta.jpg" alt="Vinesh Gupta"></div>
+<h3>Vinesh Gupta</h3>
+<div class="staff-title">Assistant Director for Research Subscriptions &amp; Academic Software Solutions</div>
+<div class="contact-box"><a href="mailto:vinesh@umd.edu">vinesh@umd.edu</a> <span class="phone-text">(301) 405-4245</span></div>
+<p class="bio-text">Vinesh manages departmental tech projects and supports research tools. He holds an MS in Engineering and an MBA in Information Systems.</p>
+</div>
+</div>
+<h2 class="roster-section-title">Service Desk / User Support</h2>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="msardelis.png" alt="Michael Sardelis"></div>
+<h3>Michael Sardelis</h3>
+<div class="staff-title">IT Coordinator</div>
+<div class="contact-box"><a href="mailto:msardeli@umd.edu">msardeli@umd.edu</a> <span class="phone-text">(301) 405-3192</span></div>
+<p class="bio-text">Michael brings a multicultural perspective and passion for user support. He enjoys family time, grilling, and promoting diversity at UMD.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="ajrivera.png" alt="Andrew Jonathan Rivera"></div>
+<h3>Andrew Jonathan "AJ" Rivera</h3>
+<div class="staff-title">IT Coordinator</div>
+<div class="contact-box"><a href="mailto:arivera4@umd.edu">arivera4@umd.edu</a> <span class="phone-text">(301) 314-0857</span></div>
+<p class="bio-text">AJ coordinates service desk efforts, specializing in platform administration. He enjoys parkour, music, and video production.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="bsamson.png" alt="Biniam Samson"></div>
+<h3>Biniam Samson</h3>
+<div class="staff-title">Service Desk Technician (C2)</div>
+<div class="contact-box"><a href="mailto:bsamson2@umd.edu">bsamson2@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Biniam is a cybersecurity major and car enthusiast who enjoys sports and tech. He supports service desk operations at Smith IT.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="jesca.png" alt="Josue Escalante"></div>
+<h3>Josue Escalante</h3>
+<div class="staff-title">Service Desk Technician (C2)</div>
+<div class="contact-box"><a href="mailto:jesca10@umd.edu">jesca10@umd.edu</a> <span class="phone-text">(301) 405-9488</span></div>
+<p class="bio-text">Josue is an Information Systems major providing support at Smith IT. He enjoys soccer and socializing with friends.</p>
+</div>
+</div>
+<h2 class="roster-section-title">Satellite Campus Support</h2>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="mmendez.png" alt="Melissa Mendez"></div>
+<h3>Melissa "Mel" Mendez</h3>
+<div class="staff-title">IT/AV Coordinator</div>
+<div class="contact-box"><a href="mailto:mmendez1@umd.edu">mmendez1@umd.edu</a> <span class="phone-text">(410) 706-0889</span></div>
+<p class="bio-text">Mel supports IT/AV needs for the Baltimore Peninsula campus and Flex MBA program.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="vacant.png" alt="Vacancy"></div>
+<h3>Vacant Position</h3>
+<div class="staff-title">IT/AV Coordinator</div>
+<div class="contact-box"><a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">The DC IT/AV Coordinator supports classes and events at the Ronald Reagan Building.</p>
+</div>
+</div>
+<h2 class="roster-section-title">Classroom (A/V) Support</h2>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="acip.png" alt="Antonio Cipriano"></div>
+<h3>Antonio "Anthony" Cipriano</h3>
+<div class="staff-title">Audio Visual Manager</div>
+<div class="contact-box"><a href="mailto:ascip@umd.edu">ascip@umd.edu</a> <span class="phone-text">(301) 405-6868</span></div>
+<p class="bio-text">Anthony brings 18+ years of AV experience and leads AV system delivery, support, and improvements for Smith classrooms and events.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="rbarnes9.png" alt="Raymond Barnes"></div>
+<h3>Raymond Barnes</h3>
+<div class="staff-title">Senior AV Specialist</div>
+<div class="contact-box"><a href="mailto:rbarnes9@umd.edu">rbarnes9@umd.edu</a> <span class="phone-text">(301) 405-5213</span></div>
+<p class="bio-text">Raymond supports AV operations for events, classrooms, and learning environments at the Smith School of Business.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="vacant.png" alt="Vacancy"></div>
+<h3>Vacant Position</h3>
+<div class="staff-title">AV Specialist</div>
+<div class="contact-box"><a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">VMH AV Specialist responsible for providing support to Smith School instructional facilities.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="vacant.png" alt="Vacancy"></div>
+<h3>Vacant Position</h3>
+<div class="staff-title">AV Specialist</div>
+<div class="contact-box"><a href="mailto:helpme@rhsmith.umd.edu">helpme@rhsmith.umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">VMH AV Specialist responsible for providing support to Smith School instructional facilities.</p>
+</div>
+</div>
+<h2 class="roster-section-title">Smith IT Student Technicians</h2>
+<div class="staff-grid">
+<div class="staff-card">
+<div class="avatar-container"><img src="llittle-2026.png" alt="Lucia Littlefield"></div>
+<h3>Lucia Littlefield</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:littlef@umd.edu">littlef@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Lucia is currently a sophomore at the University of Maryland majoring in Environmental Science and Policy with a planned concentration in Land Use. She aspires to pursue a career in urban planning and geospatial data analysis, and is actively developing her proficiency in GIS. Her goal is to make use of technology to improve people's quality of life by helping design and develop communities, support infrastructure planning, and promote sustainability.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="mnnamoko-2026.png" alt="Michael Nnamoko"></div>
+<h3>Michael Nnamoko</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:mnnamoko@umd.edu">mnnamoko@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Michael Nnamoko is a senior majoring in Information Science at the University of Maryland, College Park. He plans to pursue a future in Data Science. He possesses a positive attitude, a willingness to learn, and a growth mindset.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="mwatso_2026.png" alt="Marquis Watson"></div>
+<h3>Marquis Watson</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:mwatso14@umd.edu">mwatso14@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Marquis Watson is a Junior Civil Engineering student at the University of Maryland, College Park aspiring to be a project manager with his own company one day. He has a strong foundation in problem-solving, collaboration, and leadership. Additionally, his experience includes design work, student leadership within student orgs, volunteer work, and mentoring through academic and community outlets. All in all, he is committed to aspire and contribute within a team to assist communities as a Student AV Technician.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="uzi-2026.png"></div>
+<h3>Uzoma Ogbunigwe</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:uzi@umd.edu">uzi@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Hello, my name is Uzi. I work in AV and IT support at the University of Maryland Robert H. Smith School of Business, where I assist with classroom technology, audiovisual systems, and technical troubleshooting. I&rsquo;m also an undergraduate student studying astronomy, with a minor in video production and an interest in technology.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="arav-2026.png"></div>
+<h3>Arav Grover</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:arav@umd.edu">arav@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Arav is a senior at the University of Maryland majoring in Computer Science with a focus on Machine Learning. He is interested in artificial intelligence, software engineering, and the development of intelligent systems that solve real-world problems. Through his coursework and internship experiences, he has gained hands-on experience with machine learning, full-stack development, and AI-powered applications. He aspires to pursue a career in software engineering and artificial intelligence, with the goal of using technology to build scalable, impactful solutions that improve how people interact with and benefit from modern computing systems.</p>
+</div>
+<div class="staff-card">
+<div class="avatar-container"><img src="jonsoloo-2026.png"></div>
+<h3>Jonathan Solomon</h3>
+<div class="staff-title">Technician</div>
+<div class="contact-box"><a href="mailto:jonsoloo@umd.edu">jonsoloo@umd.edu</a> <span class="phone-text">(301) 405-2269</span></div>
+<p class="bio-text">Jonathan is a senior at the University of Maryland, majoring in Computer Science with a minor in General Business. He has experience with both backend and frontend coding, and he's driven by the idea of building technology and programs that genuinely make people's lives easier, safer, and happier. He's still figuring out exactly where he wants to land in the tech world, but he's excited to keep exploring and gaining new experience along the way.</p>
+</div>
+</div>
+</div>

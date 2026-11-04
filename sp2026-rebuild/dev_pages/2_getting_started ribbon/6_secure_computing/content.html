@@ -1,0 +1,393 @@
+<style>
+  .secure-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .secure-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .secure-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .secure-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .secure-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .secure-header h1 {
+    color: var(--smith-black);
+    margin: 0 0 0.5rem;
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .secure-header p {
+    color: var(--smith-gray-700);
+    margin: 0;
+    max-width: 65ch;
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+
+  .section-card h2 {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: start;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--smith-black);
+    border-bottom: 2px solid var(--smith-gray-200);
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+  }
+
+  .section-card h2::after {
+    content: "";
+    grid-column: 1 / -1;
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 0.5rem;
+    background: var(--smith-red);
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 800;
+  }
+
+  .intro-text,
+  .checklist-item-content p,
+  .checklist-item-content ul,
+  .notice-box p,
+  .warning-callout p {
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .intro-text {
+    margin: 0 0 1rem;
+  }
+
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .checklist-item .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 3rem;
+    width: 3rem;
+    height: 3rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.58rem);
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .checklist-item-content {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .checklist-item-content h3 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .checklist-item-content p {
+    margin: 0 0 0.65rem;
+  }
+
+  .checklist-item-content ul {
+    margin: 0.6rem 0 0;
+    padding-left: 1.2rem;
+  }
+
+  .checklist-item-content ul li {
+    margin-bottom: 0.45rem;
+  }
+
+  .checklist-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-top: 0.8rem;
+  }
+
+  .notice-box,
+  .warning-callout {
+    margin-top: 1.1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(186, 24, 46, 0.22);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box {
+    background: rgba(255, 200, 69, 0.14);
+  }
+
+  .notice-box p {
+    margin: 0 0 0.5rem;
+  }
+
+  .notice-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  .warning-callout {
+    background: rgba(186, 24, 46, 0.055);
+    border-color: rgba(186, 24, 46, 0.28);
+    border-left-color: var(--smith-red-dark);
+  }
+
+  .warning-callout h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 0.65rem;
+    color: var(--smith-red-dark);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .warning-callout p {
+    margin: 0 0 0.65rem;
+  }
+
+  .warning-callout p:last-child {
+    margin-bottom: 0;
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+  }
+
+  .policy-card {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 58px;
+    padding: 0.75rem 0.85rem;
+    color: var(--smith-red);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .policy-card:hover,
+  .policy-card:focus-visible {
+    background: var(--smith-gray-100);
+    border-color: var(--smith-red);
+    text-decoration: none;
+  }
+
+  .policy-card:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  .policy-card .policy-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 2.5rem;
+    width: 2.5rem;
+    height: 2rem;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border-bottom: 2px solid var(--smith-yellow);
+    font-size: max(12pt, 0.62rem);
+    text-align: center;
+  }
+
+  code {
+    padding: 0.1rem 0.35rem;
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: 3px;
+    font-family: Consolas, Monaco, "Andale Mono", monospace;
+    font-size: max(12pt, 0.9em);
+    overflow-wrap: anywhere;
+  }
+
+  .section-card a:not(.policy-card) {
+    color: var(--smith-red);
+    font-weight: 700;
+  }
+
+  .section-card a:not(.policy-card):hover,
+  .section-card a:not(.policy-card):focus-visible {
+    color: var(--smith-red-dark);
+  }
+
+  @media (max-width: 600px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+  }
+</style>
+<div class="secure-container"><!-- HERO HEADER -->
+<div class="secure-header">
+<div class="eyebrow">Getting Started</div>
+<h1>Secure Computing &amp; Cybersecurity</h1>
+<p>Best practices to protect your data, credentials, devices, and communications</p>
+</div>
+</div>
+<!-- SECTION 1: IDENTITY & CREDENTIAL SAFETY -->
+<div class="section-card">
+<h2><span class="badge">1</span> Identity &amp; Credential Safety</h2>
+<div class="checklist"><!-- MFA & Push Fatigue -->
+<div class="checklist-item">
+<div class="icon">📲︎</div>
+<div class="checklist-item-content">
+<h3>MFA Protection &amp; Avoiding Push Fatigue</h3>
+<p>Always use Multi-Factor Authentication (Duo Push) across university systems. <strong>Never approve an unexpected Duo prompt</strong> if you did not just attempt to log in. Attackers may spam your phone with push requests ("push fatigue") hoping you hit approve by mistake.</p>
+</div>
+</div>
+<!-- Password Managers, Strength & Composition -->
+<div class="checklist-item">
+<div class="icon">🔑︎</div>
+<div class="checklist-item-content">
+<h3>Password Requirements &amp; Recommendations</h3>
+<p>Directory ID passwords require 8&ndash;32 characters (15 max for CorporateTime/Oracle), including uppercase, lowercase, and a number/symbol. They expire every 180 days (90 for OIT staff), with a 10-minute lockout after 6 failed attempts.</p>
+<p style="margin-top: 8px;"><strong>Best Practices:</strong> Create long, easy-to-remember passphrases (e.g., <code>RHSmith-is-a-gr3@t-school!</code>) using spaces, typos, and symbols. A 7-character password takes 3 hours to crack, while an 8+ character mixed passphrase can take over 2 years! Store non-UMD credentials in a password manager (Bitwarden, 1Password, or Keeper) and never write passwords on sticky notes.</p>
+</div>
+</div>
+<!-- Phishing, Smishing & Email Security -->
+<div class="checklist-item">
+<div class="icon">🎣︎</div>
+<div class="checklist-item-content">
+<h3>Phishing, Email Security &amp; Legitimacy Checks</h3>
+<p>Be vigilant against phishing, text scams ("smishing"), and phone impersonations ("vishing"). Attempts <strong>will</strong> be made to get personal details from you. To confirm an email is genuinely from UMD/DIT, look for these indicators:</p>
+<ul>
+<li><strong>Personalized Greetings:</strong> Official emails address you by name, never generic terms like "user" or "customer."</li>
+<li><strong>No Direct Links:</strong> Legitimate administrative notices won't link directly; they'll direct you to type standard URLs yourself (e.g., <a href="https://account.umd.edu" target="_blank" rel="noopener">account.umd.edu</a>). Never click links in unsolicited emails.</li>
+<li><strong>PGP Signatures:</strong> Official DIT communications contain a PGP digital signature verifiable via the <a href="https://umd.service-now.com/itsupport?id=kb_article&amp;sys_id=da0cc42fdbf20380f7ccfff31d96190b" target="_blank" rel="noopener noreferrer">DIT Knowledge Repository</a>.</li>
+</ul>
+<div class="checklist-links"><a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank" rel="noopener noreferrer">🌐︎ FTC Phishing Guide</a> <a href="https://it.umd.edu/security" target="_blank" rel="noopener noreferrer">🛡︎ DIT Security Portal</a></div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: DEVICE, DATA SECURITY & EMAIL POLICY -->
+<div class="section-card">
+<h2><span class="badge">2</span> Device, Data &amp; Policy Compliance</h2>
+<div class="checklist"><!-- Endpoint Protection & Updates -->
+<div class="checklist-item">
+<div class="icon">🔄︎</div>
+<div class="checklist-item-content">
+<h3>Automatic Updates &amp; Antivirus</h3>
+<p>Enable automatic updates on Windows, macOS, and web browsers (Chrome, Edge, Firefox, Safari) to patch security flaws. Ensure built-in real-time protection is active on personal devices, or download enterprise software via <a href="https://terpware.umd.edu" target="_blank" rel="noopener noreferrer">Terpware</a>.</p>
+<p style="margin-top: 8px;"><strong>Device Maintenance &amp; Active Directory Policy:</strong> All University-owned devices must be powered on and logged into at least once a month to ensure critical security patches and updates are applied. Furthermore, the University's Active Directory (AD) network requires devices to check in at least once every 90 days; devices that fail to check in within this window will be flagged as "dormant" and removed from AD trust relationships.</p>
+</div>
+</div>
+<!-- Data Handling & Cloud Storage -->
+<div class="checklist-item">
+<div class="icon">☁︎</div>
+<div class="checklist-item-content">
+<h3>Data Sensitivity &amp; Approved Cloud Storage</h3>
+<p>Protect university, student (FERPA), and research data by storing it strictly in institutional storage such as UMD Google Drive or Box. Never store confidential UMD data on unapproved consumer platforms or personal unencrypted drives.</p>
+<div class="checklist-links"><a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&amp;sysparm_article=KB0012438" target="_blank" rel="noopener noreferrer">📄︎ UMD Data Classification Standard</a> <a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&amp;sysparm_article=KB0018793" target="_blank" rel="noopener noreferrer">📊︎ UMD Data Classifications and Applicable Services</a></div>
+</div>
+</div>
+<!-- Physical Security & Screen Locking -->
+<div class="checklist-item">
+<div class="icon">🔒︎</div>
+<div class="checklist-item-content">
+<h3>Physical Security &amp; Screen Locking</h3>
+<p>Always lock your computer screen when stepping away from your desk, office, or classroom podium:<br>&bull; <strong>Windows:</strong> Press <code>Win + L</code><br>&bull; <strong>Mac:</strong> Press <code>Cmd + Ctrl + Q</code></p>
+</div>
+</div>
+</div>
+<!-- Email Export & Forwarding Policy Notice -->
+<div class="warning-callout">
+<h3>⚠︎ Email Exporting &amp; Forwarding Policy</h3>
+<p><strong>The export or forwarding of work emails and data to external email accounts is strictly prohibited.</strong></p>
+<p>Commercial email providers (e.g., <code>@gmail.com</code>, <code>@yahoo.com</code>, <code>@comcast.net</code>) and unsanctioned cloud platforms do not satisfy legal or security requirements for storing PII, FERPA-protected student records, or confidential data. In accordance with the <a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&amp;sysparm_article=KB0015077" target="_blank" rel="noopener noreferrer">University's IT-14 Standard Institutional Email</a>, forwarding work emails to non-University personal accounts is strictly prohibited. Faculty and staff who transfer data outside authorized channels assume personal legal liability and responsibility for data safety, regulatory compliance, and legal discovery requests. Smith IT will not configure automated transfers to personal systems.</p>
+</div>
+<div class="notice-box">
+<p><strong>Working Off-Campus?</strong> When using untrusted public Wi-Fi networks (airports, hotels, coffee shops), always connect to the <a href="https://itsupport.umd.edu/itsupport?id=kb_article_view&amp;sysparm_article=KB0010576" target="_blank" rel="noopener noreferrer">GlobalProtect Campus VPN</a> to keep your network connection fully encrypted.</p>
+</div>
+</div>

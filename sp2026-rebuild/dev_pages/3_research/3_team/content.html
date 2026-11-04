@@ -1,0 +1,289 @@
+<style>
+  .research-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .research-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .research-header {
+    color: var(--smith-white);
+    background: linear-gradient(125deg, var(--smith-red), var(--smith-red-dark));
+    border-left: 6px solid var(--smith-yellow);
+    padding: 2.2rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .research-header .eyebrow {
+    margin: 0 0 0.55rem;
+    color: var(--smith-yellow);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .research-header h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-white);
+    font-size: max(12pt, clamp(2rem, 4vw, 2.8rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .research-header p {
+    margin: 0;
+    max-width: 65ch;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-radius: var(--smith-radius);
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+  }
+
+  .section-card h2 {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    align-items: start;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    color: var(--smith-black);
+    border-bottom: 2px solid var(--smith-gray-200);
+    font-size: max(12pt, clamp(1.35rem, 2vw, 1.8rem));
+    line-height: 1.2;
+  }
+
+  .section-card h2::after {
+    content: "";
+    grid-column: 1 / -1;
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 0.5rem;
+    background: var(--smith-red);
+  }
+
+  .section-card h2 .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 3px solid var(--smith-yellow);
+    border-radius: 50%;
+    font-size: max(12pt, 0.55rem);
+    font-weight: 800;
+  }
+
+  .media-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .media-content {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .media-content p {
+    margin: 0 0 0.9rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.02rem);
+    line-height: 1.7;
+  }
+
+  .media-image {
+    display: flex;
+    flex: 0 1 40%;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .media-image img {
+    display: block;
+    width: 100%;
+    max-width: 445px;
+    height: auto;
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 1rem;
+  }
+
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    padding: 1.1rem;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+  }
+
+  .team-card h3 {
+    margin: 0 0 0.4rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+    font-weight: 700;
+  }
+
+  .team-card .role {
+    margin: 0;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.95rem);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .contact-banner {
+    margin-top: 1.4rem;
+    padding: 1.1rem 1.2rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-yellow);
+  }
+
+  .contact-banner h3 {
+    margin: 0 0 0.45rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .contact-banner p {
+    margin: 0 0 1rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .btn-link {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-secondary {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border-color: var(--smith-red);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  @media (max-width: 700px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .media-layout {
+      flex-direction: column-reverse;
+    }
+
+    .media-image {
+      flex-basis: auto;
+      width: 100%;
+    }
+
+    .media-image img {
+      width: min(100%, 445px);
+      margin: 0 0 0 auto;
+    }
+  }
+</style>
+<div class="research-container"><!-- HERO HEADER -->
+<div class="research-header">
+<div class="eyebrow"> Research Support</div>
+<h1>Meet the Research Support Team</h1>
+<p>Cross-functional IT consulting and solutions for Business School research initiatives</p>
+</div>
+</div>
+<!-- ABOUT THE TEAM SECTION -->
+<div class="section-card">
+<div class="media-layout"><!-- Text Content Area (Left) -->
+<div class="media-content">
+<p>Our Research Support Team employs a cross-functional approach, ensuring comprehensive solutions by harnessing the diverse skills of our members. We assist with every aspect of your research project, from gathering requirements and consulting on grant proposals to defining technology solutions for both local and cloud services. We also capture specific data and provide solutions for easier analysis, addressing any area needed for your project's success.</p>
+<p>When specialized skills outside our expertise are required, we collaborate with external colleagues. If you don't know someone who can help get your project off the ground, we do!</p>
+</div>
+<!-- Media Image (Right) -->
+<div class="media-image"><img src="researchteam.png" alt="Research Support Team" width="445" height="296"></div>
+</div>
+<!-- ACTION BANNER -->
+<div class="contact-banner">
+<h3>Connect with Research Support</h3>
+<p>Get in touch to discuss your computing needs, grant technical requirements, or data solutions.</p>
+<div class="banner-actions"><a class="btn-link" href="mailto:researchsupport@rhsmith.umd.edu">Email Research Support</a> <a class="btn-link btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSejA-RZPUuSwmAq-Gq5IvNTHFnecJNwJi8uXStix_HttAwaUA/viewform?usp=sf_link">Research Consultation Form</a></div>
+</div>
+</div>
+<!-- TEAM ROSTER SECTION -->
+<div class="section-card">
+<h2><span class="badge">👥︎</span> Team Members</h2>
+<div class="team-grid">
+<div class="team-card">
+<h3>Holly Mann</h3>
+<p class="role">Director, Office of Smith IT<br>WRDS Representative</p>
+</div>
+<div class="team-card">
+<h3>Vinesh Gupta</h3>
+<p class="role">Assistant Director<br>WRDS Representative</p>
+</div>
+<div class="team-card">
+<h3>Chris Gleeson</h3>
+<p class="role">Systems &amp; Network Engineer</p>
+</div>
+<div class="team-card">
+<h3>Joel Veihmeyer</h3>
+<p class="role">Jr Systems &amp; Network Engineer</p>
+</div>
+</div>
+</div>

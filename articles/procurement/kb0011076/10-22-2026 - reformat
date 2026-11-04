@@ -1,0 +1,239 @@
+<div class="smith-it-banner" style="max-width: 800px; margin: 0 auto 20px; border-radius: 4px; overflow: hidden; font-family: Verdana, sans-serif;">
+<div style="display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; border-left: 6px solid #E21833; padding: 16px 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div style="display: flex; align-items: center; gap: 16px;"><img src="umd-formal-seal.png" alt="UMD Seal" width="64" height="64">
+<div>
+<p style="margin: 0; font-size: 20pt; font-weight: bold; color: #242424;">The Office of Smith IT</p>
+<p style="margin: 4px 0 0; font-size: 12pt; font-style: italic; color: #454545;">Robert H. Smith School of Business</p>
+</div>
+</div>
+<div style="text-align: right; font-size: 10pt; line-height: 1.2; color: #242424;">
+<p style="margin: 0;">Van Munching Hall</p>
+<p style="margin: 0;">Suite 3520</p>
+<p style="margin: 0;">301-405-2269</p>
+<p style="margin: 0;">helpme@rhsmith.umd.edu</p>
+</div>
+</div>
+</div>
+<div class="smith-body-wrapper" style="font-family: Verdana, Geneva, sans-serif; font-size: 12pt; color: #333333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+<h1 style="font-size: 18pt; color: #e21833; font-weight: bold; font-family: Verdana; margin: 20px 0 5px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Shell Shop Order in Workday</h1>
+<div style="background-color: #f9f9f9; padding: 10px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 11pt; text-align: center; border: 1px solid #eee;"><a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#storefront" rel="nofollow">Shell Shop Storefront</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#completion" rel="nofollow">Completion of the REQ</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#attachments" rel="nofollow">Document Attachments</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#after" rel="nofollow">Post-Submission Steps</a></div>
+<p style="margin-bottom: 10pt;">The following are step-by-step instructions for completing a &ldquo;Shell Shop Order&rdquo; in Workday. Use Shell Shop orders for any company listed as a Storefront supplier in Shell Shop. If the supplier is not a Shell Shop supplier, use Non-Catalog Orders in Workday instructions.</p>
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: Labor Cost Configuration for Capital Assets</strong>
+<p style="margin: 0 0 10pt 0;">When a Capital Asset and Labor/Installation is included on the requisition, calculate the specific labor cost allocation using the following formula sequence:</p>
+<div style="background-color: #fff; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 4px; font-family: monospace; font-size: 10pt; margin-bottom: 12pt; color: #444;">1. [Capital Asset Amount] x 100 = [Base Multiplier]<br>2. [Base Multiplier] &divide; [Total Labor/Installation Amount] = [Factor]<br>3. [Factor] x 100 = <strong>Labor Cost Allocation</strong></div>
+<strong style="color: #242424; display: block; margin-bottom: 4px;">Example:</strong>
+<p style="margin: 0 0 10pt 0; font-family: monospace; background-color: #fff; padding: 8px 12px; border: 1px solid #eee; border-radius: 4px; display: inline-block;">$5,200 (CA) x 100 = 520,000 &divide; $33,000 (L) = 15.7575 x 100 = <strong>$1,575.00</strong></p>
+<p style="margin: 0 0 8pt 0; font-style: italic; color: #555;">*This calculated amount represents the labor cost for the individual Capital Asset. It must be entered as a distinct line item on the REQ and subsequently subtracted from the gross total of the primary Installation/Labor line item. Under <strong>"Review Required"&nbsp;</strong>use&nbsp;<strong>"Modify System or Asset"</strong>, and in the memo of this line item, note the description of the Capital Asset for labor cost.</p>
+<p style="margin: 0; font-style: italic; color: #555;">** Subtract all individual labor cost entries from the total cost of the Installation/Labor line item.</p>
+</div>
+<h2 style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Required Procurement Resource Libraries</h2>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7; font-size: 11pt;">
+<li style="margin-bottom: 8pt;"><strong>Smith IT Procurement Catalog (ServiceNow):</strong> <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/procurement" rel="nofollow">https://rhs.umd.edu/procurement</a><br>Used to log purchases and upload critical transaction documents.</li>
+<li style="margin-bottom: 8pt;"><strong>Workday Purchases Tracker (Google Sheets):</strong> <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/wdpurchase" rel="nofollow">https://rhs.umd.edu/wdpurchase</a><br>Centralized log for all orders submitted through Workday.</li>
+<li style="margin-bottom: 8pt;"><strong>Procurement Codes Reference Chart (Google Sheets):</strong> <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/pcodes" rel="nofollow">https://rhs.umd.edu/pcodes</a><br>Contains Commodity Codes, Spend/Object Codes, USource Department Numbers, and F&amp;A Business Manager assignments.</li>
+</ul>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=72c9591a47841f142590bcab116d4324" alt="Requisition Form Panel" width="217" height="429"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Requisition form with profile details and required accounting fields.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;"><strong>System Autofill Note:</strong> Selecting the non-catalog request wizard automatically maps internal profile information into the form fields. These default system values must remain intact.</p>
+<p style="margin-bottom: 10pt;"><strong>Critical Accounting &amp; Logistics Attributes Required:</strong></p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;"><strong>Requisition Type:</strong> Determines operational routing paths (refer to the classification map below).</li>
+<li style="margin-bottom: 6pt;"><strong>USource Number:</strong> Identifies the specific department accounts covering the acquisition. Cross-reference these indices on the <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/pcodes" rel="nofollow">Procurement Codes Sheet</a>.</li>
+<li style="margin-bottom: 6pt;"><strong>Location Asset ID:</strong> Destination where the items will be placed. Enter the room designation (e.g., 3520J) and select the corresponding facility mapping from the auto-complete array list.</li>
+</ul>
+<p style="margin-bottom: 10pt;"><em>*Note: Line items scaling above $5,000 threshold values require specific configurations in the 'Review Required' attribute block.</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=3ac9591a47841f142590bcab116d430c" alt="Requisition Type Choices" width="147" height="122"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Select Catalog – Shell Shop for storefront orders.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;"><strong>Requisition Type Classification Map for Shell Shop Transactions</strong></p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;"><strong>Catalog &ndash; Shell Shop:</strong> This will be the chosen type for all Storefront suppliers in Shell Shop. (<span style="color: #e21833;">For these instructions, all choices will be for Shell Shop</span>)</li>
+<li style="margin-bottom: 6pt;"><strong>Delegated-Standard PO:</strong> Standard operational selection criteria utilized for requests remaining completely under the $25,000 cap.</li>
+<li style="margin-bottom: 6pt;"><strong>Delegated &ndash; Supplier Agreement:</strong> Mandatory configuration selected if vendor terms dictate countersigning signatures on contractual agreements prior to executing purchase orders.</li>
+<li style="margin-bottom: 6pt;"><strong>Non-Delegated &ndash; All Others:</strong> System criteria flag used for singular transactions extending beyond the $25,000 ceiling.</li>
+<li style="margin-bottom: 6pt;"><strong>Non-Delegated &ndash; Multi-Year Agreement:</strong> Selected if contractual footprints span across multi-year cycles. Annual operational cost splits must be broken out into clear line-item entries.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="storefront" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Shell Shop Storefront</h2>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 1.</span> Open Shell Shop</h3>
+<p style="margin-bottom: 10pt;">To access the Shell Shop storefront, choose Connect and it will redirect you to the page.</p>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=b2c9591a47841f142590bcab116d432d" alt="Connect Button Banner" width="617" height="142"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Choose Connect to open the Shell Shop storefront.</em></p>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 2.</span> Choose a supplier</h3>
+<p style="margin-bottom: 10pt;">Choose the supplier that you are requesting Goods or Services from.&nbsp;</p>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=bec9591a47841f142590bcab116d4325" alt="Storefront Category Options" width="192" height="194"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Choose the supplier category that matches the purchase.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;">The storefront suppliers in Shell Shop are:</p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;"><strong>General Supplies:</strong> Guy Brown, Rudolph&rsquo;s Office, and B&amp;H Photo Video</li>
+<li style="margin-bottom: 6pt;"><strong>Technology Equipment &amp; Supplies:</strong> Dell, CDW, and GovConnection</li>
+<li style="margin-bottom: 6pt;"><strong>Facilities &amp; MRO Supplies:</strong> Grainger, Graybar, McMaster-Carr, MSC Industrial, and Fastenal</li>
+<li style="margin-bottom: 6pt;"><strong>Research &amp; Scientific Supplies:</strong> Fisher Scientific, Life Technologies, Neta Scientific, VWR, and Thor Labs</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 3.</span> Find the supplier quote</h3>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=fac9591a47841f142590bcab116d4327" alt="CDW Storefront Search" width="400" height="191"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Search by the quote number provided by CDW.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;">In this example, we will use CDW as the supplier for the request.</p>
+<p style="margin-bottom: 10pt;">In the Search bar, add the quote number received from CDW to locate the storefront quote.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 4.</span> Add the quote to your cart</h3>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 20%;"><col style="width: 20%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 10px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=b6c9591a47841f142590bcab116d430e" alt="CDW Add to Cart" width="131" height="256"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Add the quote to your cart.</em></p></td>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=bac9591a47841f142590bcab116d4349" alt="CDW Checkout Options" width="152" height="242"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Proceed to checkout after adding the quote.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;"><strong>Steps to complete &ldquo;Checkout&rdquo; for CDW.</strong></p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;">Once the quote appears, choose &ldquo;<strong>Add to Cart</strong>&rdquo;</li>
+<li style="margin-bottom: 6pt;">Once the Item has been added to the cart, choose &ldquo;<strong>Checkout</strong>&rdquo;</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 5.</span> Review the cart</h3>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=f2c9591a47841f142590bcab116d4310" alt="Item Verification Screen" width="535" height="170"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Confirm the listed items match the quote before continuing.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;">An item list appears, and once verified it is correct, choose &ldquo;<strong>Checkout</strong>&rdquo;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 18px 0 8px;"><span style="color: #e21833;">Step 6.</span> Add the memo</h3>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=32c9591a47841f142590bcab116d4312" alt="Memo Field Panel" width="358" height="157"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Enter the project, fiscal year, vendor, and item details before checkout.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;">Required prior to &ldquo;Checkout&rdquo;</p>
+<p style="margin-bottom: 10pt;"><strong>Memo Field:</strong> Re-apply the strict string index layout applied at row levels:<br>Project Code / FY / Vendor Name / Item Details</p>
+<p style="margin-bottom: 10pt;">Once all &ldquo;Memo&rdquo; have been documented, choose &ldquo;Checkout&rdquo; to continue with the REQ.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="completion" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Completion of the REQ</h2>
+<p style="margin-bottom: 10pt;">The comprehensive breakdown below details the remaining administrative information inputs required during order checkout phases to ensure successful routing logs.</p>
+<div style="background-color: #fafafa; padding: 14px 18px; border-left: 4px solid #454545; border-radius: 4px; margin-bottom: 16px; font-size: 11pt;"><strong style="display: block; color: #242424; margin-bottom: 8px;">Checkout checklist</strong>
+<ul style="margin: 0; padding-left: 20px; line-height: 1.7;">
+<li style="margin-bottom: 8pt;"><strong>Memo to Suppliers Block:</strong> Input your reference quote identifiers along with target end-user / structural destination profiles.<br><span style="display: inline-block; background-color: #fff; border: 1px solid #eee; padding: 4px 8px; margin-top: 4px; font-family: monospace;">Format Example: Quote #987654 - Attn: Jane Doe / Room 3520</span></li>
+<li style="margin-bottom: 8pt;"><strong>Internal Memo Field:</strong> Re-apply the strict string index layout applied at row levels:<br><span style="display: inline-block; background-color: #fff; border: 1px solid #eee; padding: 4px 8px; margin-top: 4px; font-family: monospace;">Project Code / FY / Vendor Name / Item Details</span></li>
+<li style="margin-bottom: 8pt;"><strong>Audit Checks:</strong> Scroll through the system autofill text fields to confirm the accuracy of institutional profile information.</li>
+</ul>
+</div>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=7ec9591a47841f142590bcab116d4313" alt="Workday Checkout Panel" width="469" height="301"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Review supplier memo, internal memo, and requisition details.</em></p>
+<div style="background-color: #f9f9f9; padding: 10px 16px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 12px; font-size: 11pt;"><strong>Requested Delivery Date Field:</strong> Open the system calendar dialog and specify the exact date the baseline document packet is being submitted to workflows.</div>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=fec9591a47841f142590bcab116d432e" alt="Workday Delivery Date Scheduling Form Panel" width="686" height="249"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Set the requested delivery date for workflow submission.</em></p>
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 15px 20px; border-radius: 4px; margin: 24px 0 20px; font-size: 11pt;"><strong style="color: #a94442; display: block; margin-bottom: 8px; font-size: 12pt;">Line Item Financial Audit Guardrails (&gt;$5K Rules)</strong>
+<ul style="padding-left: 20px; margin: 0; line-height: 1.7;">
+<li style="margin-bottom: 8pt;"><strong>Review Required Flag:</strong> This dropdown choice is absolutely mandatory for each singular line element containing an individual <strong>Unit Cost of $5,000 or greater</strong>.</li>
+<li style="margin-bottom: 8pt;">Select the option attribute value marked <strong>"New"</strong> in most instances. Alternate values are reserved for formal Change Orders processed by designated Cost Center managers.</li>
+<li style="margin-bottom: 8pt;"><strong>Additional Worktags Warning:</strong> <strong>Do NOT delete, overwrite, or mutate</strong> any automatically mapped strings or values populated inside this column field.</li>
+</ul>
+</div>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=3ac9591a47841f142590bcab116d4329" alt="Workday Line Item Worktags and Asset Valuation Field Panel" width="689" height="236"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Review line-item worktags and asset valuation; leave auto-populated values intact.</em></p>
+<p style="margin-bottom: 10pt;"><em>*Note on Services: Service lines require no secondary data entries during checkout stages, as full lifecycle dates remain captured during initial line creation.</em></p>
+<h2 id="attachments" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Document Attachments Module</h2>
+<p style="margin-bottom: 10pt;">To finalize compliance metrics, drag and drop target file sheets directly into the active UI Drop Zone, or select files manually via system explorers.</p>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=3ec9591a47841f142590bcab116d4315" alt="Workday Drag and Drop File Upload Zone Interface" width="566" height="172"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Add the required supporting documents to the upload queue.</em></p>
+<p style="margin-bottom: 10pt;">Once files populate the upload queue, you must apply explicit indexing metrics to each item:</p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 8pt;">Assign a matching <strong>Attachment Category</strong> from the default profile dictionary catalog.</li>
+<li style="margin-bottom: 8pt;">Add a concise document summary within the <strong>Comments</strong> block or paste the standardized <strong>Internal Memo</strong> string.</li>
+<li style="margin-bottom: 8pt;">Ensure the checkbox option labeled <strong>"External"</strong> remains <span style="text-decoration: underline;">unchecked</span>.</li>
+</ul>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=f6c9591a47841f142590bcab116d434b" alt="Workday Document Comment and Privacy Attribute Controls" width="566" height="123"></p>
+<p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Set the attachment category and comments; leave External unchecked.</em></p>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=76c9591a47841f142590bcab116d432b" alt="Workday Attachment Category Dropdown Selection Panel" width="223" height="223"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Choose the attachment category that best describes each file.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;"><strong>Attachment Category Selection Matrix</strong></p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;"><strong>Delegated Agreement Requiring Signature:</strong> Maps to any contract, software licensing agreement, or legal text sheet requiring formal UMD administrative signature clearance.</li>
+<li style="margin-bottom: 6pt;"><strong>Quote:</strong> Standard vendor itemization invoice/cost breakdown files.</li>
+<li style="margin-bottom: 6pt;"><strong>Scope of Work:</strong> Detailed technical sheets mapping exact operational tasks to be completed by the contract vendor.</li>
+<li style="margin-bottom: 6pt;"><strong>Supporting Documentation:</strong> General supplemental logs covering validation proofs, single-source justifications, or general corporate Terms &amp; Conditions documents.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="margin-top: 20px; margin-bottom: 20px;" align="left">
+<table style="border: none; border-collapse: collapse; width: 100%;"><colgroup><col style="width: 40%;"><col style="width: 60%;"></colgroup>
+<tbody>
+<tr>
+<td style="vertical-align: top; padding: 10px 15px 10px 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=36c9591a47841f142590bcab116d434d" alt="Workday Workflow Final Submit Button Confirmation Screen" width="296" height="231"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Submit after reviewing line items and attachment labels.</em></p></td>
+<td style="vertical-align: top;">
+<p style="margin-bottom: 10pt;"><strong>Submitting the REQ</strong></p>
+<p style="margin-bottom: 10pt;">Once all entries are fully balanced and attachments properly labeled, click the green <strong>"Submit"</strong> action button to trigger the institutional procurement lifecycle.</p>
+<ul style="margin-bottom: 10pt; padding-inline-start: 24px;">
+<li style="margin-bottom: 6pt;"><strong>Approval Route 1:</strong> Form review transitions to the localized Cost Center designees and Business Managers mapped to the specific department USource string.</li>
+<li style="margin-bottom: 6pt;"><strong>Approval Route 2:</strong> Following local clearance, files transfer to the Campus Procurement Level for final Purchase Order (PUR) generation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="after" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">Post-Submission Logging Steps</h2>
+<p style="margin-bottom: 10pt;">The instance processing screen displays your official 10-digit Requisition identity handle (e.g., <strong>REQ-XXXXXXXXXX</strong>).</p>
+<div style="background-color: #fff3f3; padding: 15px 20px; border-left: 4px solid #e21833; border-radius: 4px; margin-bottom: 20px; font-size: 11pt;"><strong>Mandatory Tracking Requirement:</strong> You must immediately log this active REQ string profile inside the shared organizational databases below to ensure operational alignment:
+<ul style="padding-left: 20px; margin: 8px 0 0; line-height: 1.7;">
+<li style="margin-bottom: 8pt;"><strong>Workday Purchases Sheet (Google Sheets Log):</strong> <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/wdpurchase" rel="nofollow"><strong>https://rhs.umd.edu/wdpurchase</strong></a></li>
+<li style="margin-bottom: 8pt;"><strong>Smith IT Procurement Tracker (ServiceNow Catalog):</strong> <a style="color: #0563c1; text-decoration: underline;" href="https://rhs.umd.edu/procurement" rel="nofollow"><strong>https://rhs.umd.edu/procurement</strong></a></li>
+</ul>
+</div>
+<p style="text-align: center; margin-bottom: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%; height: auto;" src="/sys_attachment.do?sys_id=72c9591a47841f142590bcab116d434f" alt="Workday Requisition Successful Submission Confirmation Dialogue Banner" width="594" height="202"></p>
+<p style="margin: 6px 0 10pt; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Workday confirmation displayed after the requisition is submitted.</em></p>
+</div>

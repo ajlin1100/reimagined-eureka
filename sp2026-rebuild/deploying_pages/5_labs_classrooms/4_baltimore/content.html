@@ -1,0 +1,835 @@
+<style>
+  /* Base Container & Typography */
+  .baltimore-campus-container {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Hero Header Section */
+  .hero-card {
+    background: linear-gradient(135deg, #ba182e 0%, #8d1324 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 36px 32px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-card h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: max(12pt, 2.1em);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .hero-card .subtitle {
+    font-size: max(12pt, 1.1em);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-card .address-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: max(12pt, 0.95em);
+    color: #f7f7f7;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Campus Image Banner */
+  .campus-image-container {
+    box-sizing: border-box;
+    height: 650px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e6e6e6;
+  }
+
+  .campus-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Section Cards */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .section-card h2 {
+    color: #ba182e;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: max(12pt, 1.4em);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f7f7f7;
+    padding-bottom: 12px;
+  }
+
+  /* Facility Overview Highlights Grid */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+
+  .overview-item {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .overview-item .icon {
+    font-size: max(12pt, 1.4em);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .overview-item div h3 {
+    margin: 0 0 4px 0;
+    font-size: max(12pt, 0.98em);
+    color: #ba182e;
+  }
+
+  .overview-item div p {
+    margin: 0;
+    font-size: max(12pt, 0.88em);
+    color: #454545;
+    line-height: 1.4;
+  }
+
+  /* Grid Layouts */
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  /* Information Boxes */
+  .info-box {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .info-box h3 {
+    margin: 0 0 8px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .info-box p {
+    margin: 0 0 16px 0;
+    font-size: max(12pt, 0.92em);
+    color: #454545;
+  }
+
+  /* Technology Equipment List */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .tech-item {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tech-item .icon {
+    font-size: max(12pt, 1.1em);
+    flex-shrink: 0;
+  }
+
+  /* Action Alert Banners */
+  .alert-banner {
+    background-color: #f7f7f7;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .alert-banner p {
+    margin: 0;
+    font-size: max(12pt, 0.92em);
+    color: #8d1324;
+  }
+
+  /* Tip Notice Box */
+  .notice-box {
+    background-color: #fff7df;
+    border: 1px solid #f0d27a;
+    border-left: 4px solid #ba182e;
+    border-radius: 0 6px 6px 0;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .notice-box h4 {
+    margin: 0 0 6px 0;
+    color: #8d1324;
+    font-size: max(12pt, 0.98em);
+  }
+
+  .notice-box p {
+    margin: 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+  }
+
+  /* Network Services Grid */
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .network-card {
+    background: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .network-card h3 {
+    margin: 0 0 6px 0;
+    color: #ba182e;
+    font-size: max(12pt, 1.1em);
+  }
+
+  .network-card p {
+    margin: 0 0 12px 0;
+    font-size: max(12pt, 0.9em);
+    color: #454545;
+    line-height: 1.5;
+  }
+
+  /* Interactive Buttons */
+  .btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ba182e;
+    color: #ffffff !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-action:hover {
+    background-color: #8d1324;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: transparent;
+    border: 1px solid #ba182e;
+    color: #ba182e !important;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: max(12pt, 0.88em);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #f7f7f7;
+  }
+
+  a {
+    color: #ba182e;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="baltimore-campus-container"><!-- HERO HEADER -->
+<div class="hero-card">
+<p class="eyebrow">Labs &amp; Classrooms</p>
+<h1>Robert H. Smith School of Business</h1>
+<div class="subtitle">Baltimore Peninsula</div>
+<div class="address-badge">📍︎ Rye Street Market, Floor 3 &bull; 2424 Distillery Street, Baltimore, Maryland 21230</div>
+</div>
+</div>
+<!-- CAMPUS IMAGE -->
+<div class="campus-image-container"><img src="balt_pen.jpg" alt="Robert H. Smith School of Business at Baltimore Peninsula" width="792" height="594"></div>
+<!-- LOCATION OVERVIEW & DIRECTIONS -->
+<div class="section-card">
+<h2>🏢︎ Campus Overview &amp; Location</h2>
+<p>The Business School occupies a premier 3rd-floor facility featuring expansive views of the Baltimore Peninsula. Situated steps away from top dining, retail, and industry partners, this modern space supports advanced business education, executive learning, and collaborative research.</p>
+<div class="overview-grid">
+<div class="overview-item">
+<div class="icon">🏫︎</div>
+<div>
+<h3>Smart Classrooms</h3>
+<p>Fully technology-equipped spaces designed for interactive teaching and hybrid delivery.</p>
+</div>
+</div>
+<div class="overview-item">
+<div class="icon">👥︎</div>
+<div>
+<h3>Break-Out Rooms</h3>
+<p>Dedicated team breakout spaces for small group collaboration and study sessions.</p>
+</div>
+</div>
+<div class="overview-item">
+<div class="icon">🤝︎</div>
+<div>
+<h3>Flexible Spaces</h3>
+<p>Adaptable areas designed for networking events, workshops, and industry convenings.</p>
+</div>
+</div>
+<div class="overview-item">
+<div class="icon">💼︎</div>
+<div>
+<h3>Staff Offices</h3>
+<p>On-site administrative and operational support offices to assist faculty and students.</p>
+</div>
+</div>
+</div>
+<div style="margin-top: 24px;">
+<div class="info-box">
+<div>
+<h3>Directions &amp; Visitor Details</h3>
+<p>Find full commuting directions, transit options, and facility information on MBA Networth's Baltimore Campus page.</p>
+</div>
+<div><a class="btn-outline" href="https://networth.rhsmith.umd.edu/smith/campus/baltimore" target="_blank" rel="noopener">View Baltimore Campus Information ↗</a></div>
+</div>
+</div>
+</div>
+<!-- CLASSROOMS & AUDIOVISUAL TECH -->
+<div class="section-card">
+<h2>🏫︎ Classroom Technology</h2>
+<p>Every classroom at the Baltimore Peninsula facility is configured with standardized instruction technology:</p>
+<div class="tech-grid">
+<div class="tech-item"><span class="icon">🖥︎</span> Instructor PC with Standard Software</div>
+<div class="tech-item"><span class="icon">🎛︎</span> Built-In AV Control System</div>
+<div class="tech-item"><span class="icon">🔊︎</span> Program &amp; Speech Reinforcement Sound</div>
+<div class="tech-item"><span class="icon">📹︎</span> In-Room Videoconferencing Cameras</div>
+<div class="tech-item"><span class="icon">🎙︎</span> Array Microphones for In-Room Recording</div>
+<div class="tech-item"><span class="icon">📶︎</span> Campus WiFi (UMD Directory &amp; eduroam)</div>
+<div class="tech-item"><span class="icon">💻︎</span> HDMI &amp; BYOD Laptop Projector Links</div>
+</div>
+<p style="font-size: max(12pt, 0.9em); color: #454545; margin-top: 16px;">Faculty members bringing personal laptops can easily connect to classroom projectors. Contact on-site Baltimore tech support for assistance with display setup or audio routing.</p>
+<div class="alert-banner">
+<p><strong>Need additional software installed?</strong> Submit a request using the standard Smith IT form.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;"><a class="btn-outline" href="https://umdrhsmithlive.service-now.com/sp?id=software_list" target="_blank" rel="noopener">View Software List ↗</a> <a class="btn-action" href="https://docs.google.com/forms/d/e/1FAIpQLSdHklEeLfwFJpdwu9W5nFTTBmtQEudwxkWeR-idjT4Rtnq6Ng/viewform" target="_blank" rel="noopener">Request Software ↗</a></div>
+</div>
+</div>
+<!-- PRINTING SERVICES -->
+<div class="section-card">
+<h2>🛈︎ Printing &amp; Document Services</h2>
+<p>The suite contains <strong>two networked multifunction printers</strong> available for student, faculty, and staff use.</p>
+<p style="font-size: max(12pt, 0.92em); color: #454545;">To print from a personal laptop or device, connect to the printer network by following the step-by-step configuration instructions posted on or adjacent to each printer station.</p>
+</div>
+<!-- ACCOUNT AUTHENTICATION & PORTALS -->
+<div class="section-card">
+<h2>🔐︎ Authentication &amp; Academic Portals</h2>
+<p>Your <strong>University Directory ID (UMID)</strong> serves as your single credential to access core digital systems across all UMD campuses.</p>
+<div class="grid-2col" style="margin-top: 16px;">
+<div class="info-box">
+<div>
+<h3>Virtual Desktop &amp; Learning Systems</h3>
+<p>Use your Directory ID to log in to virtualized software labs and course portals.</p>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;"><a class="btn-outline" href="https://umdrhsmithlive.service-now.com/sp?id=vsmith" target="_blank" rel="noopener">vSmith Access ↗</a> <a class="btn-outline" href="https://elms.umd.edu/" target="_blank" rel="noopener">Canvas ELMS ↗</a></div>
+</div>
+<div class="info-box">
+<div>
+<h3>Directory ID Management &amp; Support</h3>
+<p>Look up your UMID or reset expired passwords through the main identity management portal or DivIT helpline.</p>
+</div>
+<div><a class="btn-outline" href="https://account.umd.edu/" target="_blank" rel="noopener">UMD Directory Portal ↗</a></div>
+</div>
+</div>
+<!-- TESTUDO TIP -->
+<div class="notice-box">
+<h4>💡︎ Important Student Action Item: Testudo Registration Portal</h4>
+<p><a href="https://testudo.umd.edu/" target="_blank" rel="noopener">Testudo</a> provides essential web services including course registration, academic calendars, and schedules. <strong>Always keep your email address updated in Testudo</strong>, as Canvas automatically routes official course communications and notifications to that address!</p>
+</div>
+</div>
+<!-- WIRELESS NETWORKING -->
+<div class="section-card">
+<h2>📶︎ Wireless Network Access</h2>
+<p>Two secure wireless networks are available throughout the Baltimore Peninsula suite:</p>
+<div class="network-grid">
+<div class="network-card">
+<h3>eduroam (Primary Network)</h3>
+<p>High-speed secure connection for UMD students, faculty, and staff. Authenticate using your full <strong>@umd.edu</strong> email address and Directory password.</p>
+<a class="btn-action" href="https://connect.umd.edu" target="_blank" rel="noopener">Download WiFi Auto-Config App ↗</a></div>
+<div class="network-card">
+<h3>UM Conf (Guest Network)</h3>
+<p>Temporary wireless access for campus visitors and guests. Setup instructions and daily connection codes are available on pamphlets posted throughout the suite.</p>
+</div>
+</div>
+<p style="font-size: max(12pt, 0.88em); color: #7f7f7f; margin-top: 16px;">For troubleshooting wireless connectivity issues, contact DivIT support at <strong>(301) 405-1500</strong> or see your on-site IT support coordinator.</p>
+</div>
+<!-- SMITH SHARED PAGE OVERRIDES -->
+<style>
+  :root {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-500: #7f7f7f;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+  }
+
+  [class*="-container"],
+  .hero-card,
+  .section-card,
+  .announcement-banner,
+  .emergency-alert-banner,
+  .emergency-contact-card,
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-box,
+  .action-box,
+  .instruction-box,
+  .contact-card,
+  .network-card,
+  .program-card,
+  .course-card,
+  .support-card,
+  .action-banner,
+  .notice-box,
+  .warning-box,
+  .alert-box,
+  .portal-notice-box,
+  .feature-box,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .location-card,
+  .lab-card,
+  .sticker-card,
+  .parking-section,
+  .guide-card,
+  .cloud-tag,
+  .rebrand-box,
+  .config-block,
+  .server-code {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  .hero-card {
+    position: relative;
+    margin: 0 0 1.5rem;
+    padding: 2rem 1.5rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 0;
+    border-bottom: 4px solid var(--smith-yellow);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .hero-card::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .hero-card .eyebrow {
+    display: inline-block;
+    margin: 0 0 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hero-card h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    max-width: 70ch;
+    margin: 0 0 0.7rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    color: var(--smith-black);
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.05);
+  }
+
+  .section-card h2 {
+    color: var(--smith-black);
+    border-bottom-color: var(--smith-gray-200);
+    font-weight: 700;
+  }
+
+  .section-card h2 .badge {
+    background: var(--smith-red);
+    color: var(--smith-white);
+    border: 3px solid var(--smith-yellow);
+    font-weight: 800;
+  }
+
+  .info-card,
+  .info-box,
+  .feature-card,
+  .feature-item,
+  .overview-item,
+  .tech-item,
+  .support-card,
+  .network-card,
+  .contact-card,
+  .program-card,
+  .course-card,
+  .practice-card,
+  .benefit-card,
+  .step-item,
+  .step-card,
+  .location-card,
+  .lab-card,
+  .parking-section,
+  .parking-stickers-grid .sticker-card {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .info-card h3,
+  .info-box h3,
+  .feature-card h3,
+  .feature-item h3,
+  .overview-item h3,
+  .support-card h3,
+  .network-card h3,
+  .contact-card h3,
+  .program-card h3,
+  .course-card h3,
+  .practice-card h3,
+  .benefit-card h3,
+  .location-card h3,
+  .lab-card h3,
+  .parking-section h3,
+  .action-box h3,
+  .support-box h3 {
+    color: var(--smith-black);
+  }
+
+  .info-card p,
+  .info-box p,
+  .feature-card p,
+  .feature-item p,
+  .overview-item p,
+  .tech-item,
+  .support-card p,
+  .network-card p,
+  .contact-card p,
+  .program-card p,
+  .course-card p,
+  .practice-card p,
+  .benefit-card p,
+  .location-card p,
+  .lab-card p,
+  .parking-steps,
+  .action-box p,
+  .support-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .announcement-banner,
+  .support-box,
+  .action-box,
+  .rebrand-box,
+  .portal-notice-box,
+  .alert-banner {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .announcement-banner p,
+  .alert-banner p,
+  .portal-notice-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .emergency-alert-banner,
+  .warning-box,
+  .alert-box {
+    color: var(--smith-red-dark);
+    background: rgba(186, 24, 46, 0.06);
+    border: 1px solid rgba(186, 24, 46, 0.24);
+    border-left: 5px solid var(--smith-red-dark);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .emergency-alert-banner h2,
+  .emergency-alert-banner p,
+  .emergency-contact-card strong,
+  .emergency-contact-card .phone-num,
+  .warning-box h3,
+  .warning-box p,
+  .alert-box {
+    color: var(--smith-red-dark);
+  }
+
+  .emergency-contact-card {
+    background: var(--smith-white);
+    border-color: rgba(186, 24, 46, 0.24);
+    border-radius: 0;
+  }
+
+  .notice-box,
+  .event-fee-box,
+  .instruction-box {
+    color: var(--smith-gray-700);
+    background: rgba(255, 200, 69, 0.14);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .notice-box h3,
+  .notice-box h4,
+  .event-fee-box h3,
+  .instruction-box h3,
+  .notice-box p,
+  .event-fee-box p,
+  .instruction-box p {
+    color: var(--smith-gray-700);
+  }
+
+  .address-badge,
+  .hero-card .address-badge {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.45rem 0.75rem;
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.18);
+    border: 1px solid rgba(186, 24, 46, 0.2);
+    border-radius: 4px;
+    backdrop-filter: none;
+    font-size: max(12pt, 0.9rem);
+    line-height: 1.45;
+  }
+
+  .btn-action,
+  .btn-request {
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-action:hover,
+  .btn-request:hover,
+  .btn-action:focus-visible,
+  .btn-request:focus-visible {
+    color: var(--smith-white) !important;
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-outline {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-weight: 700;
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  .step-number {
+    color: var(--smith-white);
+    background: var(--smith-red);
+    border: 2px solid var(--smith-yellow);
+  }
+
+  .step-card h3,
+  .step-content h3 {
+    color: var(--smith-black);
+  }
+
+  .step-card p,
+  .step-content p {
+    color: var(--smith-gray-700);
+  }
+
+  .server-code,
+  .config-block,
+  code {
+    color: var(--smith-black);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .video-container,
+  .media-display,
+  .diagram-container,
+  .campus-image-container {
+    border-color: var(--smith-gray-200);
+    box-shadow: none;
+  }
+
+  .media-display img:not(.campus-image),
+  .diagram-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .campus-image-container img,
+  .media-display img.campus-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+  }
+
+  .feature-tag,
+  .tag-item,
+  .cloud-tag {
+    color: var(--smith-gray-700);
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .feature-tag.highlight,
+  .cloud-tag {
+    color: var(--smith-red-dark);
+    background: rgba(255, 200, 69, 0.2);
+    border-color: rgba(186, 24, 46, 0.2);
+  }
+
+  .lab-card,
+  .satellite-card,
+  .network-card {
+    border-left-color: var(--smith-red);
+  }
+
+  .schedule-list li {
+    color: var(--smith-gray-700);
+    background: var(--smith-white);
+    border-color: var(--smith-gray-200);
+    border-radius: 0;
+  }
+
+  [class*="container"] a:focus-visible,
+  [class*="container"] button:focus-visible {
+    outline: 3px solid var(--smith-yellow);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 700px) {
+    [class*="container"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1rem 1.2rem;
+    }
+
+    .campus-image-container,
+    .campus-image-frame {
+      height: 280px;
+    }
+
+    .step-item {
+      gap: 0.8rem;
+    }
+  }
+</style>

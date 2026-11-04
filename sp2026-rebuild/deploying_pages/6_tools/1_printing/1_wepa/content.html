@@ -1,0 +1,245 @@
+<style>
+  .printing-instructions-portal {
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #454545;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .printing-instructions-portal *,
+  .printing-instructions-portal *::before,
+  .printing-instructions-portal *::after {
+    box-sizing: border-box;
+  }
+
+  .printing-instructions-portal .page-header {
+    position: relative;
+    margin-bottom: 24px;
+    padding: 18px 0 20px;
+    border-top: 4px solid #ba182e;
+    border-bottom: 4px solid #ffc845;
+  }
+
+  .printing-instructions-portal .eyebrow {
+    margin: 0 0 6px;
+    color: #ba182e;
+    font-size: max(12pt, 0.9em);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .printing-instructions-portal h1 {
+    margin: 0 0 8px;
+    color: #000000;
+    font-size: max(12pt, 2em);
+    line-height: 1.2;
+  }
+
+  .printing-instructions-portal .page-summary {
+    max-width: 75ch;
+    margin: 0;
+    color: #454545;
+    font-size: max(12pt, 1.05em);
+  }
+
+  .printing-instructions-portal h2 {
+    margin: 0 0 16px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #000000;
+    font-size: max(12pt, 1.4em);
+  }
+
+  .printing-instructions-portal h2::after {
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 8px;
+    background: #ba182e;
+    content: "";
+  }
+
+  .printing-instructions-portal .alert-banner {
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    border: 1px solid #e6e6e6;
+    border-left: 5px solid #ba182e;
+    background: #fff9e8;
+    color: #454545;
+  }
+
+  .printing-instructions-portal .alert-banner strong:first-child {
+    color: #000000;
+  }
+
+  .printing-instructions-portal .instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .printing-instructions-portal .instruction-card {
+    min-width: 0;
+    padding: 18px 20px;
+    border: 1px solid #e6e6e6;
+    border-left: 4px solid #ba182e;
+    background: #ffffff;
+  }
+
+  .printing-instructions-portal .instruction-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    color: #000000;
+    font-size: max(12pt, 1.15em);
+    line-height: 1.35;
+  }
+
+  .printing-instructions-portal .step-number {
+    display: inline-flex;
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffc845;
+    border-radius: 50%;
+    background: #ba182e;
+    color: #ffffff;
+    font-size: max(12pt, 0.9em);
+    line-height: 1;
+  }
+
+  .printing-instructions-portal .instruction-card ol {
+    margin: 0;
+    padding-left: 22px;
+  }
+
+  .printing-instructions-portal .instruction-card li {
+    margin-bottom: 6px;
+  }
+
+  .printing-instructions-portal .instruction-card li:last-child {
+    margin-bottom: 0;
+  }
+
+  .printing-instructions-portal a {
+    color: #ba182e;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .printing-instructions-portal a:hover {
+    color: #8d1324;
+  }
+
+  .printing-instructions-portal a:focus-visible {
+    outline: 3px solid #ffc845;
+    outline-offset: 3px;
+  }
+
+  .printing-instructions-portal .action-link {
+    display: inline-block;
+    margin: 2px 0;
+    padding: 6px 12px;
+    border: 1px solid #ba182e;
+    background: #ba182e;
+    color: #ffffff;
+    font-size: max(12pt, 1em);
+    text-decoration: none;
+  }
+
+  .printing-instructions-portal .action-link:hover {
+    border-color: #8d1324;
+    background: #8d1324;
+    color: #ffffff;
+  }
+
+  .printing-instructions-portal .note-text {
+    margin: 8px 0 0;
+    color: #454545;
+    font-size: max(12pt, 0.95em);
+    font-style: italic;
+  }
+
+  .printing-instructions-portal .closing-note {
+    margin: 20px 0 0;
+    padding: 12px 16px;
+    border-left: 4px solid #ffc845;
+    background: #f7f7f7;
+  }
+
+  @media (max-width: 700px) {
+    .printing-instructions-portal {
+      padding: 16px;
+    }
+
+    .printing-instructions-portal .instruction-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="printing-instructions-portal">
+  <header class="page-header">
+    <p class="eyebrow">Tools / Printing</p>
+    <h1>WEPA Printing Instructions</h1>
+    <p class="page-summary">WEPA (Wireless Everywhere Print Anywhere) allows you to print seamlessly from your personal computer, mobile device, cloud accounts, or a USB drive to any kiosk on campus.</p>
+  </header>
+
+  <div class="alert-banner">
+    <strong>Important Notice for Students:</strong> Do <strong>NOT</strong> create a new account with WEPA. An account has automatically been created for you and linked to your Directory ID. After logging in to a kiosk once with your campus credentials, you will be able to swipe your UMD ID card to log in automatically.
+  </div>
+
+  <section aria-labelledby="how-to-print">
+    <h2 id="how-to-print">How to Print</h2>
+    <div class="instruction-grid">
+      <article class="instruction-card">
+        <h3><span class="step-number" aria-hidden="true">1</span>From Your Computer (Personal Laptop/Desktop)</h3>
+        <ol>
+          <li><a class="action-link" href="https://wepanow.com/software" target="_blank" rel="noopener">Download the WEPA Driver</a></li>
+          <li>Open your document and print, selecting either <strong>WEPA-BW</strong> or <strong>WEPA-COLOR</strong> as your printer.</li>
+          <li>Log in with your UMD Directory ID and password when prompted.</li>
+          <li>Go to any WEPA Kiosk and swipe your campus ID card to release your job.*</li>
+        </ol>
+      </article>
+
+      <article class="instruction-card">
+        <h3><span class="step-number" aria-hidden="true">2</span>Contactless &amp; Mobile Printing (WEPA Express)</h3>
+        <ol>
+          <li>Download the WEPA Mobile App or Desktop Application via the <a href="https://support.wepanow.com/express/" target="_blank" rel="noopener">WEPA Express Page</a>.</li>
+          <li>Log in using your UMD Directory ID and password.</li>
+          <li>Print directly from cloud storage (Google Drive, Dropbox) or your local device to kiosks located in Van Munching Hall or the Ronald Reagan Building without touching the kiosk screen.</li>
+        </ol>
+      </article>
+
+      <article class="instruction-card">
+        <h3><span class="step-number" aria-hidden="true">3</span>Direct from a USB Drive</h3>
+        <ol>
+          <li>Go to any WEPA kiosk and tap <strong>Print from USB</strong> on the main screen.</li>
+          <li>Insert your USB drive into the kiosk USB slot.</li>
+          <li>Select your document to print. <span class="note-text">(Supported formats: PDF or Microsoft Office files like .doc, .xls, .ppt).</span></li>
+        </ol>
+      </article>
+
+      <article class="instruction-card">
+        <h3><span class="step-number" aria-hidden="true">4</span>From Campus Computer Labs</h3>
+        <ol>
+          <li>Open your document, click <strong>File</strong>, then select <strong>Print</strong>.</li>
+          <li>Choose <strong>WEPA-BW</strong> or <strong>WEPA-COLOR</strong> from the printer list.</li>
+          <li>Log in with your UMD Directory ID and password when prompted.</li>
+          <li>Head to any WEPA kiosk and swipe your campus ID to release your print job.*</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <p class="closing-note">*First-time users must log in once at the physical kiosk using their Directory ID credentials to link their physical campus ID card for future swipe access.</p>
+</div>

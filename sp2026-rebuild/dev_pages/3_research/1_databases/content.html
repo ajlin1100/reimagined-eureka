@@ -1,0 +1,255 @@
+<style>
+  .research-container,
+  .section-card {
+    --smith-red: #ba182e;
+    --smith-red-dark: #8d1324;
+    --smith-yellow: #ffc845;
+    --smith-black: #000000;
+    --smith-gray-700: #454545;
+    --smith-gray-200: #e6e6e6;
+    --smith-gray-100: #f7f7f7;
+    --smith-white: #ffffff;
+    --smith-radius: 10px;
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-size: 12pt;
+    color: var(--smith-black);
+    line-height: 1.6;
+  }
+
+  .research-container {
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  }
+
+  .research-header {
+    background: var(--smith-white);
+    color: var(--smith-black);
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--smith-yellow);
+  }
+
+  .research-header::before {
+    content: "";
+    display: block;
+    width: 110px;
+    height: 4px;
+    margin-bottom: 1rem;
+    background: var(--smith-red);
+  }
+
+  .research-header .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--smith-red);
+    font-size: max(12pt, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .research-header h1 {
+    margin: 0 0 0.5rem;
+    color: var(--smith-black);
+    font-size: max(12pt, clamp(2rem, 4vw, 3rem));
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .research-header p {
+    margin: 0;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+  }
+
+  .section-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--smith-white);
+    border: 1px solid var(--smith-gray-200);
+    border-top: 4px solid var(--smith-red);
+    border-radius: var(--smith-radius);
+    box-shadow: 0 4px 14px rgba(17, 17, 17, 0.06);
+  }
+
+  .media-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .media-image {
+    flex: 0 0 min(28%, 280px);
+  }
+
+  .media-image img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border: 1px solid var(--smith-gray-200);
+  }
+
+  .media-content {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .media-content p.lead-text {
+    margin: 0 0 1.25rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 1.05rem);
+    line-height: 1.7;
+  }
+
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.4rem;
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.1rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 4px solid var(--smith-red);
+    border-radius: 0;
+  }
+
+  .info-box h3 {
+    margin: 0 0 0.55rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .info-box p {
+    margin: 0 0 0.8rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .contact-banner {
+    margin-top: 1.2rem;
+    padding: 1.1rem 1.2rem;
+    background: var(--smith-gray-100);
+    border: 1px solid var(--smith-gray-200);
+    border-left: 5px solid var(--smith-red);
+  }
+
+  .contact-banner h3 {
+    margin: 0 0 0.45rem;
+    color: var(--smith-black);
+    font-size: max(12pt, 1.1rem);
+  }
+
+  .contact-banner p {
+    margin: 0 0 1rem;
+    color: var(--smith-gray-700);
+    font-size: max(12pt, 0.96rem);
+  }
+
+  .banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .section-card a:not(.btn-link) {
+    color: var(--smith-red);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  .btn-link {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 0.65rem 1rem;
+    color: var(--smith-white) !important;
+    background: var(--smith-red);
+    border: 1px solid var(--smith-red);
+    border-radius: 5px;
+    font-size: max(12pt, 0.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background: var(--smith-red-dark);
+    border-color: var(--smith-red-dark);
+  }
+
+  .btn-secondary {
+    color: var(--smith-red) !important;
+    background: var(--smith-white);
+    border-color: var(--smith-red);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible {
+    background: var(--smith-gray-100);
+  }
+
+  @media (max-width: 700px) {
+    .section-card {
+      padding: 1.1rem;
+    }
+
+    .media-layout {
+      flex-direction: column;
+    }
+
+    .media-image {
+      flex-basis: auto;
+      width: 100%;
+    }
+
+    .media-image img {
+      width: min(100%, 280px);
+      margin: 0 auto 0.5rem;
+    }
+  }
+</style>
+<div class="research-container"><!-- HERO HEADER -->
+<div class="research-header">
+<div class="eyebrow">Research Support</div>
+<h1>Financial Research Databases &amp; Subscriptions</h1>
+<p>Advanced computational resources and support for Business School researchers</p>
+</div>
+</div>
+<!-- MAIN SECTION -->
+<div class="section-card">
+<div class="media-layout"><!-- Media Image (Left) -->
+<div class="media-image"><img src="research.png" alt="Research Computing" width="331" height="500"></div>
+<!-- Content Area (Right) -->
+<div class="media-content">
+<p class="lead-text">We provide a broad array of technology resources and support specifically designed to meet the research needs of Business School faculty and students. Our Research Computing team is dedicated to empowering researchers to effectively integrate computational methods into their work by offering access to advanced computational resources, expert guidance, and comprehensive support.</p>
+<div class="grid-2col">
+<div class="info-box">
+<div>
+<h3>UMD Libraries</h3>
+<p>Explore institutional databases and research tools campus-wide.</p>
+</div>
+<a class="btn-link" href="https://lib.guides.umd.edu/az/databases">University DB Finder</a></div>
+<div class="info-box">
+<div>
+<h3>Business School Subscriptions</h3>
+<p>Access business and financial database subscriptions.</p>
+</div>
+<a class="btn-link" href="https://umdrhsmithtest2.service-now.com/sp?id=kb_article_view&amp;sysparm_article=KB0010904">Financial Databases</a></div>
+</div>
+<div class="contact-banner">
+<h3>Need Assistance or Research Support?</h3>
+<p>For more information, contact the Research Computing Team at <a href="mailto:researchsupport@rhsmith.umd.edu">researchsupport@rhsmith.umd.edu</a> or complete the consultation form below.</p>
+<div class="banner-actions"><a class="btn-link" href="mailto:researchsupport@rhsmith.umd.edu">Email Research Support</a> <a class="btn-link btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSejA-RZPUuSwmAq-Gq5IvNTHFnecJNwJi8uXStix_HttAwaUA/viewform?usp=sf_link">Research Consultation Form</a></div>
+</div>
+</div>
+</div>
+</div>
