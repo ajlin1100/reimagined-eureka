@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KB Authoring</title>
+</head>
+<body style="margin: 0; padding: 24px 12px; background-color: #ffffff;">
+
+<!-- SMITH IT HEADER BANNER (see articles/formatting_paragon/header.html) -->
+<div class="smith-it-banner" style="max-width: 900px; margin: 0 auto 20px; border-radius: 6px; overflow: hidden; font-family: 'Segoe UI', Verdana, sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f8f9fa; border-left: 6px solid #E21833; padding: 20px 24px;">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="../../sp2026-rebuild/standards/smith_style_guide_files/UMD_Smith_236%20x236.png" alt="UMD Seal" width="64" height="64" style="object-fit: contain;">
+      <div>
+        <p style="margin: 0; font-size: 20pt; font-weight: 700; color: #111111; letter-spacing: -0.5px;">The Office of Smith IT</p>
+        <p style="margin: 4px 0 0; font-size: 11pt; font-style: italic; color: #555555; font-family: Georgia, serif;">Robert H. Smith School of Business</p>
+      </div>
+    </div>
+    <div style="text-align: right; font-size: 9.5pt; line-height: 1.4; color: #333333; border-left: 1px solid #ddd; padding-left: 18px;">
+      <p style="margin: 0; font-weight: bold;">Van Munching Hall</p>
+      <p style="margin: 0;">Suite 3520</p>
+      <p style="margin: 0;">301-405-2269</p>
+      <p style="margin: 0; color: #E21833; font-weight: 500;">helpme@rhsmith.umd.edu</p>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY CONTAINER -->
+<div class="smith-body-wrapper" style="font-family: Verdana, Geneva, sans-serif; font-size: 12pt; color: #333333; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+
+<h1 style="font-size: 18pt; color: #e21833; font-weight: bold; font-family: Verdana; margin: 20px 0 5px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">KB Authoring</h1>
+
+<p style="margin-bottom: 15pt;">This guide covers how Smith IT writes and formats ServiceNow knowledge articles. Section 1 covers the basics of writing knowledge content; Section 2 documents the department formatting standard; Section 3 is a copy-paste library of the HTML elements used in our published articles; Section 4 covers the authoring tools and local editing workflow. This document practices what it preaches: it is built entirely from the elements it describes.</p>
+
+<!-- TOC NAV -->
+<div style="background-color: #f9f9f9; padding: 10px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 11pt; text-align: center; border: 1px solid #eee;"><a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#basics" rel="nofollow">Knowledge Article Basics</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#formatting" rel="nofollow">Formatting Guidelines</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#elements" rel="nofollow">HTML Element Library</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#tools" rel="nofollow">Authoring Tools</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#checklist" rel="nofollow">Pre-Publication Checklist</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#references" rel="nofollow">References</a></div>
+
+<!-- ============================== SECTION 1 ============================== -->
+<h2 id="basics" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">1. Knowledge Article Basics</h2>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.1 When to write a knowledge article</h3>
+<p style="margin-bottom: 10pt;">A knowledge article answers <strong>one</strong> question or walks the reader through <strong>one</strong> task. Good candidates are repeat help-desk questions, stable procedures (ordering, account setup, classroom technology), and policy or reference material that readers return to. If the content changes week to week, applies to exactly one person, or is really several unrelated tasks, it does not belong in a single KB article.</p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.2 Before you write</h3>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
+  <li style="margin-bottom: 8pt;"><strong>Search first.</strong> Look for existing articles on the same topic. Update or expand an existing article rather than creating a near-duplicate; duplicates split search results and go stale independently.</li>
+  <li style="margin-bottom: 8pt;"><strong>Identify the audience.</strong> Smith School faculty, staff, and students read differently than internal IT staff. Choose vocabulary, depth, and prerequisites for the least technical intended reader.</li>
+  <li style="margin-bottom: 8pt;"><strong>Verify the procedure end to end.</strong> Walk every step yourself in a current environment. Capture screenshots as you go.</li>
+  <li style="margin-bottom: 8pt;"><strong>Collect links and references.</strong> Vendor documentation, related articles, forms, and contact points belong in the article, not in the reader's inbox.</li>
+</ul>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.3 Anatomy of an article</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana; width: 25%;">Field</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Guidance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Title</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Use the words a reader would search for. Name the system and the task, e.g., <em>Shell Shop Order in Workday</em>. Avoid internal jargon and ticket-speak.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Short description</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">One or two sentences: what the article does and who it is for. This text appears in search results, so make it stand alone.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Body</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Follow the department skeleton (Section 2.4): banner, title, optional table of contents, sections, optional footer. For procedures: overview &rarr; prerequisites &rarr; numbered steps &rarr; verification &rarr; related links.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Keywords / meta</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Add synonyms and common misspellings readers might search (e.g., &ldquo;Shell Shop,&rdquo; &ldquo;ShellShop,&rdquo; &ldquo;storefront&rdquo;). Keywords decide whether the article is found.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Category &amp; owner</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Assign the correct knowledge category and a named owner. The owner is responsible for accuracy, review, and retirement.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.4 Writing style rules</h3>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
+  <li style="margin-bottom: 8pt;">Write in <strong>second person</strong> (&ldquo;you&rdquo;), <strong>active voice</strong>, present tense: &ldquo;Click <strong>Checkout</strong>&rdquo;, not &ldquo;The Checkout button should be clicked.&rdquo;</li>
+  <li style="margin-bottom: 8pt;">Number procedural steps and keep <strong>one action per step</strong>. If a step needs two actions, split it.</li>
+  <li style="margin-bottom: 8pt;"><strong>Bold</strong> the names of buttons, fields, and menu items exactly as they appear on screen, e.g., <strong>&ldquo;Review Required&rdquo;</strong>.</li>
+  <li style="margin-bottom: 8pt;">Put warnings and prerequisites <strong>before</strong> the step they affect, never after.</li>
+  <li style="margin-bottom: 8pt;">Keep paragraphs short (2&ndash;4 sentences). Use lists for anything enumerable.</li>
+  <li style="margin-bottom: 8pt;">Define acronyms on first use: &ldquo;Purchase Order (PUR)&rdquo;.</li>
+  <li style="margin-bottom: 8pt;">Screenshots must show the current interface, be cropped to the relevant area, and carry alt text and a caption (Section 3.3).</li>
+</ul>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.5 Article lifecycle</h3>
+<p style="margin-bottom: 10pt;">Every article has an owner and a review date. Owners re-verify procedures when the underlying system changes (Workday releases, portal updates), act on reader feedback, and retire or merge articles that are superseded. An outdated article is worse than none &mdash; it erodes trust in the whole knowledge base.</p>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 2 ============================== -->
+<h2 id="formatting" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">2. Department Formatting Guidelines</h2>
+
+<p style="margin-bottom: 15pt;">These guidelines distill the Smith brand standards (see <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/</code>) into the constraints of the ServiceNow knowledge editor, as demonstrated in the department's reference articles (see Section 5).</p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.1 ServiceNow constraints</h3>
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: Inline Styles Only</strong>
+<p style="margin: 0 0 10pt 0;">The ServiceNow knowledge editor strips <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;style&gt;</code> blocks, external stylesheets, and JavaScript. <strong>All formatting must be inline</strong> via the <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">style</code> attribute. Class names such as <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">smith-it-banner</code> are kept only as semantic markers for authors; they carry no styling on their own.</p>
+<p style="margin: 0;">Images must be uploaded as article attachments and referenced by attachment file name (e.g., <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">umd-formal-seal.png</code>) or by <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">/sys_attachment.do?sys_id=...</code> URL. Add <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">rel="nofollow"</code> to hyperlinks.</p>
+</div>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.2 Brand palette</h3>
+<p style="margin-bottom: 10pt;">Use these tokens consistently. Red is for emphasis, structure, and critical notices &mdash; never for long passages of text.</p>
+<table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Swatch</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Token</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Hex</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Role in KB articles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #E21833; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Maryland red</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#E21833</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Banner edge, article title, critical callouts, table header rules</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #8d1324; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Dark Smith red</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#8d1324</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Restrained darker emphasis</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #ffc845; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Smith yellow</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#ffc845</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Secondary accent, small highlights</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #242424; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Near-black</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#242424</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Banner text, subsection headings, strong labels</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #454545; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Dark gray</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#454545</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Section headings, neutral callout edges</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #333333; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Body gray</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#333333</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Body copy</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #666666; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Medium gray</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#666666</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Captions, supporting metadata</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #e6e6e6; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Light gray</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#e6e6e6</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Borders and dividers</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #f8f9fa; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Surface gray</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#f8f9fa</code> / <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#f9f9f9</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Banner, TOC, and footer surfaces</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><span style="display: inline-block; width: 16px; height: 16px; background-color: #0563c1; border: 1px solid #ccc; border-radius: 3px;"></span></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Link blue</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;"><code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#0563c1</code> / <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#0056b3</code></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6;">Hyperlinks (underlined in body text; bold in the TOC nav)</td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-bottom: 15pt; font-size: 11pt; color: #555;"><em>The Smith web pages use Source Sans 3 and Smith red <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#ba182e</code> (see the page-type style guide). Knowledge articles use the Verdana stack and Maryland red <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#E21833</code> for consistency with the existing KB library; keep the two families separate.</em></p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.3 Typography scale</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Element</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Specification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Article title (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h1</code>)</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">18pt bold Verdana, Maryland red, thin bottom rule</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Section heading (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code>)</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">14pt bold Verdana, dark gray <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#454545</code>, thin bottom rule; carries an <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">id</code> when targeted by the TOC</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Subsection heading (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h3</code>)</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">12pt bold Verdana, near-black <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#242424</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Body text</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">12pt Verdana/Geneva, <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#333333</code>, line-height 1.6, paragraph margin-bottom 10pt</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Callout text</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">11pt; callout heading 12pt bold in the variant's label color</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Image caption</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">9.5pt italic, <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#666666</code>, centered</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.4 Article skeleton</h3>
+<p style="margin-bottom: 10pt;">Every article is assembled in this order. Sections 3.1&ndash;3.3 give the full code for each block.</p>
+<ol style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Header banner</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">smith-it-banner</code>) &mdash; office identity and contact block.</li>
+  <li style="margin-bottom: 6pt;"><strong>Body wrapper</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">smith-body-wrapper</code>) &mdash; all remaining content goes inside; sets the Verdana stack, 12pt body text, and 800px centered column.</li>
+  <li style="margin-bottom: 6pt;"><strong>Title</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h1</code>) &mdash; one per article.</li>
+  <li style="margin-bottom: 6pt;"><strong>TOC nav</strong> &mdash; optional; include for articles with three or more sections.</li>
+  <li style="margin-bottom: 6pt;"><strong>Sections</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code>/<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h3</code>) &mdash; prose, lists, annotations, images, and tables. Separate major sections with a horizontal rule where it aids scanning.</li>
+  <li style="margin-bottom: 6pt;"><strong>Footer block</strong> &mdash; optional quick-reference or contact panel.</li>
+</ol>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div class="smith-it-banner" style="..."&gt;...&lt;/div&gt;
+
+&lt;div class="smith-body-wrapper" style="font-family: Verdana, Geneva, sans-serif; font-size: 12pt; color: #333333; line-height: 1.6; max-width: 800px; margin: 0 auto;"&gt;
+  &lt;h1 style="..."&gt;Article Title&lt;/h1&gt;
+  &lt;div style="..."&gt;...TOC nav (optional)...&lt;/div&gt;
+  &lt;h2 id="overview" style="..."&gt;Overview&lt;/h2&gt;
+  &lt;p style="margin-bottom: 10pt;"&gt;...&lt;/p&gt;
+  &lt;div style="..."&gt;...footer block (optional)...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.5 Accessibility requirements</h3>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
+  <li style="margin-bottom: 8pt;">Every image has descriptive <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">alt</code> text that names what the screenshot shows.</li>
+  <li style="margin-bottom: 8pt;">Link text describes the destination (&ldquo;Procurement Codes Sheet&rdquo;), never &ldquo;click here&rdquo;.</li>
+  <li style="margin-bottom: 8pt;">Never communicate meaning with color alone. Every callout pairs its color with an explicit text label (&ldquo;Note&rdquo;, &ldquo;PROHIBITED&rdquo;).</li>
+  <li style="margin-bottom: 8pt;">Keep heading order strict: one <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h1</code>, then <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code>, then <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h3</code> &mdash; no skipped levels.</li>
+  <li style="margin-bottom: 8pt;">Use real tables with header cells for tabular data. The borderless media table (Section 3.3) is the one sanctioned layout-table pattern, for pairing a screenshot with its walkthrough.</li>
+</ul>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 3 ============================== -->
+<h2 id="elements" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">3. HTML Element Library</h2>
+
+<p style="margin-bottom: 10pt;">Each element below is shown rendered, followed by its HTML. Paste the code into the ServiceNow editor's HTML source view and adjust the text.</p>
+<div style="background-color: #fff8f0; border-left: 4px solid #f0ad4e; padding: 12px 16px; margin: 0 0 20px; border-radius: 4px; font-size: 11pt;"><strong>About the rendered examples:</strong> in this draft, example images resolve to local files so the page renders in a browser. In ServiceNow, upload images as article attachments and reference them by file name or <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">/sys_attachment.do?sys_id=...</code> URL, as the code shows.</div>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">3.1 Page header banner</h3>
+<p style="margin-bottom: 10pt;">The banner opens every article: office identity on the left, contact block on the right, Maryland red leading edge. The canonical source is <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/formatting_paragon/header.html</code>, which also contains the Office of Finance and Accounting variant &mdash; change the office name, suite, and contact lines; keep the structure and styling identical.</p>
+
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div class="smith-it-banner" style="max-width: 900px; margin: 0 auto; border-radius: 6px; overflow: hidden; font-family: 'Segoe UI', Verdana, sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+  <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f8f9fa; border-left: 6px solid #E21833; padding: 20px 24px;">
+    <div style="display: flex; align-items: center; gap: 18px;">
+      <img src="../../sp2026-rebuild/standards/smith_style_guide_files/UMD_Smith_236%20x236.png" alt="UMD Seal" width="64" height="64" style="object-fit: contain;">
+      <div>
+        <p style="margin: 0; font-size: 20pt; font-weight: 700; color: #111111; letter-spacing: -0.5px;">The Office of Smith IT</p>
+        <p style="margin: 4px 0 0; font-size: 11pt; font-style: italic; color: #555555; font-family: Georgia, serif;">Robert H. Smith School of Business</p>
+      </div>
+    </div>
+    <div style="text-align: right; font-size: 9.5pt; line-height: 1.4; color: #333333; border-left: 1px solid #ddd; padding-left: 18px;">
+      <p style="margin: 0; font-weight: bold;">Van Munching Hall</p>
+      <p style="margin: 0;">Suite 3520</p>
+      <p style="margin: 0;">301-405-2269</p>
+      <p style="margin: 0; color: #E21833; font-weight: 500;">helpme@rhsmith.umd.edu</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div class="smith-it-banner" style="max-width: 900px; margin: 0 auto 20px; border-radius: 6px; overflow: hidden; font-family: 'Segoe UI', Verdana, sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.08);"&gt;
+  &lt;div style="display: flex; justify-content: space-between; align-items: center; background-color: #f8f9fa; border-left: 6px solid #E21833; padding: 20px 24px;"&gt;
+    &lt;div style="display: flex; align-items: center; gap: 18px;"&gt;
+      &lt;img src="umd-formal-seal.png" alt="UMD Seal" width="64" height="64" style="object-fit: contain;"&gt;
+      &lt;div&gt;
+        &lt;p style="margin: 0; font-size: 20pt; font-weight: 700; color: #111111; letter-spacing: -0.5px;"&gt;The Office of Smith IT&lt;/p&gt;
+        &lt;p style="margin: 4px 0 0; font-size: 11pt; font-style: italic; color: #555555; font-family: Georgia, serif;"&gt;Robert H. Smith School of Business&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style="text-align: right; font-size: 9.5pt; line-height: 1.4; color: #333333; border-left: 1px solid #ddd; padding-left: 18px;"&gt;
+      &lt;p style="margin: 0; font-weight: bold;"&gt;Van Munching Hall&lt;/p&gt;
+      &lt;p style="margin: 0;"&gt;Suite 3520&lt;/p&gt;
+      &lt;p style="margin: 0;"&gt;301-405-2269&lt;/p&gt;
+      &lt;p style="margin: 0; color: #E21833; font-weight: 500;"&gt;helpme@rhsmith.umd.edu&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">3.2 Annotations (callout blocks)</h3>
+<p style="margin-bottom: 10pt;">Annotations set important text apart from the flow. Use them sparingly &mdash; an article full of callouts has no emphasis at all. Every callout starts with an explicit text label so meaning never depends on color alone.</p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Note / warning (yellow)</h3>
+<p style="margin-bottom: 10pt;">For supplementary information the reader must not miss: configuration notes, exceptions, formulas.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: Labor Cost Configuration for Capital Assets</strong>
+<p style="margin: 0;">When a Capital Asset and Labor/Installation is included on the requisition, calculate the specific labor cost allocation before checkout.</p>
+</div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"&gt;
+  &lt;strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;"&gt;Note: Title of the Note&lt;/strong&gt;
+  &lt;p style="margin: 0;"&gt;Body text of the note.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Critical / prohibited (red)</h3>
+<p style="margin-bottom: 10pt;">For prohibited actions, compliance requirements, and anything with financial or security consequences.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #fff3f3; border-left: 5px solid #E21833; padding: 12px 16px; margin: 0; border-radius: 0 4px 4px 0;">
+  <strong style="color: #E21833; display: block; margin-bottom: 4px;">PROHIBITED</strong>
+  <p style="margin: 0; font-size: 11pt;">&ldquo;Stringing&rdquo; orders (splitting over-$5,000 needs into small portions to bypass submitting requisitions) is strictly prohibited.</p>
+</div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #fff3f3; border-left: 5px solid #E21833; padding: 12px 16px; margin: 15px 0 10px; border-radius: 0 4px 4px 0;"&gt;
+  &lt;strong style="color: #E21833; display: block; margin-bottom: 4px;"&gt;PROHIBITED&lt;/strong&gt;
+  &lt;p style="margin: 0; font-size: 11pt;"&gt;Body text of the critical notice.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Caution / security (amber)</h3>
+<p style="margin-bottom: 10pt;">For security requirements and cautions that are serious but not prohibitions.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #fff9e6; border-left: 5px solid #ffc107; padding: 12px 16px; margin: 0; border-radius: 0 4px 4px 0;">
+  <strong style="color: #856404; display: block; margin-bottom: 4px;">SECURITY REQUIREMENT</strong>
+  <p style="margin: 0; font-size: 11pt;">Purchasing Cards and order forms must be stored in a secure location at all times.</p>
+</div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #fff9e6; border-left: 5px solid #ffc107; padding: 12px 16px; margin: 15px 0 10px; border-radius: 0 4px 4px 0;"&gt;
+  &lt;strong style="color: #856404; display: block; margin-bottom: 4px;"&gt;SECURITY REQUIREMENT&lt;/strong&gt;
+  &lt;p style="margin: 0; font-size: 11pt;"&gt;Body text of the caution.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Neutral / resource (gray)</h3>
+<p style="margin-bottom: 10pt;">For resource libraries, reference lists, and grouped links that support the article.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #fafafa; padding: 16px 20px; border-left: 4px solid #454545; border-radius: 4px; margin: 0;"><strong style="color: #242424; font-size: 11pt; display: block; margin-bottom: 10pt;">Required Procurement Resource Libraries</strong>
+<ul style="padding-left: 20px; margin: 0; line-height: 1.7; font-size: 11pt;">
+<li style="margin-bottom: 6px;"><strong>Smith IT Procurement Catalog (ServiceNow):</strong> <a style="color: #0056b3;" href="https://rhs.umd.edu/procurement" rel="nofollow">https://rhs.umd.edu/procurement</a><br><span style="color: #666;">Used to log purchases and upload critical transaction documents.</span></li>
+<li style="margin-bottom: 0;"><strong>Workday Purchases Tracker (Google Sheets):</strong> <a style="color: #0056b3;" href="https://rhs.umd.edu/wdpurchase" rel="nofollow">https://rhs.umd.edu/wdpurchase</a><br><span style="color: #666;">Centralized log for all orders submitted through Workday.</span></li>
+</ul>
+</div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #fafafa; padding: 16px 20px; border-left: 4px solid #454545; border-radius: 4px; margin-bottom: 20px;"&gt;
+  &lt;strong style="color: #242424; font-size: 11pt; display: block; margin-bottom: 10pt;"&gt;Resource Library Title&lt;/strong&gt;
+  &lt;ul style="padding-left: 20px; margin: 0; line-height: 1.7; font-size: 11pt;"&gt;
+    &lt;li style="margin-bottom: 6px;"&gt;&lt;strong&gt;Resource Name:&lt;/strong&gt;
+      &lt;a style="color: #0056b3;" href="https://example.com" rel="nofollow"&gt;https://example.com&lt;/a&gt;&lt;br&gt;
+      &lt;span style="color: #666;"&gt;What the resource is for.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Quote / address block</h3>
+<p style="margin-bottom: 10pt;">For verbatim text the reader must copy exactly: addresses, memo formats, reference strings.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #f9f9f9; border-left: 3px solid #666; padding: 10px 14px; font-style: italic; margin: 0;">
+  University of Maryland<br>
+  Central Receiving<br>
+  Paint Branch Parkway, Building 383<br>
+  College Park, Maryland 20742
+</div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #f9f9f9; border-left: 3px solid #666; padding: 10px 14px; font-style: italic; margin: 4px 0 8px;"&gt;
+  University of Maryland&lt;br&gt;
+  Central Receiving&lt;br&gt;
+  Paint Branch Parkway, Building 383&lt;br&gt;
+  College Park, Maryland 20742
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">3.3 Other useful elements</h3>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Table of contents nav</h3>
+<p style="margin-bottom: 10pt;">A centered link bar placed directly under the title for articles with three or more sections. Each link targets an <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code> with a matching <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">id</code>. The bar at the top of this document is a live example.</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #f9f9f9; padding: 10px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 11pt; text-align: center; border: 1px solid #eee;"&gt;
+  &lt;a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#overview" rel="nofollow"&gt;Overview&lt;/a&gt; |
+  &lt;a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#steps" rel="nofollow"&gt;Steps&lt;/a&gt; |
+  &lt;a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#after" rel="nofollow"&gt;Post-Submission Steps&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Matching section target: --&gt;
+&lt;h2 id="overview" style="..."&gt;Overview&lt;/h2&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Headings</h3>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;h1 style="font-size: 18pt; color: #e21833; font-weight: bold; font-family: Verdana; margin: 20px 0 5px; border-bottom: 1px solid #ddd; padding-bottom: 4px;"&gt;Article Title&lt;/h1&gt;
+
+&lt;h2 style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;"&gt;Section Heading&lt;/h2&gt;
+
+&lt;h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;"&gt;Subsection Heading&lt;/h3&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Body text, emphasis, and inline code</h3>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<p style="margin: 0;">Body paragraph with <strong>bold UI labels</strong>, <em>italic asides</em>, and an inline code token such as <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">REQ-XXXXXXXXXX</code>. Links are <a style="color: #0563c1; text-decoration: underline;" href="https://www.purchase.umd.edu/" rel="nofollow">underlined blue</a> with descriptive text.</p>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;p style="margin-bottom: 10pt;"&gt;Body paragraph with &lt;strong&gt;bold UI labels&lt;/strong&gt;,
+&lt;em&gt;italic asides&lt;/em&gt;, and an inline code token such as
+&lt;code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;"&gt;REQ-XXXXXXXXXX&lt;/code&gt;.
+Links are &lt;a style="color: #0563c1; text-decoration: underline;" href="https://www.purchase.umd.edu/" rel="nofollow"&gt;underlined blue&lt;/a&gt;
+with descriptive text.&lt;/p&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Lists</h3>
+<p style="margin-bottom: 10pt;">Bulleted lists for unordered items; numbered lists for procedures. For formal policy articles, nested alphabetical lists use <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">list-style-type: upper-alpha</code> and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">lower-alpha</code>.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<ol style="list-style-type: upper-alpha; padding-inline-start: 24px; margin: 0;">
+  <li style="margin-bottom: 8pt;"><strong>FIRST ITEM</strong>
+    <ol style="list-style-type: lower-alpha; padding-inline-start: 24px; margin-top: 6pt;">
+      <li style="margin-bottom: 6pt;">First sub-item.</li>
+      <li style="margin-bottom: 6pt;">Second sub-item.</li>
+    </ol>
+  </li>
+  <li style="margin-bottom: 8pt;"><strong>SECOND ITEM</strong></li>
+</ol>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;"&gt;
+  &lt;li style="margin-bottom: 8pt;"&gt;Bulleted item.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol style="list-style-type: upper-alpha; padding-inline-start: 24px; margin-bottom: 10pt;"&gt;
+  &lt;li style="margin-bottom: 8pt;"&gt;&lt;strong&gt;FIRST ITEM&lt;/strong&gt;
+    &lt;ol style="list-style-type: lower-alpha; padding-inline-start: 24px; margin-top: 6pt;"&gt;
+      &lt;li style="margin-bottom: 6pt;"&gt;First sub-item.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Image with caption</h3>
+<p style="margin-bottom: 10pt;">Screenshots are centered, bordered, and followed by an italic caption. Always set <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">alt</code>, <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">width</code>, and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">height</code>.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<p style="text-align: center; margin: 0;"><img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%;" src="../../sp2026-rebuild/standards/smith_style_guide_files/umd-smith-logo.png" alt="University of Maryland Robert H. Smith School of Business logo" width="400" height="130"></p>
+<p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Caption text tells the reader what to notice in the image.</em></p>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;p style="text-align: center; margin-bottom: 0;"&gt;
+  &lt;img style="border: 1px solid #ddd; border-radius: 4px; max-width: 100%;"
+       src="/sys_attachment.do?sys_id=ATTACHMENT_SYS_ID"
+       alt="Descriptive alt text for the screenshot" width="582" height="421"&gt;
+&lt;/p&gt;
+&lt;p style="margin: 6px 0 20px; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"&gt;
+  &lt;em&gt;Caption text tells the reader what to notice in the image.&lt;/em&gt;
+&lt;/p&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Media table (image + walkthrough)</h3>
+<p style="margin-bottom: 10pt;">A borderless two-column table pairs a tall screenshot (left, 40%) with its explanation (right, 60%). This is the department's standard step-illustration pattern and the only sanctioned layout table.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<table style="width: 100%; border-collapse: collapse; margin: 0; border: none;">
+<tbody>
+<tr>
+<td style="width: 40%; padding: 10px 15px 10px 0; text-align: center; vertical-align: top;"><img style="border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);" src="../../sp2026-rebuild/standards/smith_style_guide_files/UMD_Smith_236%20x236.png" alt="UMD Smith square logo" width="120" height="120"><p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"><em>Complete profile fields and confirm required attributes.</em></p></td>
+<td style="width: 60%; vertical-align: top; padding: 10px 0; font-size: 11pt; line-height: 1.6;">
+<p style="margin-bottom: 10pt; font-weight: bold; color: #242424; font-size: 12pt;">Critical Attributes Required:</p>
+<ul style="padding-left: 20px; margin: 0; line-height: 1.7;">
+<li style="margin-bottom: 8px;"><strong>Requisition Type:</strong> Determines operational routing paths.</li>
+<li style="margin-bottom: 8px;"><strong>USource Number:</strong> Identifies the department accounts covering the acquisition.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;table style="width: 100%; border-collapse: collapse; margin-bottom: 25px; border: none;"&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="width: 40%; padding: 10px 15px 10px 0; text-align: center; vertical-align: top;"&gt;
+        &lt;img style="border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"
+             src="/sys_attachment.do?sys_id=ATTACHMENT_SYS_ID"
+             alt="Descriptive alt text" width="213" height="440"&gt;
+        &lt;p style="margin: 6px 0 0; color: #666; font-size: 9.5pt; line-height: 1.4; text-align: center;"&gt;
+          &lt;em&gt;Caption for the screenshot.&lt;/em&gt;&lt;/p&gt;
+      &lt;/td&gt;
+      &lt;td style="width: 60%; vertical-align: top; padding: 10px 0; font-size: 11pt; line-height: 1.6;"&gt;
+        &lt;p style="margin-bottom: 10pt; font-weight: bold; color: #242424; font-size: 12pt;"&gt;Walkthrough Heading&lt;/p&gt;
+        &lt;ul style="padding-left: 20px; margin: 0; line-height: 1.7;"&gt;
+          &lt;li style="margin-bottom: 8px;"&gt;&lt;strong&gt;Field Name:&lt;/strong&gt; What to enter and why.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Code / formula block</h3>
+<p style="margin-bottom: 10pt;">A monospace panel for formulas, command lines, file paths, or text the reader must reproduce exactly.</p>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">Rendered example</p>
+<div style="border: 1px dashed #c8c8c8; border-radius: 4px; padding: 14px 16px; background-color: #ffffff; margin: 0 0 8px;">
+<div style="background-color: #fff; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 4px; font-family: monospace; font-size: 10pt; margin: 0; color: #444;">1. [Capital Asset Amount] x 100 = [Base Multiplier]<br>2. [Base Multiplier] / [Total Labor/Installation Amount] = [Factor]<br>3. [Factor] x 100 = <strong>Labor Cost Allocation</strong></div>
+</div>
+<p style="margin: 18px 0 6px; font-size: 9pt; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: #7f7f7f;">HTML</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #fff; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 4px; font-family: monospace; font-size: 10pt; margin-bottom: 12pt; color: #444;"&gt;
+  1. [Capital Asset Amount] x 100 = [Base Multiplier]&lt;br&gt;
+  2. [Base Multiplier] / [Total Labor/Installation Amount] = [Factor]&lt;br&gt;
+  3. [Factor] x 100 = &lt;strong&gt;Labor Cost Allocation&lt;/strong&gt;
+&lt;/div&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Horizontal rule</h3>
+<p style="margin-bottom: 10pt;">Separates major sections in long articles (used between the sections of this document).</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;"&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Data table</h3>
+<p style="margin-bottom: 10pt;">For genuine tabular data (schedules, codes, contact matrices). Header cells carry a red bottom rule; rows are divided with light gray. The palette and typography tables in Section 2 are live examples.</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;"&gt;Column&lt;/th&gt;
+      &lt;th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;"&gt;Column&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"&gt;Cell&lt;/td&gt;
+      &lt;td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"&gt;Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">Footer / quick-reference block</h3>
+<p style="margin-bottom: 10pt;">Closes an article with contact points, reference numbers, or related links. The footer of this document is a live example.</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 20px; color: #242424;"><code>&lt;div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 16px 20px; margin-top: 25px;"&gt;
+  &lt;h3 style="font-size: 12pt; color: #242424; font-weight: bold; margin: 0 0 10px; font-family: Verdana;"&gt;Quick Reference&lt;/h3&gt;
+  &lt;table style="width: 100%; border-collapse: collapse; font-size: 11pt;"&gt;
+    &lt;tr&gt;
+      &lt;td style="padding: 4px 0; width: 50%; vertical-align: top;"&gt;&lt;strong&gt;Label:&lt;/strong&gt; Value&lt;/td&gt;
+      &lt;td style="padding: 4px 0; width: 50%; vertical-align: top;"&gt;&lt;strong&gt;Label:&lt;/strong&gt; Value&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 4 ============================== -->
+<h2 id="tools" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">4. Authoring Tools</h2>
+
+<p style="margin-bottom: 15pt;">The ServiceNow knowledge editor is adequate for plain text, but it is a difficult environment for HTML formatting work: the editing surface is small, there is no find-and-replace, no syntax highlighting, and the rich-text layer can rewrite or strip markup on save. The department's standard practice is to <strong>author and format article HTML in a local code editor</strong> &mdash; typically Visual Studio Code &mdash; and paste the finished markup into ServiceNow's HTML source view.</p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">4.1 Recommended editors</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana; width: 25%;">Tool</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">Why use it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Visual Studio Code</strong> (recommended)</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Full HTML syntax highlighting and tag matching, regex find-and-replace, multi-cursor editing, Emmet abbreviation expansion, bracket-pair colorization, and a large extension ecosystem. Free and available on managed workstations.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Notepad++</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Lightweight Windows alternative with HTML highlighting and regex search. Suitable for quick edits when VS Code is unavailable.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Any plain-text editor</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">The workflow only requires an editor that saves raw text. What matters is that markup is edited as text, not through a rich-text canvas.</td>
+    </tr>
+  </tbody>
+</table>
+<div style="background-color: #fff3f3; border-left: 5px solid #E21833; padding: 12px 16px; margin: 15px 0 10px; border-radius: 0 4px 4px 0;">
+  <strong style="color: #E21833; display: block; margin-bottom: 4px;">DO NOT</strong>
+  <p style="margin: 0; font-size: 11pt;">Author or copy article content through Microsoft Word, Outlook, or other rich-text applications. They inject proprietary markup (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;o:p&gt;</code>, <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">mso-*</code> styles, nested spans) that bloats the article, breaks the department style, and is difficult to remove.</p>
+</div>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">4.2 The round-trip workflow</h3>
+<ol style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Extract.</strong> In ServiceNow, open the article and switch the body field to HTML source view (the <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;/&gt;</code> control). Copy the full markup.</li>
+  <li style="margin-bottom: 6pt;"><strong>Save locally.</strong> Paste into a new <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">.html</code> file in your editor. Keep one file per article, named for the article (e.g., <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">kb0011076-new.html</code>).</li>
+  <li style="margin-bottom: 6pt;"><strong>Edit.</strong> Apply the elements from Section 3. Use find-and-replace for repetitive style updates (e.g., retargeting every link color).</li>
+  <li style="margin-bottom: 6pt;"><strong>Preview.</strong> Open the file in a browser to check rendering. For an accurate preview, wrap the article markup in a minimal shell with the banner and body wrapper from Section 2.4 &mdash; this document is itself an example of that pattern.</li>
+  <li style="margin-bottom: 6pt;"><strong>Publish.</strong> Paste the finished markup back into the ServiceNow HTML source view, save, and verify the result in the <strong>portal preview</strong> &mdash; not just the editor, which renders differently.</li>
+</ol>
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: ServiceNow May Normalize Markup on Save</strong>
+<p style="margin: 0;">The editor can reorder attributes, collapse whitespace, or drop elements it does not allow. Always diff the saved article against your local file after publishing, and treat the <strong>local file as the source of truth</strong> for future edits &mdash; never re-copy markup out of ServiceNow as your starting point.</p>
+</div>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">4.3 Useful VS Code capabilities for KB work</h3>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
+  <li style="margin-bottom: 8pt;"><strong>Find and replace with regex</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">Ctrl+H</code>, enable <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">.*</code>): update a style token across every element at once, e.g., replace all <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#0056b3</code> link colors.</li>
+  <li style="margin-bottom: 8pt;"><strong>Multi-cursor editing</strong> (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">Alt+Click</code> / <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">Ctrl+Alt+Down</code>): apply the same attribute change to several list items or table cells simultaneously.</li>
+  <li style="margin-bottom: 8pt;"><strong>Emmet:</strong> expand abbreviations such as <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">ul&gt;li*3</code> into list skeletons, then add inline styles.</li>
+  <li style="margin-bottom: 8pt;"><strong>Tag matching and folding:</strong> click a <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;div&gt;</code> to highlight its closer; fold nested blocks to navigate long articles. Mismatched tags are flagged inline.</li>
+  <li style="margin-bottom: 8pt;"><strong>Preview extensions</strong> (e.g., a live HTML preview or Live Server): watch the rendered article update as you edit, without switching to a browser manually.</li>
+  <li style="margin-bottom: 8pt;"><strong>Source control:</strong> keep article files in Git so every formatting change is tracked, diffable, and reversible. The reference articles under <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/procurement/</code> in this workspace follow that practice.</li>
+</ul>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 5 ============================== -->
+<h2 id="checklist" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">5. Pre-Publication Checklist</h2>
+
+<p style="margin-bottom: 10pt;"><strong>Content</strong></p>
+<ul style="padding-left: 24px; margin: 0 0 15px; line-height: 1.7;">
+  <li style="margin-bottom: 6pt;">The article answers one question or completes one task; the title uses words readers actually search for.</li>
+  <li style="margin-bottom: 6pt;">The short description states what the article does and who it is for.</li>
+  <li style="margin-bottom: 6pt;">Every procedure was walked end to end in a current environment; steps are numbered with one action each.</li>
+  <li style="margin-bottom: 6pt;">Warnings and prerequisites appear before the steps they affect; acronyms are defined on first use.</li>
+</ul>
+<p style="margin-bottom: 10pt;"><strong>Formatting</strong></p>
+<ul style="padding-left: 24px; margin: 0 0 15px; line-height: 1.7;">
+  <li style="margin-bottom: 6pt;">Banner, body wrapper, and heading hierarchy (<code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h1</code> &rarr; <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code> &rarr; <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h3</code>) follow Section 2; no skipped heading levels.</li>
+  <li style="margin-bottom: 6pt;">All styling is inline; there are no <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;style&gt;</code> blocks, scripts, or external stylesheets.</li>
+  <li style="margin-bottom: 6pt;">Links are underlined blue with descriptive text and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">rel="nofollow"</code>.</li>
+  <li style="margin-bottom: 6pt;">Callouts are used sparingly and each carries an explicit text label.</li>
+  <li style="margin-bottom: 6pt;">Articles with three or more sections include a TOC nav, and every TOC link resolves to a heading <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">id</code>.</li>
+</ul>
+<p style="margin-bottom: 10pt;"><strong>ServiceNow</strong></p>
+<ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
+  <li style="margin-bottom: 6pt;">Images are attached to the article, render in the portal preview (not just the editor), and have alt text and captions.</li>
+  <li style="margin-bottom: 6pt;">Keywords/meta, category, and owner are set; a review date is assigned.</li>
+  <li style="margin-bottom: 6pt;">A local copy of the article HTML is saved as the source of truth before publishing (Section 4.2).</li>
+  <li style="margin-bottom: 6pt;">A second person has proofread the article before publication.</li>
+</ul>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 6 ============================== -->
+<h2 id="references" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">6. References</h2>
+
+<div style="background-color: #fafafa; padding: 16px 20px; border-left: 4px solid #454545; border-radius: 4px; margin-bottom: 20px;"><strong style="color: #242424; font-size: 11pt; display: block; margin-bottom: 10pt;">Department Standards and Reference Articles</strong>
+<ul style="padding-left: 20px; margin: 0; line-height: 1.7; font-size: 11pt;">
+<li style="margin-bottom: 6px;"><strong>Header banner source:</strong> <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/formatting_paragon/header.html</code><br><span style="color: #666;">Smith IT and Finance &amp; Accounting banner variants.</span></li>
+<li style="margin-bottom: 6px;"><strong>Formatting paragon article:</strong> <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/formatting_paragon/knowledge_formatting_basis</code><br><span style="color: #666;">The reference implementation of the full article skeleton.</span></li>
+<li style="margin-bottom: 6px;"><strong>Well-formatted examples:</strong> <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/procurement/kb0011076/kb0011076-new.html</code> and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/procurement/kb0011079/mod.html</code><br><span style="color: #666;">Procedural and policy articles in the department style.</span></li>
+<li style="margin-bottom: 6px;"><strong>Brand standards:</strong> <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/smith_page_type_style_guide.md</code> and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/smith_style_guide.html</code><br><span style="color: #666;">Institutional color, typography, and page-type guidance. The Smith Style Guide on the intranet (<a style="color: #0563c1; text-decoration: underline;" href="https://intranet.rhsmith.umd.edu/offices/marketing-communications/smith-style-guide" rel="nofollow">intranet.rhsmith.umd.edu</a>) remains authoritative for brand use.</span></li>
+</ul>
+</div>
+
+<!-- QUICK CONTACT FOOTER BLOCK (live example of Section 3.3) -->
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 16px 20px; margin-top: 25px;">
+  <h3 style="font-size: 12pt; color: #242424; font-weight: bold; margin: 0 0 10px; font-family: Verdana;">Questions &amp; Feedback</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
+    <tr>
+      <td style="padding: 4px 0; width: 50%; vertical-align: top;"><strong>Smith IT Service Desk:</strong> 301-405-2269</td>
+      <td style="padding: 4px 0; width: 50%; vertical-align: top;"><strong>Email:</strong> <a href="mailto:helpme@rhsmith.umd.edu" rel="nofollow" style="color: #0563c1; text-decoration: underline;">helpme@rhsmith.umd.edu</a></td>
+    </tr>
+    <tr>
+      <td style="padding: 4px 0; vertical-align: top;"><strong>Location:</strong> Van Munching Hall, Suite 3520</td>
+      <td style="padding: 4px 0; vertical-align: top;"><strong>Document owner:</strong> Smith IT Knowledge Management</td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+</body>
+</html>
