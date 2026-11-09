@@ -31,10 +31,10 @@
 
 <h1 style="font-size: 18pt; color: #e21833; font-weight: bold; font-family: Verdana; margin: 20px 0 5px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">KB Authoring</h1>
 
-<p style="margin-bottom: 15pt;">This guide covers how Smith IT writes and formats ServiceNow knowledge articles. Section 1 covers the basics of writing knowledge content; Section 2 documents the department formatting standard; Section 3 is a copy-paste library of the HTML elements used in our published articles; Section 4 covers the authoring tools and local editing workflow. This document practices what it preaches: it is built entirely from the elements it describes.</p>
+<p style="margin-bottom: 15pt;">This guide covers how to write and format ServiceNow knowledge articles. Section 1 covers the basics of writing knowledge content; Section 2 documents the department formatting standard; Section 3 is a copy-paste library of the HTML elements used in our published articles; Section 4 covers the authoring tools and local editing workflow; Section 5 walks through authoring an article in ServiceNow step by step. This document practices what it preaches: it is built entirely from the elements it describes.</p>
 
 <!-- TOC NAV -->
-<div style="background-color: #f9f9f9; padding: 10px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 11pt; text-align: center; border: 1px solid #eee;"><a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#basics" rel="nofollow">Knowledge Article Basics</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#formatting" rel="nofollow">Formatting Guidelines</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#elements" rel="nofollow">HTML Element Library</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#tools" rel="nofollow">Authoring Tools</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#checklist" rel="nofollow">Pre-Publication Checklist</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#references" rel="nofollow">References</a></div>
+<div style="background-color: #f9f9f9; padding: 10px 16px; border-radius: 4px; margin-bottom: 25px; font-size: 11pt; text-align: center; border: 1px solid #eee;"><a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#basics" rel="nofollow">Knowledge Article Basics</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#formatting" rel="nofollow">Formatting Guidelines</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#elements" rel="nofollow">HTML Element Library</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#tools" rel="nofollow">Authoring Tools</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#servicenow" rel="nofollow">Authoring in ServiceNow</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#checklist" rel="nofollow">Pre-Publication Checklist</a> | <a style="color: #0056b3; text-decoration: none; font-weight: bold;" href="#references" rel="nofollow">References</a></div>
 
 <!-- ============================== SECTION 1 ============================== -->
 <h2 id="basics" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">1. Knowledge Article Basics</h2>
@@ -45,7 +45,7 @@
 <h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.2 Before you write</h3>
 <ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
   <li style="margin-bottom: 8pt;"><strong>Search first.</strong> Look for existing articles on the same topic. Update or expand an existing article rather than creating a near-duplicate; duplicates split search results and go stale independently.</li>
-  <li style="margin-bottom: 8pt;"><strong>Identify the audience.</strong> Smith School faculty, staff, and students read differently than internal IT staff. Choose vocabulary, depth, and prerequisites for the least technical intended reader.</li>
+  <li style="margin-bottom: 8pt;"><strong>Identify the audience.</strong> Smith School faculty, staff, and students read differently than internal staff. Choose vocabulary, depth, and prerequisites for the least technical intended reader.</li>
   <li style="margin-bottom: 8pt;"><strong>Verify the procedure end to end.</strong> Walk every step yourself in a current environment. Capture screenshots as you go.</li>
   <li style="margin-bottom: 8pt;"><strong>Collect links and references.</strong> Vendor documentation, related articles, forms, and contact points belong in the article, not in the reader's inbox.</li>
 </ul>
@@ -69,7 +69,7 @@
     </tr>
     <tr>
       <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Body</strong></td>
-      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Follow the department skeleton (Section 2.4): banner, title, optional table of contents, sections, optional footer. For procedures: overview &rarr; prerequisites &rarr; numbered steps &rarr; verification &rarr; related links.</td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Follow the department skeleton: banner, title, optional table of contents, sections, optional footer. For procedures: overview &rarr; prerequisites &rarr; numbered steps &rarr; verification &rarr; related links.</td>
     </tr>
     <tr>
       <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Keywords / meta</strong></td>
@@ -90,7 +90,7 @@
   <li style="margin-bottom: 8pt;">Put warnings and prerequisites <strong>before</strong> the step they affect, never after.</li>
   <li style="margin-bottom: 8pt;">Keep paragraphs short (2&ndash;4 sentences). Use lists for anything enumerable.</li>
   <li style="margin-bottom: 8pt;">Define acronyms on first use: &ldquo;Purchase Order (PUR)&rdquo;.</li>
-  <li style="margin-bottom: 8pt;">Screenshots must show the current interface, be cropped to the relevant area, and carry alt text and a caption (Section 3.3).</li>
+  <li style="margin-bottom: 8pt;">Screenshots must show the current interface, be cropped to the relevant area, and carry alt text and a caption.</li>
 </ul>
 
 <h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">1.5 Article lifecycle</h3>
@@ -101,7 +101,7 @@
 <!-- ============================== SECTION 2 ============================== -->
 <h2 id="formatting" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">2. Department Formatting Guidelines</h2>
 
-<p style="margin-bottom: 15pt;">These guidelines distill the Smith brand standards (see <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/</code>) into the constraints of the ServiceNow knowledge editor, as demonstrated in the department's reference articles (see Section 5).</p>
+<p style="margin-bottom: 15pt;">These guidelines distill the Smith brand standards (see <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/</code>) into the constraints of the ServiceNow knowledge editor, as demonstrated in the department's reference articles (see Section 7).</p>
 
 <h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">2.1 ServiceNow constraints</h3>
 <div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: Inline Styles Only</strong>
@@ -247,7 +247,7 @@
   <li style="margin-bottom: 8pt;">Link text describes the destination (&ldquo;Procurement Codes Sheet&rdquo;), never &ldquo;click here&rdquo;.</li>
   <li style="margin-bottom: 8pt;">Never communicate meaning with color alone. Every callout pairs its color with an explicit text label (&ldquo;Note&rdquo;, &ldquo;PROHIBITED&rdquo;).</li>
   <li style="margin-bottom: 8pt;">Keep heading order strict: one <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h1</code>, then <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h2</code>, then <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">h3</code> &mdash; no skipped levels.</li>
-  <li style="margin-bottom: 8pt;">Use real tables with header cells for tabular data. The borderless media table (Section 3.3) is the one sanctioned layout-table pattern, for pairing a screenshot with its walkthrough.</li>
+  <li style="margin-bottom: 8pt;">Use real tables with header cells for tabular data. The borderless media table is the one sanctioned layout-table pattern, for pairing a screenshot with its walkthrough.</li>
 </ul>
 
 <hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
@@ -610,7 +610,75 @@ with descriptive text.&lt;/p&gt;</code></pre>
 <hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
 
 <!-- ============================== SECTION 5 ============================== -->
-<h2 id="checklist" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">5. Pre-Publication Checklist</h2>
+<h2 id="servicenow" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">5. Authoring an Article in ServiceNow, Step by Step</h2>
+
+<p style="margin-bottom: 15pt;">This section walks a new article through ServiceNow from record creation to published result. It assumes the planning in Section 1 is complete: the formatting standard is Section 2, the markup blocks are Section 3, and the local editing workflow is Section 4.</p>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">5.1 Create the article record</h3>
+<ol style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Open a new article.</strong> In ServiceNow, navigate to <strong>Knowledge &gt; Articles &gt; Create New</strong> (or open the knowledge base and select <strong>New Article</strong>).</li>
+  <li style="margin-bottom: 6pt;"><strong>Choose the knowledge base.</strong> The knowledge base determines the available categories, the publication workflow, and the article's audience &mdash; confirm it before writing anything else.</li>
+  <li style="margin-bottom: 6pt;"><strong>Save the draft immediately.</strong> ServiceNow assigns the KB number on first save. Record it and name your local HTML file after it, so the published article and its source file are always paired.</li>
+</ol>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">5.2 Complete the article fields</h3>
+<p style="margin-bottom: 10pt;">Section 1.3 covers what to write in each field. On the ServiceNow form, also note:</p>
+<table style="width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 11pt;">
+  <thead>
+    <tr>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana; width: 25%;">Field</th>
+      <th style="text-align: left; padding: 8px 10px; border-bottom: 2px solid #E21833; color: #242424; font-family: Verdana;">ServiceNow notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Title &amp; short description</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Both appear in portal search results; write them for a reader scanning a results list.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Category</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">The category list is filtered by the selected knowledge base. Choose the most specific category that fits &mdash; readers browse by category.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Owner</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">The owner receives feedback tasks and review reminders. Name an individual so accountability is clear.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Keywords / meta</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Add synonyms and common misspellings. Keywords affect search only; they are not shown on the published article.</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;"><strong>Review date</strong></td>
+      <td style="padding: 8px 10px; border-bottom: 1px solid #e6e6e6; vertical-align: top;">Set the date by which the owner re-verifies the procedure.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">5.3 Build the body</h3>
+<ol style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Draft locally.</strong> Compose and format the body in your code editor following Sections 2 and 3, per the round-trip workflow. Never compose in the rich-text editor or paste from Word or Outlook.</li>
+  <li style="margin-bottom: 6pt;"><strong>Open the HTML source view.</strong> In the article body field, click the <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">&lt;/&gt;</code> control to switch from rich text to source.</li>
+  <li style="margin-bottom: 6pt;"><strong>Paste the finished markup.</strong> Replace the entire contents of the source view with the markup from your local file.</li>
+  <li style="margin-bottom: 6pt;"><strong>Attach images.</strong> Save the record, then upload each screenshot as an article attachment. Reference each image by attachment file name or <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">/sys_attachment.do?sys_id=...</code> URL, with alt text, dimensions, and a caption.</li>
+  <li style="margin-bottom: 6pt;"><strong>Save from the source view.</strong> Save the record while still in HTML source view.</li>
+</ol>
+<div style="background-color: #fcf8e3; border-left: 4px solid #f0ad4e; padding: 16px 20px; border-radius: 4px; margin: 20px 0; font-size: 11pt; line-height: 1.6;"><strong style="color: #a94442; display: block; margin-bottom: 10pt; font-size: 12pt;">Note: Stay in HTML Source View Until You Save</strong>
+<p style="margin: 0;">Switching back to the rich-text view before saving lets the editor rewrite your markup &mdash; Section 4.2 describes the normalization ServiceNow applies. If you want to check the rich-text rendering, save first, then reopen the article.</p>
+</div>
+
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">5.4 Preview, review, and publish</h3>
+<ol style="padding-left: 24px; margin: 0 0 20px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Preview in the portal.</strong> Open the article as a reader will see it. The editor renders differently from the portal, so the editor alone is not a valid check.</li>
+  <li style="margin-bottom: 6pt;"><strong>Run the checklist.</strong> Work through the pre-publication checklist.</li>
+  <li style="margin-bottom: 6pt;"><strong>Get a second reader.</strong> A second person proofreads the article before publication.</li>
+  <li style="margin-bottom: 6pt;"><strong>Publish.</strong> Submit the article through your knowledge base's publication workflow and confirm the workflow state shows <strong>Published</strong>.</li>
+  <li style="margin-bottom: 6pt;"><strong>Verify after publication.</strong> Search the portal by title and by keywords; confirm the article surfaces, images render, and links work. Diff the saved markup against your local source of truth.</li>
+</ol>
+
+<hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
+
+<!-- ============================== SECTION 6 ============================== -->
+<h2 id="checklist" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">6. Pre-Publication Checklist</h2>
 
 <p style="margin-bottom: 10pt;"><strong>Content</strong></p>
 <ul style="padding-left: 24px; margin: 0 0 15px; line-height: 1.7;">
@@ -631,14 +699,14 @@ with descriptive text.&lt;/p&gt;</code></pre>
 <ul style="padding-left: 24px; margin: 0 0 20px; line-height: 1.7;">
   <li style="margin-bottom: 6pt;">Images are attached to the article, render in the portal preview (not just the editor), and have alt text and captions.</li>
   <li style="margin-bottom: 6pt;">Keywords/meta, category, and owner are set; a review date is assigned.</li>
-  <li style="margin-bottom: 6pt;">A local copy of the article HTML is saved as the source of truth before publishing (Section 4.2).</li>
+  <li style="margin-bottom: 6pt;">A local copy of the article HTML is saved as the source of truth before publishing.</li>
   <li style="margin-bottom: 6pt;">A second person has proofread the article before publication.</li>
 </ul>
 
 <hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
 
-<!-- ============================== SECTION 6 ============================== -->
-<h2 id="references" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">6. References</h2>
+<!-- ============================== SECTION 7 ============================== -->
+<h2 id="references" style="font-size: 14pt; color: #454545; font-weight: bold; font-family: Verdana; margin: 24px 0 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px;">7. References</h2>
 
 <div style="background-color: #fafafa; padding: 16px 20px; border-left: 4px solid #454545; border-radius: 4px; margin-bottom: 20px;"><strong style="color: #242424; font-size: 11pt; display: block; margin-bottom: 10pt;">Department Standards and Reference Articles</strong>
 <ul style="padding-left: 20px; margin: 0; line-height: 1.7; font-size: 11pt;">
