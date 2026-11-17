@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmithSN Uptime Status</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-6 font-sans">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8 flex justify-between items-center border-b border-slate-800 pb-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">Smith IT Services Status</h1>
+        <p class="text-sm text-slate-400">Live Uptime & Response Time Monitor</p>
+      </div>
+      <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+        Refresh Status
+      </button>
+    </header>
+
+    <div id="loading" class="text-center py-12 text-slate-400">Loading monitoring logs...</div>
+
+    <div id="dashboard" class="hidden space-y-6">
+      <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-lg">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-700/50 text-slate-300 text-xs uppercase tracking-wider border-b border-slate-700">
+              <th class="p-4">Timestamp</th>
+              <th class="p-4">Target URL</th>
+              <th class="p-4">Status Code</th>
+              <th class="p-4">Response Time</th>
+              <th class="p-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="logTableBody" class="divide-y divide-slate-700 text-sm"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "https://script.google.com/a/macros/umd.edu/s/AKfycbxl5uvqkU7uGKXbvsRVUrCcIC70pFvpEXH0mM3BNxXMi-xmiP09cLyBhUMqLXSe2uhbAg/exec";
+
+    async function fetchLogs() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        renderTable(data.reverse()); // Show newest first
+      } catch (err) {
+        document.getElementById('loading').innerText = "Failed to load logs from Apps Script endpoint.";
+      }
+    }
+
+    function renderTable(logs) {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      
+      const tbody = document.getElementById('logTableBody');
+      tbody.innerHTML = "";
+
+      logs.forEach(log => {
+        const row = document.createElement('tr');
+        row.className = "hover:bg-slate-700/30 transition";
+        
+        const isUp = log.Status === "UP";
+        const badgeClass = isUp ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+
+        row.innerHTML = `
+          <td class="p-4 text-slate-300">${new Date(log.Timestamp).toLocaleString()}</td>
+          <td class="p-4 font-mono text-xs text-indigo-300 truncate max-w-xs">${log.URL}</td>
+          <td class="p-4 font-mono">${log['Status Code']}</td>
+          <td class="p-4 font-mono">${log['Response Time (ms)']} ms</td>
+          <td class="p-4"><span class="px-2.5 py-1 rounded-full text-xs font-semibold ${badgeClass}">${log.Status}</span></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    fetchLogs();
+  </script>
+</body>
+</html>
