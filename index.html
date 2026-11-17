@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmithSN Uptime Status</title>
+  <title>UMD Smith Uptime Status</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen p-6 font-sans">
@@ -13,52 +13,103 @@
         <h1 class="text-2xl font-bold tracking-tight">Smith IT Services Status</h1>
         <p class="text-sm text-slate-400">Live Uptime & Response Time Monitor</p>
       </div>
-      <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+      <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow">
         Refresh Status
       </button>
     </header>
 
     <div id="loading" class="text-center py-12 text-slate-400">Loading monitoring logs...</div>
 
-    <div id="dashboard" class="hidden space-y-6">
+    <div id="dashboard" class="hidden space-y-8">
+      <!-- 3-Card Status Overview -->
+      <div id="statusCards" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Dynamically populated cards go here -->
+      </div>
+
+      <!-- Historical Log Table -->
       <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-lg">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-slate-700/50 text-slate-300 text-xs uppercase tracking-wider border-b border-slate-700">
-              <th class="p-4">Timestamp</th>
-              <th class="p-4">Target URL</th>
-              <th class="p-4">Status Code</th>
-              <th class="p-4">Response Time</th>
-              <th class="p-4">Status</th>
-            </tr>
-          </thead>
-          <tbody id="logTableBody" class="divide-y divide-slate-700 text-sm"></tbody>
-        </table>
+        <div class="px-6 py-4 bg-slate-700/30 border-b border-slate-700">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-300">Recent Activity Logs</h2>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-700/50 text-slate-300 text-xs uppercase tracking-wider border-b border-slate-700">
+                <th class="p-4">Timestamp</th>
+                <th class="p-4">Target URL</th>
+                <th class="p-4">Status Code</th>
+                <th class="p-4">Response Time</th>
+                <th class="p-4">Status</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody" class="divide-y divide-slate-700 text-sm"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
-    const API_URL = "https://script.google.com/a/macros/umd.edu/s/AKfycbxl5uvqkU7uGKXbvsRVUrCcIC70pFvpEXH0mM3BNxXMi-xmiP09cLyBhUMqLXSe2uhbAg/exec";
+    const API_URL = "https://script.google.com/macros/s/AKfycbwALbZPz7Vn4CnpIC6lCvb9wvQ-Vnbss8wvsA6LYmdCHaCAbGJpusZ16YDII6CEMhwS/exec";
 
     async function fetchLogs() {
       try {
         const res = await fetch(API_URL);
         const data = await res.json();
-        renderTable(data.reverse()); // Show newest first
+        
+        if (!data || data.length === 0) {
+          document.getElementById('loading').innerText = "No logs recorded yet. Run your Apps Script checkUptime() function once to generate data.";
+          return;
+        }
+
+        renderDashboard(data);
       } catch (err) {
-        document.getElementById('loading').innerText = "Failed to load logs from Apps Script endpoint.";
+        document.getElementById('loading').innerText = "Failed to load logs from Apps Script endpoint. Verify your Web App URL.";
       }
     }
 
-    function renderTable(logs) {
+    function renderDashboard(logs) {
       document.getElementById('loading').classList.add('hidden');
       document.getElementById('dashboard').classList.remove('hidden');
       
+      // 1. Extract the latest entry for each unique URL
+      const latestStatusMap = {};
+      logs.forEach(log => {
+        // Since logs come chronological, later entries overwrite earlier ones for the same URL
+        latestStatusMap[log.URL] = log;
+      });
+
+      // 2. Render Status Cards
+      const cardsContainer = document.getElementById('statusCards');
+      cardsContainer.innerHTML = "";
+
+      Object.values(latestStatusMap).forEach(log => {
+        const isUp = log.Status === "UP";
+        const badgeClass = isUp ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+        const cardBorder = isUp ? "border-slate-700 hover:border-emerald-500/50" : "border-rose-500/50";
+
+        const card = document.createElement('div');
+        card.className = `bg-slate-800 rounded-xl p-5 border ${cardBorder} shadow-md transition flex flex-col justify-between`;
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${badgeClass}">${log.Status}</span>
+              <span class="text-xs font-mono text-slate-400">${log['Response Time (ms)']} ms</span>
+            </div>
+            <div class="font-mono text-xs text-indigo-300 break-all mb-2">${log.URL}</div>
+          </div>
+          <div class="text-xs text-slate-400 pt-3 border-t border-slate-700/50">
+            Last checked: ${new Date(log.Timestamp).toLocaleTimeString()}
+          </div>
+        `;
+        cardsContainer.appendChild(card);
+      });
+
+      // 3. Render Historical Table (Newest first)
       const tbody = document.getElementById('logTableBody');
       tbody.innerHTML = "";
 
-      logs.forEach(log => {
+      [...logs].reverse().forEach(log => {
         const row = document.createElement('tr');
         row.className = "hover:bg-slate-700/30 transition";
         
@@ -66,7 +117,7 @@
         const badgeClass = isUp ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30";
 
         row.innerHTML = `
-          <td class="p-4 text-slate-300">${new Date(log.Timestamp).toLocaleString()}</td>
+          <td class="p-4 text-slate-300 whitespace-nowrap">${new Date(log.Timestamp).toLocaleString()}</td>
           <td class="p-4 font-mono text-xs text-indigo-300 truncate max-w-xs">${log.URL}</td>
           <td class="p-4 font-mono">${log['Status Code']}</td>
           <td class="p-4 font-mono">${log['Response Time (ms)']} ms</td>
