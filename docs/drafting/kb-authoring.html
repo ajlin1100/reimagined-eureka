@@ -607,6 +607,20 @@ with descriptive text.&lt;/p&gt;</code></pre>
   <li style="margin-bottom: 8pt;"><strong>Source control:</strong> keep article files in Git so every formatting change is tracked, diffable, and reversible. The reference articles under <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">articles/procurement/</code> in this workspace follow that practice.</li>
 </ul>
 
+<h3 style="font-size: 12pt; color: #242424; font-weight: bold; font-family: Verdana; margin: 20px 0 10px;">4.4 Reformat an existing article with GitHub Copilot</h3>
+<p style="margin-bottom: 10pt;">GitHub Copilot Chat in VS Code can help apply the existing formatting standard to an article's HTML. Treat it as an editing assistant: provide the relevant guidelines as context, limit the requested changes, and review the result before publishing.</p>
+<ol style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Set up Copilot.</strong> In VS Code, install the GitHub Copilot and GitHub Copilot Chat extensions if they are not already available. (No company account currently exists for this, so use a Free Account if you want to utilize AI to speed up the formatting process.)</li>
+  <li style="margin-bottom: 6pt;"><strong>Make the style guides available.</strong> Access shared cloud folder containing the Smith Style Guide and any related page-type guidance, and download them into one of your VS Code workspace subfolders.</li>
+  <li style="margin-bottom: 6pt;"><strong>Open a working copy.</strong> Save the existing article HTML as a separate local working file so the original remains unchanged. Open that file in VS Code.</li>
+  <li style="margin-bottom: 6pt;"><strong>Add focused chat context.</strong> In Copilot Chat, use <strong>Add Context</strong> to attach the article, the relevant files from the shared style-guide folder, and this guide's Sections 2 and 3. You can also use <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">#file</code> references when available. Follow company data-handling rules and use only an approved account for article content.</li>
+  <li style="margin-bottom: 6pt;"><strong>Request a constrained reformat.</strong> Ask Copilot to preserve the article's meaning and content while updating its presentation to match the supplied guidelines. For example:</li>
+</ol>
+<pre style="background-color: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px 16px; font-family: Consolas, 'Courier New', monospace; font-size: 9.5pt; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word; margin: 0 0 15px; color: #242424;"><code>Reformat this existing ServiceNow knowledge article using the attached KB formatting guidance and Smith style guides. Preserve all wording, facts, steps, links, and images; change presentation and HTML formatting only. Keep all styles inline and do not add scripts, style blocks, external stylesheets, or unsupported elements. Do not invent or remove information. Flag anything that needs an editorial decision instead of changing it. Show me the proposed changes so I can review them.</code></pre>
+<ol start="6" style="padding-left: 24px; margin: 0 0 15px; line-height: 1.8;">
+  <li style="margin-bottom: 6pt;"><strong>Review and verify.</strong> Inspect every proposed change in the diff, especially links, images, wording, and inline styles. Reject changes that alter article content or conflict with ServiceNow constraints. Preview the HTML in a browser, then follow the round-trip workflow above and verify the published portal preview.</li>
+</ol>
+
 <hr style="border: 0; border-top: 1px solid #d3d3d3; margin: 15px 0;">
 
 <!-- ============================== SECTION 5 ============================== -->
@@ -716,23 +730,6 @@ with descriptive text.&lt;/p&gt;</code></pre>
 <li style="margin-bottom: 6px;"><strong>Brand standards:</strong> <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/smith_page_type_style_guide.md</code> and <code style="font-weight: bold; color: #242424; background: #eee; padding: 2px 4px; border-radius: 3px;">sp2026-rebuild/standards/smith_style_guide.html</code><br><span style="color: #666;">Institutional color, typography, and page-type guidance. The Smith Style Guide on the intranet (<a style="color: #0563c1; text-decoration: underline;" href="https://intranet.rhsmith.umd.edu/offices/marketing-communications/smith-style-guide" rel="nofollow">intranet.rhsmith.umd.edu</a>) remains authoritative for brand use.</span></li>
 </ul>
 </div>
-
-<!-- QUICK CONTACT FOOTER BLOCK (live example of Section 3.3) -->
-<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 16px 20px; margin-top: 25px;">
-  <h3 style="font-size: 12pt; color: #242424; font-weight: bold; margin: 0 0 10px; font-family: Verdana;">Questions &amp; Feedback</h3>
-  <table style="width: 100%; border-collapse: collapse; font-size: 11pt;">
-    <tr>
-      <td style="padding: 4px 0; width: 50%; vertical-align: top;"><strong>Smith IT Service Desk:</strong> 301-405-2269</td>
-      <td style="padding: 4px 0; width: 50%; vertical-align: top;"><strong>Email:</strong> <a href="mailto:helpme@rhsmith.umd.edu" rel="nofollow" style="color: #0563c1; text-decoration: underline;">helpme@rhsmith.umd.edu</a></td>
-    </tr>
-    <tr>
-      <td style="padding: 4px 0; vertical-align: top;"><strong>Location:</strong> Van Munching Hall, Suite 3520</td>
-      <td style="padding: 4px 0; vertical-align: top;"><strong>Document owner:</strong> Smith IT Knowledge Management</td>
-    </tr>
-  </table>
 </div>
-
-</div>
-
 </body>
 </html>
