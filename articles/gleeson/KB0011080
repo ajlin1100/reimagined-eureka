@@ -1,0 +1,27 @@
+<p>&nbsp;</p>
+<div style="max-width: 800px; margin: -30px auto 0; border-radius: 4px; overflow: hidden; font-family: 'Interstate', sans-serif;">
+<div style="display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; border-left: 6px solid #E21833; padding: 16px 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div style="display: flex; align-items: center; gap: 16px;"><img src="umd-formal-seal.png" alt="UMD Seal" width="64" height="64">
+<div>
+<p style="margin: 0; font-size: 20pt; font-weight: bold; color: #242424;">The Office of Smith IT</p>
+<p style="margin: 4px 0 0; font-size: 12pt; font-style: italic; color: #454545;">Robert H. Smith School of Business</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div style="text-align: right; font-size: 10pt; line-height: 1.2; color: #242424;">
+<p style="margin: 0;">Van Munching Hall</p>
+<p style="margin: 0;">Suite 3520</p>
+<p style="margin: 0;">301-405-2269</p>
+<p style="margin: 0;">helpme@rhsmith.umd.edu</p>
+</div>
+</div>
+</div>
+<p>A security certificate used across much of higher education, including many University of Maryland systems, was stopped being trusted by major browsers and operating systems starting Monday, November 16. Universities nationwide are required to replace these certificates on very short notice (approximately 5 days). A replacement certificate provider was setup, however Mac users running an older version of Mac OS (such as 14.2 and earlier) may not have received the 2022 Apple updates that contained the newer SSL root bundles which included the new provider.</p>
+<p><strong>Symptoms:</strong></p>
+<p>In applications that use the system Keychain or the Safari web browser you may see warnings or errors saying "SSL.com TLS RSA Root CA 2022 certificate is not trusted"</p>
+<p><img src="/sys_attachment.do?sys_id=1f5b0e924764d750ecefb8ca116d43fd" width="465" height="265"></p>
+<p>These errors will not appear for the Google Chrome or Mozilla Firefox browsers as they use their own internal CA root bundles which are updated every time a new version of the browser is released and installed by the user.</p>
+<p><strong>Suggested resolution:</strong></p>
+<p><strong>Please Note: </strong>We suggest trying this fix to resolve the issue, but please keep in mind that you are applying it to your personal device. Because we do not manage personal hardware, we cannot be held responsible for any unexpected issues or glitches that might come up.</p>
+<p>You can download the two necessary certificates from the SSL.com website directly here:<br><a href="https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-RSA.pem" rel="nofollow">https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-RSA.pem</a><br><a href="https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-ECC.pem" rel="nofollow">https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-ECC.pem</a></p>
+<p>You would need to import both certificates into your Mac keychain, following the instructions from this Apple KB to add the 2022 certificates:<br><a href="https://support.apple.com/guide/keychain-access/add-certificates-to-a-keychain-kyca2431/mac" rel="nofollow">https://support.apple.com/guide/keychain-access/add-certificates-to-a-keychain-kyca2431/mac</a></p>
+<p>&nbsp;</p>

@@ -1,0 +1,26 @@
+<div style="margin: 0 auto 20px; font-family: Verdana, Geneva, sans-serif; background-color: #f1f1f1; border-left: 6px solid #E21833; padding: 16px 24px;">
+  <p style="margin: 0; font-size: 20pt; font-weight: bold; color: #242424;">The Office of Smith IT</p>
+  <p style="margin: 4px 0 12px; font-size: 12pt; font-style: italic; color: #454545;">Robert H. Smith School of Business</p>
+  <p style="margin: 0; font-size: 10pt; line-height: 1.4; color: #242424;">Van Munching Hall, Suite 3520<br>301-405-2269<br><a href="mailto:helpme@rhsmith.umd.edu" style="color: #8d1324; text-decoration: underline;">helpme@rhsmith.umd.edu</a></p>
+</div>
+
+<div style="font-family: Verdana, Geneva, sans-serif; font-size: 12pt; color: #333333; line-height: 1.6; margin: 0 auto;">
+  <h1 style="font-size: 18pt; color: #8d1324; margin: 20px 0 10px; border-bottom: 1px solid #e6e6e6; padding-bottom: 4px;">Certificate trust errors on older versions of macOS</h1>
+
+  <p>A security certificate used across much of higher education, including many University of Maryland systems, stopped being trusted by major browsers and operating systems starting Monday, November 16. Universities nationwide are required to replace these certificates on very short notice (approximately 5 days). A replacement certificate provider was set up; however, Mac users running an older version of macOS (such as 14.2 and earlier) may not have received the 2022 Apple updates that contained the newer SSL root bundles, which included the new provider.</p>
+
+  <h2 style="font-size: 14pt; color: #454545; margin: 24px 0 10px; border-bottom: 1px solid #e6e6e6; padding-bottom: 4px;">Symptoms</h2>
+  <p>In applications that use the system Keychain or the Safari web browser, you may see warnings or errors saying "SSL.com TLS RSA Root CA 2022 certificate is not trusted".</p>
+  <p><img src="/sys_attachment.do?sys_id=1f5b0e924764d750ecefb8ca116d43fd" alt="Example of a certificate trust warning" width="465" height="265" style="max-width: 100%; height: auto;"></p>
+  <p style="font-size: 10pt; color: #555555;"><em>Example of a certificate trust warning.</em></p>
+  <p>These errors will not appear for the Google Chrome or Mozilla Firefox browsers as they use their own internal CA root bundles, which are updated every time a new version of the browser is released and installed by the user.</p>
+
+  <h2 style="font-size: 14pt; color: #454545; margin: 24px 0 10px; border-bottom: 1px solid #e6e6e6; padding-bottom: 4px;">Suggested resolution</h2>
+  <p style="background-color: #fff9e6; border-left: 5px solid #ffc107; padding: 12px 16px; margin: 15px 0; font-size: 11pt;"><strong>Please note:</strong> We suggest trying this fix to resolve the issue, but please keep in mind that you are applying it to your personal device. Because we do not manage personal hardware, we cannot be held responsible for any unexpected issues or glitches that might come up.</p>
+  <p>You can download the two necessary certificates directly from the SSL.com website:</p>
+  <ul>
+    <li><a href="https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-RSA.pem" style="color: #8d1324; text-decoration: underline;" rel="nofollow">SSL.com TLS Root 2022 RSA certificate</a></li>
+    <li><a href="https://repo-certs.ssl.com/repo/certs/SSLcom-TLS-Root-2022-ECC.pem" style="color: #8d1324; text-decoration: underline;" rel="nofollow">SSL.com TLS Root 2022 ECC certificate</a></li>
+  </ul>
+  <p>You would need to import both certificates into your Mac keychain, following the instructions in the <a href="https://support.apple.com/guide/keychain-access/add-certificates-to-a-keychain-kyca2431/mac" style="color: #8d1324; text-decoration: underline;" rel="nofollow">Apple guide to adding certificates to a keychain</a>.</p>
+</div>
