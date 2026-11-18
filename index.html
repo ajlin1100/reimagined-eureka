@@ -8,14 +8,17 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen p-6 font-sans">
   <div class="max-w-5xl mx-auto">
-    <header class="mb-8 flex justify-between items-center border-b border-slate-800 pb-4">
+    <header class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-4 gap-4">
       <div>
         <h1 class="text-2xl font-bold tracking-tight">SmithSN Status</h1>
         <p class="text-sm text-slate-400">Live Uptime & Response Time Monitor</p>
       </div>
-      <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow">
-        Refresh Status
-      </button>
+      <div class="flex items-center gap-4">
+        <span id="syncStatus" class="text-xs text-slate-400 font-mono">Auto-refreshing every 60s</span>
+        <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow">
+          Refresh Now
+        </button>
+      </div>
     </header>
 
     <div id="loading" class="text-center py-12 text-slate-400">Loading monitoring logs...</div>
@@ -23,7 +26,7 @@
     <div id="dashboard" class="hidden space-y-8">
       <!-- 3-Card Status Overview -->
       <div id="statusCards" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Dynamically populated cards go here -->
+        <!-- Dynamically populated cards -->
       </div>
 
       <!-- Historical Log Table -->
@@ -50,7 +53,7 @@
   </div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbwK-ZNv9ILfCmvsloxGLZ1N_pbQJm3ClBl3HGkks6XYkiCvW10XiZ3EikFoTSODqezS7A/exec";
+    const API_URL = "YOUR_WEB_APP_URL_HERE";
 
     async function fetchLogs() {
       try {
@@ -63,8 +66,12 @@
         }
 
         renderDashboard(data);
+        
+        // Update sync status timestamp
+        const now = new Date().toLocaleTimeString();
+        document.getElementById('syncStatus').innerText = `Last synced: ${now} (Polls every 60s)`;
       } catch (err) {
-        document.getElementById('loading').innerText = "Failed to load logs from Apps Script endpoint. Verify your Web App URL.";
+        document.getElementById('syncStatus').innerText = "Sync failed - retrying in 60s";
       }
     }
 
@@ -72,14 +79,13 @@
       document.getElementById('loading').classList.add('hidden');
       document.getElementById('dashboard').classList.remove('hidden');
       
-      // 1. Extract the latest entry for each unique URL
+      // Extract latest entry per unique URL
       const latestStatusMap = {};
       logs.forEach(log => {
-        // Since logs come chronological, later entries overwrite earlier ones for the same URL
         latestStatusMap[log.URL] = log;
       });
 
-      // 2. Render Status Cards
+      // Render Status Cards
       const cardsContainer = document.getElementById('statusCards');
       cardsContainer.innerHTML = "";
 
@@ -99,13 +105,13 @@
             <div class="font-mono text-xs text-indigo-300 break-all mb-2">${log.URL}</div>
           </div>
           <div class="text-xs text-slate-400 pt-3 border-t border-slate-700/50">
-            Last checked: ${new Date(log.Timestamp).toLocaleTimeString()}
+            Checked: ${new Date(log.Timestamp).toLocaleTimeString()}
           </div>
         `;
         cardsContainer.appendChild(card);
       });
 
-      // 3. Render Historical Table (Newest first)
+      // Render Historical Table (Newest first)
       const tbody = document.getElementById('logTableBody');
       tbody.innerHTML = "";
 
@@ -127,7 +133,11 @@
       });
     }
 
+    // Initial load on page open
     fetchLogs();
+
+    // Auto-refresh every 60 seconds (60000 milliseconds)
+    setInterval(fetchLogs, 60000);
   </script>
 </body>
 </html>
