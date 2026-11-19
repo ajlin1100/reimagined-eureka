@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmithSN Uptime Status</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-6 font-sans">
+  <div class="max-w-5xl mx-auto">
+    <header class="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-4 gap-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">SmithSN Status</h1>
+        <p class="text-sm text-slate-400">Live Uptime & Response Time Monitor</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="syncStatus" class="text-xs text-slate-400 font-mono">Auto-refreshing every 60s</span>
+        <button onclick="fetchLogs()" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow">
+          Refresh Now
+        </button>
+      </div>
+    </header>
+
+    <div id="loading" class="text-center py-12 text-slate-400">Loading monitoring logs...</div>
+
+    <div id="dashboard" class="hidden space-y-8">
+      <!-- 3-Card Status Overview -->
+      <div id="statusCards" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Dynamically populated cards -->
+      </div>
+
+      <!-- Historical Log Table -->
+      <div class="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-lg">
+        <div class="px-6 py-4 bg-slate-700/30 border-b border-slate-700">
+          <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-300">Recent Activity Logs</h2>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-700/50 text-slate-300 text-xs uppercase tracking-wider border-b border-slate-700">
+                <th class="p-4">Timestamp</th>
+                <th class="p-4">Target URL</th>
+                <th class="p-4">Status Code</th>
+                <th class="p-4">Response Time</th>
+                <th class="p-4">Status</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody" class="divide-y divide-slate-700 text-sm"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbwK-ZNv9ILfCmvsloxGLZ1N_pbQJm3ClBl3HGkks6XYkiCvW10XiZ3EikFoTSODqezS7A/exec";
+
+    async function fetchLogs() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        
+        if (!data || data.length === 0) {
+          document.getElementById('loading').innerText = "No logs recorded yet. Run your Apps Script checkUptime() function once to generate data.";
+          return;
+        }
+
+        renderDashboard(data);
+        
+        // Update sync status timestamp
+        const now = new Date().toLocaleTimeString();
+        document.getElementById('syncStatus').innerText = `Last synced: ${now} (Polls every 60s)`;
+      } catch (err) {
+        document.getElementById('syncStatus').innerText = "Sync failed - retrying in 60s";
+      }
+    }
+
+    function renderDashboard(logs) {
+      document.getElementById('loading').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      
+      // Extract latest entry per unique URL
+      const latestStatusMap = {};
+      logs.forEach(log => {
+        latestStatusMap[log.URL] = log;
+      });
+
+      // Render Status Cards
+      const cardsContainer = document.getElementById('statusCards');
+      cardsContainer.innerHTML = "";
+
+      Object.values(latestStatusMap).forEach(log => {
+        const isUp = log.Status === "UP";
+        const badgeClass = isUp ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+        const cardBorder = isUp ? "border-slate-700 hover:border-emerald-500/50" : "border-rose-500/50";
+
+        const card = document.createElement('div');
+        card.className = `bg-slate-800 rounded-xl p-5 border ${cardBorder} shadow-md transition flex flex-col justify-between`;
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start mb-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold ${badgeClass}">${log.Status}</span>
+              <span class="text-xs font-mono text-slate-400">${log['Response Time (ms)']} ms</span>
+            </div>
+            <div class="font-mono text-xs text-indigo-300 break-all mb-2">${log.URL}</div>
+          </div>
+          <div class="text-xs text-slate-400 pt-3 border-t border-slate-700/50">
+            Checked: ${new Date(log.Timestamp).toLocaleTimeString()}
+          </div>
+        `;
+        cardsContainer.appendChild(card);
+      });
+
+      // Render Historical Table (Newest first)
+      const tbody = document.getElementById('logTableBody');
+      tbody.innerHTML = "";
+
+      [...logs].reverse().forEach(log => {
+        const row = document.createElement('tr');
+        row.className = "hover:bg-slate-700/30 transition";
+        
+        const isUp = log.Status === "UP";
+        const badgeClass = isUp ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+
+        row.innerHTML = `
+          <td class="p-4 text-slate-300 whitespace-nowrap">${new Date(log.Timestamp).toLocaleString()}</td>
+          <td class="p-4 font-mono text-xs text-indigo-300 truncate max-w-xs">${log.URL}</td>
+          <td class="p-4 font-mono">${log['Status Code']}</td>
+          <td class="p-4 font-mono">${log['Response Time (ms)']} ms</td>
+          <td class="p-4"><span class="px-2.5 py-1 rounded-full text-xs font-semibold ${badgeClass}">${log.Status}</span></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Initial load on page open
+    fetchLogs();
+
+    // Auto-refresh every 60 seconds (60000 milliseconds)
+    setInterval(fetchLogs, 60000);
+  </script>
+</body>
+</html>
